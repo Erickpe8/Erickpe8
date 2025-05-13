@@ -10,7 +10,7 @@ Soy un **desarrollador en formación** de **19 años**. Me encanta aprender sobr
 - **Lenguajes**: PHP, HTML, CSS
 - **Frameworks**: Laravel, Vue.js
 - **Bases de datos**: MySQL
-- **Otras herramientas**: Github, Visual Studio Code, Taiga, Trello.
+- **Otras herramientas**: Github, Visual Studio Code, Taiga, Trello, Powerbi y Packet Tracer.
 
 ## 📚 Proyectos en los que estoy trabajando 🚀
 ### Apoyo en la Unidad de Desarrollo de FESC
