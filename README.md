@@ -27,3 +27,6 @@ Estoy aprendiendo todo lo que puedo sobre desarrollo de software y cada día tra
 - **IG**: [Erickperez_8](https://www.instagram.com/erickperez_8/)
 
 ¡Gracias por visitar mi perfil! 💻✨
+
+![Contador de visitas](https://komarev.com/ghpvc/?username=Erickpe8&label=Visitas&color=0e75b6&style=flat)
+
