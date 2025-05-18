@@ -28,7 +28,18 @@ Estoy aprendiendo todo lo que puedo sobre desarrollo de software y cada día tra
 
 ¡Gracias por visitar mi perfil! 💻✨
 
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=Erickpe8&theme=github-light&hide_border=FALSO&border_radius=12.5&locale=es&short_numbers=FALSO&date_format=j%20M%5B%20Y%5D&exclude_days=Sun%2CMon&card_width=561&card_height=203)](https://git.io/streak-stats)
+<table>
+  <tr>
+    <td>
+      <img src="https://github-readme-streak-stats.herokuapp.com?user=Erickpe8&theme=meta-light&border_radius=12.5&locale=es" width="100%"/>
+    </td>
+    <td>
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Erickpe8&layout=compact" width="100%"/>
+    </td>
+  </tr>
+</table>
 
-![Contador de visitas](https://komarev.com/ghpvc/?username=Erickpe8&label=Visitas&color=0e75b6&style=flat)
+<div align="left">
+  <img src="https://komarev.com/ghpvc/?username=Erickpe8&label=Visitas&color=0e75b6&style=flat" alt="Contador de visitas" />
+</div>
 
