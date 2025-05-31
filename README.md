@@ -1,16 +1,44 @@
-## Hi there 👋
+# ¡Hola! Soy Erick 👋
 
-<!--
-**Erickpe8/Erickpe8** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Soy un **desarrollador en formación** de **19 años**. Me encanta aprender sobre la **gestión de proyectos de software** y cómo hacer que las aplicaciones funcionen de manera eficiente. Actualmente, estoy enfocado en **aprender Laravel** para el desarrollo backend, **Vue.js** para crear interfaces interactivas y mejorar mis habilidades en la documentación y gestión de proyectos.
 
-Here are some ideas to get you started:
+## 🚀 Lo que estoy aprendiendo
+- **Laravel**: Enfocado en aprender el desarrollo backend con Laravel.
+- **Vue.js**: Aprendiendo a crear interfaces dinámicas y fáciles de usar con Vue.js.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## 🛠️ Herramientas y tecnologías que manejo
+- **Lenguajes**: PHP, HTML, CSS
+- **Frameworks**: Laravel, Vue.js
+- **Bases de datos**: MySQL
+- **Otras herramientas**: Github, Visual Studio Code, Taiga, Trello y Powerbi.
+
+## 📚 Proyectos en los que estoy trabajando 🚀
+### Apoyo en la Unidad de Desarrollo de FESC
+Actualmente, estoy colaborando en la **Fábrica de Software** dentro de la **Unidad de Desarrollo** de la **Fundación de Estudios Superiores Comfanorte (FESC)**. Este rol me permite trabajar en proyectos reales, mejorar mis habilidades de desarrollo y colaborar con profesionales en la creación de soluciones de software para diferentes necesidades de los diferentes sectores.
+
+### Desarrollo de mi propio software como servicio (SaaS)
+Estoy creando un software como servicio (SaaS) para optimizar procesos en una empresa del sector, con el objetivo de mejorar la eficiencia operativa y facilitar su acceso en línea, planeando expandirlo a más empresas a medida que crezca.
+
+## 🌱 Mi objetivo
+Estoy aprendiendo todo lo que puedo sobre desarrollo de software y cada día trato de mejorar mis habilidades. Me encanta experimentar con nuevas tecnologías y trabajar en proyectos que me ayuden a crecer como programador.
+
+## 📫 Conéctate conmigo
+- **Correo electrónico**: ericksperezc@gmail.com
+- **IG**: [Erickperez_8](https://www.instagram.com/erickperez_8/)
+
+¡Gracias por visitar mi perfil! 💻✨
+
+<table>
+  <tr>
+    <td>
+      <img src="https://github-readme-streak-stats.herokuapp.com?user=Erickpe8&theme=meta-light&border_radius=12.5&locale=es" width="100%"/>
+    </td>
+    <td>
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Erickpe8&layout=compact&langs_count=10" width="100%"/>
+    </td>
+  </tr>
+</table>
+
+<div align="left">
+  <img src="https://komarev.com/ghpvc/?username=Erickpe8&label=Visitas&color=0e75b6&style=flat" alt="Contador de visitas" />
+</div>
