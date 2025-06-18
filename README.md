@@ -7,10 +7,10 @@ Soy un **desarrollador en formación** de **19 años**. Me encanta aprender sobr
 - **Vue.js**: Aprendiendo a crear interfaces dinámicas y fáciles de usar con Vue.js.
 
 ## 🛠️ Herramientas y tecnologías que manejo
-- **Lenguajes**: PHP, HTML, CSS
-- **Frameworks**: Laravel, Vue.js
-- **Bases de datos**: MySQL
-- **Otras herramientas**: Github, Visual Studio Code, Taiga, Trello y Powerbi.
+- **Lenguajes**: PHP, HTML, CSS.
+- **Frameworks**: Laravel, Vue.js, Tailwind.
+- **Bases de datos**: MySQL, Postgres.
+- **Otras herramientas**: Github, Visual Studio Code, Taiga, Trello, Chardb y Powerbi.
 
 ## 📚 Proyectos en los que estoy trabajando 🚀
 ### Apoyo en la Unidad de Desarrollo de FESC
@@ -25,6 +25,8 @@ Estoy aprendiendo todo lo que puedo sobre desarrollo de software y cada día tra
 ## 📫 Conéctate conmigo
 - **Correo electrónico**: ericksperezc@gmail.com
 - **IG**: [Erickperez_8](https://www.instagram.com/erickperez_8/)
+## 📺 Conoce un poco de mi contenido
+- **Youtube**: [Erickperez_8](https://www.youtube.com/@ErickPerez_8)
 
 ¡Gracias por visitar mi perfil! 💻✨
 
