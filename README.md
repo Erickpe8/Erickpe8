@@ -10,6 +10,7 @@ Soy un **desarrollador en formación** de **19 años**. Me encanta aprender sobr
 - **Lenguajes**: PHP, HTML, CSS.
 - **Frameworks**: Laravel, Vue.js, Tailwind.
 - **Bases de datos**: MySQL, Postgres.
+- **Uso de arquitecturas a fines con laravel**
 - **Otras herramientas**: Github, Visual Studio Code, Taiga, Trello, Chardb y Powerbi.
 
 ## 📚 Proyectos en los que estoy trabajando 🚀
