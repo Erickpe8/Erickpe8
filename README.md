@@ -37,7 +37,7 @@ Estoy aprendiendo todo lo que puedo sobre desarrollo de software y cada día tra
       <img src="https://github-readme-streak-stats.herokuapp.com?user=Erickpe8&theme=meta-light&border_radius=12.5&locale=es" width="100%"/>
     </td>
     <td>
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Erickpe8&layout=compact&langs_count=10" width="100%"/>
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Erickpe8&layout=compact&langs_count=8" width="100%"/>
     </td>
   </tr>
 </table>
