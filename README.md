@@ -1,3 +1,12 @@
+<div align="center">
+  <img 
+    src="https://capsule-render.vercel.app/api?type=waving&color=43c5ef&height=200&section=header&text=Erick%20Perez&fontSize=60&fontColor=FFFFFF&animation=fadeIn&fontAlignY=38&desc=Developer&descAlignY=60&descAlign=50" 
+    width="100%"
+  />
+</div>
+
+---
+
 # Welcome, I'm Erick Pérez <img src="https://mwcorvettes.com/wp-content/uploads/2019/03/savethewave-300x252.gif" width="46" height="39" alt="Wave">
 
 Soy un desarrollador backend en formación de 19 años, apasionado por la gestión de proyectos de software y por crear aplicaciones eficientes, escalables y bien estructuradas. Me motiva comprender todo el ciclo del desarrollo: desde la toma de requerimientos y la planeación, hasta la implementación y la documentación técnica.
