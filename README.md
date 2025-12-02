@@ -1,6 +1,23 @@
-# ¡Hola! Soy Erick 👋
+# Welcome, I'm Erick Pérez <img src="https://mwcorvettes.com/wp-content/uploads/2019/03/savethewave-300x252.gif" width="46" height="39" alt="Wave">
 
-Soy un **desarrollador backend en formación** de **19 años**, apasionado por la **gestión de proyectos de software** y por crear aplicaciones eficientes, escalables y bien estructuradas. Me motiva comprender todo el ciclo del desarrollo: desde la toma de requerimientos y la planeación, hasta la implementación y documentación técnica.
+Soy un desarrollador backend en formación de 19 años, apasionado por la gestión de proyectos de software y por crear aplicaciones eficientes, escalables y bien estructuradas. Me motiva comprender todo el ciclo del desarrollo: desde la toma de requerimientos y la planeación, hasta la implementación y la documentación técnica.
+
+<p align="center"> 
+  <!-- YouTube -->
+  <a href="https://www.youtube.com/@ErickPerez_8">
+    <img align="center" src="https://img.shields.io/badge/YouTube-ErickPerez__8-red?style=social" alt="YouTube channel">
+  </a>
+
+  <!-- GitHub Followers -->
+  <a href="https://github.com/Erickpe8">
+    <img align="center" alt="GitHub followers" src="https://img.shields.io/github/followers/Erickpe8?label=follow&style=social">
+  </a>
+
+  <!-- Profile Views -->
+  <a href="https://github.com/Erickpe8">
+    <img align="center" src="https://komarev.com/ghpvc/?username=Erickpe8&color=blue" alt="Profile views">
+  </a>
+</p>
 
 ---
 
