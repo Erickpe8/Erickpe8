@@ -4,10 +4,10 @@ name: Metrics
 on:
   # Schedule updates (cada 8 horas)
   schedule:
-    - cron: "0 */8 * * *"
+    - cron: "0 */1 * * *"
   # Permite ejecutarlo manualmente
   workflow_dispatch:
-  # Se dispara también cuando hagas push a main
+  # Se dispara también cuando haga push a main
   push:
     branches:
       - main
