@@ -121,9 +121,21 @@ Quiero aplicar buenas prácticas, una planeación consciente y un trabajo en equ
 
 ## 📈 Metrics Dashboard
 
-<div align="center">
+<div align="center" style="margin-top: 20px; margin-bottom: 20px;">
+  
+  <!-- Imagen generada por GitHub Actions -->
   <img 
-    src="https://metrics.lecoq.io/Erickpe8?template=classic&base=header%2C%20activity%2C%20community%2C%20repositories%2C%20metadata&config.timezone=America%2FBogota" 
+    src="./github-metrics.svg"
     width="90%"
+    alt="GitHub Metrics for Erickpe8"
   />
+
+  <br><br>
+
+  <!-- Pie de página -->
+  <sub>
+    <i>Desarrollado con ❤️</i>
+  </sub>
+
 </div>
+
