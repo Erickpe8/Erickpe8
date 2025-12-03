@@ -2,7 +2,7 @@
 name: Metrics
 
 on:
-  # Schedule updates (cada 8 horas)
+  # Schedule updates (cada 1 hora)
   schedule:
     - cron: "0 */1 * * *"
   # Permite ejecutarlo manualmente
