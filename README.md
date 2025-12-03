@@ -5,26 +5,32 @@
   />
 </div>
 
----
+<br>
 
-# Welcome, I'm Erick Pérez <img src="https://mwcorvettes.com/wp-content/uploads/2019/03/savethewave-300x252.gif" width="46" height="39" alt="Wave">
+<h1 align="center">
+  Welcome, I'm Erick Pérez  
+  <img src="https://mwcorvettes.com/wp-content/uploads/2019/03/savethewave-300x252.gif" width="46" alt="Wave">
+</h1>
 
-Soy un desarrollador backend en formación de 19 años, apasionado por la gestión de proyectos de software y por crear aplicaciones eficientes, escalables y bien estructuradas. Me motiva comprender todo el ciclo del desarrollo: desde la toma de requerimientos y la planeación, hasta la implementación y la documentación técnica.
+<p align="center" style="font-size: 16px;">
+  Soy un desarrollador backend en formación de 19 años, apasionado por la gestión de proyectos de software y por crear aplicaciones eficientes, escalables y bien estructuradas.  
+  Me motiva comprender todo el ciclo del desarrollo: desde la toma de requerimientos y la planeación, hasta la implementación y la documentación técnica.
+</p>
 
 <p align="center"> 
   <!-- YouTube -->
   <a href="https://www.youtube.com/@ErickPerez_8">
-    <img align="center" src="https://img.shields.io/badge/YouTube-ErickPerez__8-red?style=social" alt="YouTube channel">
+    <img src="https://img.shields.io/badge/YouTube-ErickPerez__8-red?style=social" alt="YouTube channel">
   </a>
 
   <!-- GitHub Followers -->
   <a href="https://github.com/Erickpe8">
-    <img align="center" alt="GitHub followers" src="https://img.shields.io/github/followers/Erickpe8?label=follow&style=social">
+    <img alt="GitHub followers" src="https://img.shields.io/github/followers/Erickpe8?label=follow&style=social">
   </a>
 
   <!-- Profile Views -->
   <a href="https://github.com/Erickpe8">
-    <img align="center" src="https://komarev.com/ghpvc/?username=Erickpe8&color=blue" alt="Profile views">
+    <img src="https://komarev.com/ghpvc/?username=Erickpe8&label=Visitas&color=0e75b6&style=flat" alt="Contador de visitas">
   </a>
 </p>
 
@@ -32,46 +38,57 @@ Soy un desarrollador backend en formación de 19 años, apasionado por la gesti�
 
 ## 🚀 Lo que estoy aprendiendo
 
-- **Laravel 10.x (monolito con Blade):** Profundizando en el desarrollo backend, optimización de controladores y seeders, manejo de autenticación, roles y buenas prácticas de organización del código.  
-- **JavaScript:** Fortaleciendo conocimientos en lógica, manipulación del DOM y conexión con APIs para mejorar la interacción entre frontend y backend.  
-- **Docker:** Configurando entornos de desarrollo estables y replicables, optimizando flujos de trabajo entre equipos.  
-- **Arquitecturas:** Explorando patrones y principios de diseño como MVC, modularidad y separación de responsabilidades para mejorar la mantenibilidad y escalabilidad.  
-- **Diseño de bases de datos:** Modelando estructuras relacionales, aplicando relaciones y claves foráneas para asegurar integridad y coherencia en los datos.  
-- **Git y GitHub:** Perfeccionando flujos de trabajo con ramas (feature, develop, main) y estrategias de merge en entornos colaborativos.  
-- **Gestión técnica:** Aplicando metodologías ágiles, control de versiones y comunicación técnica para lograr una planificación más eficiente.  
-- **Documentación y diseño:** Utilizo **PlantText** y **ChartDB** para diagramar estructuras de software, además de **Figma** para maquetar y prototipar interfaces funcionales y coherentes con los objetivos del proyecto.
+- **Laravel 10.x (monolito con Blade):** Profundizando en el desarrollo backend, la organización de controladores, el uso de seeders, la gestión de autenticación y roles, y la aplicación de buenas prácticas para mantener el código limpio y mantenible.  
+- **JavaScript:** Fortaleciendo la lógica, la manipulación del DOM y la conexión con APIs para mejorar la interacción entre frontend y backend, buscando interfaces más dinámicas y fluidas.  
+- **Docker:** Configurando entornos de desarrollo estables y replicables, para que los proyectos sean fáciles de desplegar y de compartir entre equipos.  
+- **Arquitecturas de software:** Explorando patrones y principios como MVC, modularidad y separación de responsabilidades, con el objetivo de construir sistemas más escalables y fáciles de mantener.  
+- **Diseño de bases de datos:** Modelando estructuras relacionales, definiendo relaciones y claves foráneas para garantizar la integridad y coherencia de la información.  
+- **Git y GitHub:** Refinando el uso de ramas (feature, develop, main), revisiones de código y estrategias de merge en entornos colaborativos.  
+- **Gestión técnica:** Aplicando metodologías ágiles, control de versiones y comunicación técnica para que la planificación y el desarrollo sean más organizados y predecibles.  
+- **Documentación y diseño:** Uso herramientas como **PlantText** y **ChartDB** para diagramar estructuras de software, y **Figma** para maquetar y prototipar interfaces alineadas con los objetivos del proyecto.
 
-
-> 💡 *Me gusta integrar lo técnico con la gestión: construir software sólido y entender el “por qué” detrás de cada decisión.*
+> 💡 *Me gusta integrar lo técnico con la gestión: no solo programar, sino entender el “por qué” de cada decisión.*
 
 ---
 
 ## 🛠️ Herramientas y tecnologías que manejo
 
-- **Lenguajes:** PHP, JavaScript, HTML y CSS.  
-- **Frameworks y librerías:** Laravel, TailwindCSS y Flowbite.  
-- **Bases de datos:** MySQL y PostgreSQL.  
-- **Diseño y documentación:** PlantText y ChartDB para diagramar estructuras, y Figma para maquetar y prototipar interfaces.  
+- **Lenguajes:** PHP, JavaScript, HTML, CSS.  
+- **Frameworks y librerías:** Laravel, TailwindCSS, Flowbite.  
+- **Bases de datos:** MySQL, PostgreSQL.  
 - **Entorno de desarrollo:** Laragon y Docker.  
 - **IDE principal:** Visual Studio Code.  
 - **Gestores de bases de datos:** DBeaver y phpMyAdmin.  
-- **Control de versiones:** Git y GitHub, aplicando flujos colaborativos y estrategias de ramas (feature, develop, main).  
-- **Gestión de proyectos:** Trello y Taiga, para la organización de tareas, seguimiento de avances y control de entregas.
-
+- **Control de versiones:** Git y GitHub, trabajando con flujos de ramas como feature, develop y main.  
+- **Diseño y documentación:** Figma para prototipado de interfaces; PlantText y ChartDB para diagramas y modelado de sistemas.  
+- **Gestión de proyectos:** Trello y Taiga para organización de tareas, seguimiento de avances y control de entregas.
 
 ---
 
 ## 📚 Experiencia actual
 
-Actualmente trabajo en una **Fábrica de Software**, donde participo en el desarrollo de sistemas internos, estructuro módulos backend, gestiono requerimientos y elaboro documentación técnica. Este rol me ha permitido fortalecer mis habilidades técnicas, comprender procesos reales de desarrollo en un entorno profesional, potenciar el trabajo en equipo y consolidar mi enfoque organizativo.  
+Actualmente trabajo en una **Fábrica de Software**, donde participo en el desarrollo de sistemas internos para una institución de educación superior.  
+Dentro de mis responsabilidades se encuentran:
 
-Además, desarrollo proyectos personales y continúo con mi formación profesional, aplicando lo aprendido, mejorando mi lógica y explorando nuevas tecnologías que amplían mi visión como desarrollador.
+- Estructurar y desarrollar módulos backend.  
+- Colaborar en el análisis y levantamiento de requerimientos.  
+- Apoyar la definición de flujos y reglas de negocio.  
+- Mantener y mejorar la documentación técnica de los proyectos.  
+
+Este rol me ha permitido fortalecer mis habilidades técnicas, entender mejor cómo se construyen soluciones reales en un entorno profesional, potenciar el trabajo en equipo y consolidar un enfoque más organizado y estratégico al momento de desarrollar software.
+
+Además, complemento esta experiencia con proyectos personales y formación académica, donde pongo en práctica lo aprendido, mejoro mi lógica y exploro nuevas tecnologías que amplían mi visión como desarrollador.
 
 ---
 
 ## 🌱 Mi objetivo profesional
 
-Seguir consolidándome como **desarrollador backend** con enfoque en **gestión de proyectos técnicos**, aplicando buenas prácticas, planeación clara y trabajo en equipo. Busco construir soluciones que generen valor real y mejoren la productividad de los entornos donde se implementen.
+Seguir consolidándome como **desarrollador backend** con un enfoque claro en **gestión de proyectos técnicos**.  
+Quiero aplicar buenas prácticas, una planeación consciente y un trabajo en equipo sólido para construir soluciones que:
+
+- Sean técnicamente robustas y escalables.  
+- Resuelvan problemas reales y aporten valor a las organizaciones.  
+- Faciliten la vida de quienes las usan y de quienes las mantienen.  
 
 > 💬 *“Un proyecto bien gestionado no solo se entrega a tiempo, también deja un equipo más fuerte detrás.”*
 
@@ -85,20 +102,23 @@ Seguir consolidándome como **desarrollador backend** con enfoque en **gestión 
 
 ---
 
+## 📊 GitHub Stats
+
 <table>
   <tr>
     <td>
       <img src="https://github-readme-streak-stats.herokuapp.com?user=Erickpe8&theme=meta-light&border_radius=12.5&locale=es" width="100%"/>
     </td>
-    <td>
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Erickpe8&layout=compact&langs_count=8" width="100%"/>
-    </td>
   </tr>
 </table>
 
-<div align="left">
-  <img src="https://komarev.com/ghpvc/?username=Erickpe8&label=Visitas&color=0e75b6&style=flat" alt="Contador de visitas" />
-</div>
-
 ---
 
+## 📈 Metrics Dashboard
+
+<div align="center">
+  <img 
+    src="https://metrics.lecoq.io/Erickpe8?template=classic&base=header%2C%20activity%2C%20community%2C%20repositories%2C%20metadata&config.timezone=America%2FBogota" 
+    width="90%"
+  />
+</div>
