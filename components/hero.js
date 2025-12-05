@@ -7,17 +7,19 @@ class HeroSection extends HTMLElement {
                 <!-- Foto -->
                 <div class="flex justify-center mb-6">
                     <img 
-                        src="https://github.com/Erickpe8.png" 
-                        class="w-36 h-36 rounded-full shadow-xl border-4 border-white object-cover hover:scale-105 transition-transform duration-300"
+                        src="https://github.com/Erickpe8.png"
+                        class="w-32 h-32 md:w-44 md:h-44 rounded-full shadow-lg border-4 border-white object-cover
+                            hover:scale-105 transition duration-300"
+                        style="box-shadow: 0 0 25px rgba(67,197,239,0.25);"
                     />
                 </div>
 
                 <!-- Saludo -->
-                <h1 class="text-5xl md:text-6xl font-bold mb-6 flex items-center justify-center gap-3">
-                    <span class="wave-animation inline-block text-6xl">👋</span>
-                    Hola, soy <span class="gradient-text ml-2">Erick Pérez</span>
+                <h1 class="text-4xl md:text-6xl font-bold text-center leading-tight mb-6">
+                    <span class="wave-animation inline-block text-5xl md:text-6xl">👋</span>
+                    <span class="block md:inline">Hola, soy</span>
+                    <span class="gradient-text block md:inline md:ml-2">Erick Pérez</span>
                 </h1>
-
 
                 <p class="text-xl text-gray-700 mb-4">
                     Fullstack Developer en formación
