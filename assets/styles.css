@@ -1,0 +1,29 @@
+.gradient-text {
+    background: linear-gradient(135deg, #43c5ef, #0969da);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.wave-animation {
+    animation: wave 2.5s ease-in-out infinite;
+    transform-origin: 70% 70%;
+}
+
+@keyframes wave {
+    0%,100% { transform: rotate(0deg); }
+    10%,30% { transform: rotate(14deg); }
+    20% { transform: rotate(-8deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
