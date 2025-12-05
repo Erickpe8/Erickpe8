@@ -18,10 +18,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Prepare site
+        run: |
+          mkdir site
+          cp index.html site/
+          cp github-metrics.svg site/
+          cp -r assets site/
+          cp -r components site/
+          cp main.js site/
+          cp styles.css site/
+
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "."
+          path: "site"
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
