@@ -26,7 +26,7 @@ jobs:
           cp -r assets site/
           cp -r components site/
           cp main.js site/
-          cp styles.css site/
+          cp assets/styles.css site/
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
