@@ -8,9 +8,6 @@ class StatsSection extends HTMLElement {
 
                 <div class="flex flex-col items-center justify-center gap-8">
 
-                    <img src="https://github-readme-streak-stats.herokuapp.com?user=Erickpe8&theme=meta-light&border_radius=12.5&locale=es"
-                        class="w-full max-w-2xl rounded-xl shadow-lg" />
-
                     <img src="./github-metrics.svg"
                         class="w-full max-w-3xl rounded-xl shadow-lg" />
 
