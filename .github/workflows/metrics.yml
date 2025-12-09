@@ -20,7 +20,6 @@ jobs:
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          # Tu GitHub token (usa METRICS_TOKEN con scopes de solo lectura)
           token: ${{ secrets.METRICS_TOKEN }}
 
           # Opciones de Metrics
