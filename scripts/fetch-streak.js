@@ -39,6 +39,12 @@ async function main() {
 
   const data = await response.json();
 
+  if (!data.data || !data.data.user) {
+    console.log("Error en datos devueltos por la API:");
+    console.log(JSON.stringify(data, null, 2));
+    process.exit(1);
+  }
+
   const days = data.data.user.contributionsCollection.contributionCalendar.weeks
     .flatMap(week => week.contributionDays)
     .map(d => ({
@@ -63,7 +69,6 @@ async function main() {
 
       if (tempStart === null) tempStart = days[i].date;
 
-      // Actualizar racha actual si es el último día
       if (i === days.length - 1) {
         current = tempStreak;
         currentStart = tempStart;
