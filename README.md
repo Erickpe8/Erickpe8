@@ -105,16 +105,7 @@ Quiero aplicar buenas prácticas, una planeación consciente y un trabajo en equ
 ## 📊 GitHub Stats
 
 <div align="center">
-  <table>
-    <tr>
-      <td>
-        <img 
-          src="https://github-readme-streak-stats.herokuapp.com?user=Erickpe8&theme=meta-light&border_radius=12.5&locale=es" 
-          width="100%"
-        />
-      </td>
-    </tr>
-  </table>
+  <img src="./assets/streak.svg" width="85%" />
 </div>
 
 ---
