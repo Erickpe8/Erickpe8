@@ -41,7 +41,7 @@ jobs:
           
           git pull --rebase || true
           
-          git add assets/streak.svg streak-data.json
+          git add assets/streak-template.svg streak-data.json
           git commit -m "Auto-update streak SVG" || echo "No changes to commit"
 
           # PUSH usando tu token personal
