@@ -1,7 +1,7 @@
 const fs = require("fs");
 const fetch = require("node-fetch");
 
-const token = process.env.METRICS_TOKEN;
+const token = process.env.METRICS_TOKEN_STREAK;
 
 async function main() {
   const user = "Erickpe8";
