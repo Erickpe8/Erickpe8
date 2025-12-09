@@ -1,13 +1,14 @@
-# Visit https://github.com/lowlighter/metrics#-documentation for full reference
 name: Metrics
 
 on:
-  # Schedule updates (cada 1 hora)
+  # Actualizaciones automáticas cada hora
   schedule:
     - cron: "0 */1 * * *"
+
   # Permite ejecutarlo manualmente
   workflow_dispatch:
-  # Se dispara también cuando haga push a main
+
+  # Ejecutarlo cuando haya push a main
   push:
     branches:
       - main
@@ -15,16 +16,22 @@ on:
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: lowlighter/metrics@latest
-        with:
-          token: ${{ secrets.METRICS_TOKEN }}
 
-          # Opciones de Metrics
+    permissions:
+      contents: write  
+
+    steps:
+      - name: Generate GitHub Metrics
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.metrics-token-erick }}
+
+          # Configuración principal
           user: Erickpe8
           template: classic
           base: header, activity, community, repositories, metadata
           config_timezone: America/Bogota
 
+          # Mejoras de estabilidad recomendadas
+          retries: 3
+          delay: 20
