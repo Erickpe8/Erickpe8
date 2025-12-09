@@ -1,9 +1,9 @@
 const fs = require("fs");
 
-// Datos generados por la Action
+// Leer datos
 const data = JSON.parse(fs.readFileSync("streak-data.json", "utf8"));
 
-// Cargar template
+// Leer template
 let svg = fs.readFileSync("assets/streak-template.svg", "utf8");
 
 // Reemplazar variables
@@ -18,4 +18,4 @@ svg = svg
   .replace("{{longest_streak_end}}", data.longestStreakEnd);
 
 // Guardar SVG final
-fs.writeFileSync("assets/streak-template.svg", svg);
+fs.writeFileSync("assets/streak.svg", svg);
