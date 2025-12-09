@@ -18,4 +18,4 @@ svg = svg
   .replace("{{longest_streak_end}}", data.longestStreakEnd);
 
 // Guardar SVG final
-fs.writeFileSync("assets/streak.svg", svg);
+fs.writeFileSync("assets/streak-template.svg", svg);
