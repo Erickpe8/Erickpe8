@@ -1,0 +1,38 @@
+name: Update Streak SVG
+
+on:
+  schedule:
+    - cron: "0 6 * * *" # 1 AM Colombia (UTC-5)
+  workflow_dispatch:
+
+jobs:
+  streak:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Get streak data
+        id: streak
+        uses: bonsaialfred/github-streak-data@v1
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          user: "Erickpe8"
+          output: "streak-data.json"
+
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Generate SVG from template
+        run: node scripts/generate-svg.js
+
+      - name: Commit updated SVG
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add assets/streak.svg
+          git commit -m "Auto-update streak SVG" || echo "No changes"
+          git push
