@@ -92,16 +92,37 @@ Quiero aplicar buenas prácticas, una planeación consciente y un trabajo en equ
 
 > 💬 *“Un proyecto bien gestionado no solo se entrega a tiempo, también deja un equipo más fuerte detrás.”*
 
----
-
-## 📫 Conéctate conmigo
-
-- **Correo electrónico:** [ericksperezc@gmail.com](mailto:ericksperezc@gmail.com)  
-- **Instagram:** [@Erickperez_8](https://www.instagram.com/erickperez_8/)  
-- **YouTube:** [ErickPerez_8](https://www.youtube.com/@ErickPerez_8)
 
 ---
+## 🌐 Portafolio
 
+<p align="center">
+  <a href="https://erickpe8.github.io/Erickpe8/" target="_blank">
+    <svg width="320" height="80" viewBox="0 0 320 80" xmlns="http://www.w3.org/2000/svg">
+      <!-- Fondo -->
+      <rect x="0" y="0" width="320" height="80" rx="16" fill="#1D1616"/>
+      <!-- Borde -->
+      <rect x="1.5" y="1.5" width="317" height="77" rx="14.5" fill="none" stroke="#D84040" stroke-width="3"/>
+
+      <!-- Icono simple tipo "link" -->
+      <circle cx="48" cy="40" r="18" fill="#D84040"/>
+      <path d="M44 40a6 6 0 0 1 6-6h6" stroke="#EEEEEE" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <path d="M50 46a6 6 0 0 1-6 6h-6" stroke="#EEEEEE" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <path d="M47 37l6 6-6 6" stroke="#EEEEEE" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <!-- Texto principal -->
+      <text x="105" y="38" fill="#EEEEEE" font-size="20" font-family="Segoe UI, system-ui" font-weight="600">
+        Ver portafolio
+      </text>
+
+      <!-- Texto secundario -->
+      <text x="105" y="56" fill="#CCCCCC" font-size="13" font-family="Segoe UI, system-ui">
+        erickpe8.github.io/Erickpe8
+      </text>
+    </svg>
+  </a>
+</p>
+---
 
 ## 📈 Metrics Dashboard
 
@@ -123,3 +144,10 @@ Quiero aplicar buenas prácticas, una planeación consciente y un trabajo en equ
 
 </div>
 
+---
+
+## 📫 Conéctate conmigo
+
+- **Correo electrónico:** [ericksperezc@gmail.com](mailto:ericksperezc@gmail.com)  
+- **Instagram:** [@Erickperez_8](https://www.instagram.com/erickperez_8/)  
+- **YouTube:** [ErickPerez_8](https://www.youtube.com/@ErickPerez_8)
