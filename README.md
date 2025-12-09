@@ -102,13 +102,6 @@ Quiero aplicar buenas prácticas, una planeación consciente y un trabajo en equ
 
 ---
 
-## 📊 GitHub Stats
-
-<div align="center">
-  <img src="./assets/streak-template.svg" width="85%" />
-</div>
-
----
 
 ## 📈 Metrics Dashboard
 
