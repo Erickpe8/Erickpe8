@@ -1,11 +1,11 @@
 name: Update Streak SVG
 
 permissions:
-  contents: write  
+  contents: write
 
 on:
   schedule:
-    - cron: "0 6 * * *" # 1 AM COL
+    - cron: "0 6 * * *"
   workflow_dispatch:
 
 jobs:
@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repo with PAT
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.METRICS_TOKEN }} 
+          token: ${{ secrets.METRICS_TOKEN }}
 
       - name: Set Node.js
         uses: actions/setup-node@v4
@@ -34,14 +34,15 @@ jobs:
       - name: Generate final SVG
         run: node scripts/generate-svg.js
 
-      - name: Commit streak.svg
+      - name: Commit and Push SVG (with rebase)
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           
-          git pull --rebase
+          git pull --rebase || true
           
           git add assets/streak.svg streak-data.json
-          git commit -m "Auto-update streak SVG" || echo "No changes"
-          
-          git push
+          git commit -m "Auto-update streak SVG" || echo "No changes to commit"
+
+          # PUSH usando tu token personal
+          git push https://x-access-token:${{ secrets.METRICS_TOKEN }}@github.com/Erickpe8/Erickpe8.git HEAD:main
