@@ -22,16 +22,20 @@ jobs:
         run: |
           mkdir -p site
 
+          # Copiar archivos públicos
           cp index.html site/
           cp github-metrics.svg site/
           cp main.js site/
           cp assets/styles.css site/
 
           mkdir -p site/assets
-          rsync -av --exclude="streak.svg" assets/ site/assets/
+          rsync -av \
+            --exclude="streak.svg" \
+            --exclude="streak-template.svg" \
+            --exclude="*.json" \
+            assets/ site/assets/
 
           cp -r components site/
-
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
@@ -40,3 +44,4 @@ jobs:
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
+
