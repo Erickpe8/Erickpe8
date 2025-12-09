@@ -5,7 +5,7 @@ permissions:
 
 on:
   schedule:
-    - cron: "0 6 * * *"  # 1 AM COL
+    - cron: "0 6 * * *" 
   workflow_dispatch:
 
 jobs:
@@ -16,7 +16,7 @@ jobs:
       - name: Checkout repo with PAT
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.METRICS_TOKEN_STREAK }} 
+          token: ${{ secrets.METRICS_TOKEN_STREAK }}
           fetch-depth: 0
 
       - name: Set Node.js
@@ -45,4 +45,4 @@ jobs:
           git add assets/streak.svg streak-data.json
           git commit -m "Auto-update streak SVG" || echo "No changes"
 
-          git push https://x-access-token:${{ secrets.METRICS_TOKEN_STREAK }}@github.com/Erickpe8/Erickpe8.git HEAD:main  
+          git push https://x-access-token:${{ secrets.METRICS_TOKEN_STREAK }}@github.com/Erickpe8/Erickpe8.git HEAD:main
