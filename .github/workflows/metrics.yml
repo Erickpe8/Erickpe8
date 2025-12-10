@@ -24,7 +24,7 @@ jobs:
       - name: Generate GitHub Metrics
         uses: lowlighter/metrics@latest
         with:
-          token: ${{ secrets.metrics-token-erick }}
+          token: ${{ secrets.METRICS_TOKEN_ERICK }}
 
           # Configuración principal
           user: Erickpe8
