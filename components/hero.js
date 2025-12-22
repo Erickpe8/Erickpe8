@@ -1,7 +1,7 @@
 class HeroSection extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-        <section class="hero-gradient pt-32 pb-20 px-4 text-center fade-in">
+        <section class="hero-gradient pt-32 pb-24 px-4 text-center fade-in">
             <div class="max-w-6xl mx-auto">
 
                 <!-- Foto -->
@@ -41,9 +41,9 @@ class HeroSection extends HTMLElement {
                 </p>
 
                 <div class="flex flex-wrap justify-center gap-3 mb-8">
-                    <a href="https://www.youtube.com/@ErickPerez_8" class="px-4 py-2 bg-red-500 text-white rounded-full hover:bg-red-600">YouTube</a>
-                    <a href="https://github.com/Erickpe8" class="px-4 py-2 bg-gray-900 text-white rounded-full hover:bg-gray-800">GitHub</a>
-                    <a href="https://www.instagram.com/erickperez_8/" class="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full hover:opacity-90">Instagram</a>
+                    <a href="https://www.youtube.com/@ErickPerez_8" class="btn btn-youtube">YouTube</a>
+                    <a href="https://github.com/Erickpe8" class="btn btn-github">GitHub</a>
+                    <a href="https://www.instagram.com/erickperez_8/" class="btn btn-instagram">Instagram</a>
                 </div>
 
             </div>

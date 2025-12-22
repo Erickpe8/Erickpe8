@@ -1,14 +1,14 @@
 class ProjectsSection extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-        <section id="projects" class="py-20 px-4 fade-in">
+        <section id="projects" class="py-24 px-4 fade-in">
             <div class="max-w-6xl mx-auto">
                 <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Proyectos destacados</h2>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                     <!-- SmartDifferentialCalc -->
-                    <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col">
+                    <div data-skeleton class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col">
                         <div class="h-40 bg-gradient-to-br from-sky-500 to-indigo-600 flex items-center justify-center">
                             <span class="text-white font-semibold text-lg tracking-wide">
                                 SmartDifferentialCalc
@@ -28,7 +28,7 @@ class ProjectsSection extends HTMLElement {
                                 ${this.techBadge("JavaScript", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg")}
                             </div>
 
-                            <a href="https://github.com/Erickpe8/SmartDifferentialCalc" target="_blank"
+                            <a href="https://github.com/Erickpe8/SmartDifferentialCalc" target="_blank" rel="noopener noreferrer"
                                 class="mt-2 inline-flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm">
                                 Ver proyecto en GitHub
                                 <span class="ml-1">↗</span>
@@ -37,7 +37,7 @@ class ProjectsSection extends HTMLElement {
                     </div>
 
                     <!-- Arquitecturas CRUD Autores/Libros -->
-                    <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col">
+                    <div data-skeleton class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col">
                         <div class="h-40 bg-gradient-to-br from-rose-500 to-orange-500 flex items-center justify-center">
                             <span class="text-white font-semibold text-lg tracking-wide text-center px-4">
                                 Arquitecturas CRUD Autores/Libros
@@ -56,7 +56,7 @@ class ProjectsSection extends HTMLElement {
                                 ${this.techBadge("MySQL", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg")}
                             </div>
 
-                            <a href="https://github.com/Erickpe8/arquitecturas-crud-autores-libros" target="_blank"
+                            <a href="https://github.com/Erickpe8/arquitecturas-crud-autores-libros" target="_blank" rel="noopener noreferrer"
                                 class="mt-2 inline-flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm">
                                 Ver proyecto en GitHub
                                 <span class="ml-1">↗</span>
@@ -65,7 +65,7 @@ class ProjectsSection extends HTMLElement {
                     </div>
 
                     <!-- TaskFlow Manager -->
-                    <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col">
+                    <div data-skeleton class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col">
                         <div class="h-40 bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center">
                             <span class="text-white font-semibold text-lg tracking-wide text-center px-4">
                                 TaskFlow Manager
@@ -83,7 +83,7 @@ class ProjectsSection extends HTMLElement {
                                 ${this.techBadge("TypeScript", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg")}
                             </div>
 
-                            <a href="https://github.com/Erickpe8/TaskFlow-Manager" target="_blank"
+                            <a href="https://github.com/Erickpe8/TaskFlow-Manager" target="_blank" rel="noopener noreferrer"
                                 class="mt-2 inline-flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm">
                                 Ver proyecto en GitHub
                                 <span class="ml-1">↗</span>
@@ -94,8 +94,8 @@ class ProjectsSection extends HTMLElement {
                 </div>
 
                 <div class="text-center mt-12">
-                    <a href="https://github.com/Erickpe8?tab=repositories" target="_blank"
-                        class="px-6 py-3 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition text-sm font-medium">
+                    <a href="https://github.com/Erickpe8?tab=repositories" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-dark">
                         Ver todos los repositorios
                     </a>
                 </div>
@@ -107,7 +107,7 @@ class ProjectsSection extends HTMLElement {
     techBadge(name, iconUrl) {
         return `
         <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-gray-100 text-gray-800 text-xs font-medium">
-            <img src="${iconUrl}" alt="${name}" class="w-4 h-4 object-contain" />
+            <img src="${iconUrl}" alt="${name}" class="w-4 h-4 object-contain" width="16" height="16" loading="lazy" decoding="async" />
             <span>${name}</span>
         </span>`;
     }

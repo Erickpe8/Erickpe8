@@ -1,5 +1,9 @@
 const elements = document.querySelectorAll(".fade-in");
 
+window.addEventListener("load", () => {
+    document.body.classList.remove("is-loading");
+});
+
 const observer = new IntersectionObserver(
     entries => {
         entries.forEach(entry => {

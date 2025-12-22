@@ -13,7 +13,7 @@ class LearningSection extends HTMLElement {
                     <!-- Laravel -->
                     <div class="bg-white rounded-2xl p-8 shadow-lg flex items-start gap-4 hover:shadow-xl transition shadow-blue-100">
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" 
-                            class="w-10 h-10 mt-1"/>
+                            class="w-10 h-10 mt-1" width="40" height="40" loading="lazy" decoding="async" alt="Laravel"/>
                         <div>
                             <h3 class="text-xl font-semibold mb-2">Laravel 10.x</h3>
                             <p class="text-gray-600 leading-relaxed">
@@ -25,7 +25,7 @@ class LearningSection extends HTMLElement {
                     <!-- JavaScript -->
                     <div class="bg-white rounded-2xl p-8 shadow-lg flex items-start gap-4 hover:shadow-xl transition shadow-blue-100">
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" 
-                            class="w-10 h-10 mt-1"/>
+                            class="w-10 h-10 mt-1" width="40" height="40" loading="lazy" decoding="async" alt="JavaScript"/>
                         <div>
                             <h3 class="text-xl font-semibold mb-2">JavaScript</h3>
                             <p class="text-gray-600 leading-relaxed">
@@ -37,7 +37,7 @@ class LearningSection extends HTMLElement {
                     <!-- Docker -->
                     <div class="bg-white rounded-2xl p-8 shadow-lg flex items-start gap-4 hover:shadow-xl transition shadow-blue-100">
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" 
-                            class="w-10 h-10 mt-1"/>
+                            class="w-10 h-10 mt-1" width="40" height="40" loading="lazy" decoding="async" alt="Docker"/>
                         <div>
                             <h3 class="text-xl font-semibold mb-2">Docker</h3>
                             <p class="text-gray-600 leading-relaxed">
@@ -49,7 +49,7 @@ class LearningSection extends HTMLElement {
                     <!-- Arquitectura de Software -->
                     <div class="bg-white rounded-2xl p-8 shadow-lg flex items-start gap-4 hover:shadow-xl transition shadow-blue-100">
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" 
-                            class="w-10 h-10 opacity-0"/> <!-- Ícono invisible para mantener alineación -->
+                            class="w-10 h-10 opacity-0" width="40" height="40" loading="lazy" decoding="async" alt="Figma"/> <!-- Ícono invisible para mantener alineación -->
                         <div>
                             <h3 class="text-xl font-semibold mb-2">Arquitectura de Software</h3>
                             <p class="text-gray-600 leading-relaxed">
@@ -66,3 +66,5 @@ class LearningSection extends HTMLElement {
 }
 
 customElements.define("learning-section", LearningSection);
+
+

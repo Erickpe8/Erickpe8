@@ -1,7 +1,7 @@
 class AboutSection extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-        <section id="about" class="py-20 px-4 fade-in">
+        <section id="about" class="py-24 px-4 fade-in">
             <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-10">
                 
                 <h2 class="text-4xl font-bold text-center mb-8 gradient-text">Sobre mí</h2>

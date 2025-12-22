@@ -46,7 +46,7 @@ class ContactSection extends HTMLElement {
 
     card(label, value, link, iconType) {
         return `
-        <a href="${link}" target="_blank"
+        <a href="${link}" target="_blank" rel="noopener noreferrer"
             class="card-hover bg-white rounded-2xl p-8 shadow-lg flex items-center gap-4 hover:shadow-xl transition shadow-blue-100">
 
             <div class="flex-shrink-0">
@@ -75,12 +75,12 @@ class ContactSection extends HTMLElement {
             case "github":
                 return `
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-                    alt="GitHub" class="w-7 h-7 object-contain" />
+                    alt="GitHub" class="w-7 h-7 object-contain" width="28" height="28" loading="lazy" decoding="async" />
                 `;
             case "instagram":
                 return `
                 <img src="https://www.svgrepo.com/show/452229/instagram-1.svg"
-                    alt="Instagram" class="w-7 h-7 object-contain" />
+                    alt="Instagram" class="w-7 h-7 object-contain" width="28" height="28" loading="lazy" decoding="async" />
                 `;
             case "youtube":
                 return `

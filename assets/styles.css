@@ -27,3 +27,68 @@
     opacity: 1;
     transform: translateY(0);
 }
+
+:focus-visible {
+    outline: 3px solid #0969da;
+    outline-offset: 3px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.4rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-youtube {
+    background: #ef4444;
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(239, 68, 68, 0.25);
+}
+
+.btn-github {
+    background: #111827;
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(17, 24, 39, 0.2);
+}
+
+.btn-instagram {
+    background: linear-gradient(135deg, #ec4899, #8b5cf6);
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(236, 72, 153, 0.25);
+}
+
+.btn-dark {
+    background: #111827;
+    color: #ffffff;
+}
+
+.is-loading [data-skeleton] {
+    position: relative;
+    overflow: hidden;
+}
+
+.is-loading [data-skeleton]::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, rgba(255, 255, 255, 0) 25%, rgba(148, 163, 184, 0.25) 50%, rgba(255, 255, 255, 0) 75%);
+    transform: translateX(-100%);
+    animation: shimmer 1.2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}

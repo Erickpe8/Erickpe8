@@ -5,11 +5,16 @@
                 <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
                     
                     <!-- Logo -->
-                    <h1 class="text-2xl font-bold gradient-text">EP</h1>
+                    <a href="#" class="text-2xl font-bold gradient-text" aria-label="Inicio">
+                        EP
+                    </a>
 
                     <!-- Botón hamburguesa (SOLO MOBILE) -->
                     <button id="menu-toggle" 
-                            class="md:hidden flex flex-col justify-between w-7 h-6 focus:outline-none">
+                            class="md:hidden flex flex-col justify-between w-7 h-6 focus:outline-none"
+                            aria-controls="mobile-nav"
+                            aria-expanded="false"
+                            aria-label="Abrir menu">
                         <span class="block h-[2px] bg-gray-800 rounded-full"></span>
                         <span class="block h-[2px] bg-gray-800 rounded-full"></span>
                         <span class="block h-[2px] bg-gray-800 rounded-full"></span>
@@ -39,6 +44,9 @@
 
             toggle.addEventListener("click", () => {
                 mobileNav.classList.toggle("hidden");
+                const isOpen = !mobileNav.classList.contains("hidden");
+                toggle.setAttribute("aria-expanded", String(isOpen));
+                toggle.setAttribute("aria-label", isOpen ? "Cerrar menu" : "Abrir menu");
             });
         }
     }

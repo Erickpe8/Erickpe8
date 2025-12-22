@@ -1,7 +1,7 @@
 class SkillsSection extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-        <section id="skills" class="py-20 px-4 bg-white fade-in">
+        <section id="skills" class="py-24 px-4 bg-white fade-in">
             <div class="max-w-6xl mx-auto">
 
                 <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Habilidades</h2>
@@ -96,8 +96,8 @@ class SkillsSection extends HTMLElement {
 
     badge(name, icon) {
         return `
-        <span class="skill-badge flex items-center gap-2 px-5 py-2 bg-gray-100 text-gray-800 rounded-full shadow-sm hover:shadow-md transition">
-            <img src="${icon}" class="w-5 h-5 object-contain" alt="${name}" />
+        <span data-skeleton class="skill-badge flex items-center gap-2 px-5 py-2 bg-gray-100 text-gray-800 rounded-full shadow-sm hover:shadow-md transition">
+            <img src="${icon}" class="w-5 h-5 object-contain" alt="${name}" width="20" height="20" loading="lazy" decoding="async" />
             ${name}
         </span>`;
     }
