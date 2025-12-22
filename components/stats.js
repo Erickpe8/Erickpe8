@@ -1,17 +1,17 @@
-﻿class StatsSection extends HTMLElement {
+class StatsSection extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
         <section class="py-24 px-4 bg-white fade-in min-h-screen flex items-center justify-center">
             <div class="max-w-6xl mx-auto text-center">
 
-                <h2 class="text-4xl font-bold mb-12 gradient-text">Estadí­sticas GitHub</h2>
+                <h2 class="text-4xl font-bold mb-12 gradient-text">Estadísticas GitHub</h2>
 
                 <div class="flex flex-col items-center justify-center gap-8" aria-live="polite">
                     <div data-metrics-placeholder
                         class="flex items-center gap-3 rounded-xl border border-sky-100 bg-sky-50/70 px-5 py-3 text-sky-900 shadow-sm">
                         <span data-metrics-placeholder-dot
                             class="inline-flex h-2.5 w-2.5 rounded-full bg-sky-500 animate-pulse"></span>
-                        <span data-metrics-placeholder-text>Actualizando mÃ©tricas...</span>
+                        <span data-metrics-placeholder-text>Actualizando métricas...</span>
                     </div>
                     <div class="w-full max-w-3xl">
                         <img data-metrics-img
@@ -44,7 +44,7 @@
             if (placeholderText) {
                 placeholderText.textContent = isError
                     ? "No se pudo cargar. Reintentando..."
-                    : "Actualizando mÃ©tricas...";
+                    : "Actualizando métricas...";
             }
         };
         const updateMetricsSrc = () => {
