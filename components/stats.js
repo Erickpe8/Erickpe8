@@ -4,7 +4,7 @@
         <section class="py-24 px-4 bg-white fade-in min-h-screen flex items-center justify-center">
             <div class="max-w-6xl mx-auto text-center">
 
-                <h2 class="text-4xl font-bold mb-12 gradient-text">EstadÃ­sticas GitHub</h2>
+                <h2 class="text-4xl font-bold mb-12 gradient-text">Estadí­sticas GitHub</h2>
 
                 <div class="flex flex-col items-center justify-center gap-8" aria-live="polite">
                     <div data-metrics-placeholder
