@@ -7,7 +7,18 @@ class HeroSection extends HTMLElement {
                 <!-- Foto -->
                 <div class="flex justify-center mb-6">
                     <img 
-                        src="https://github.com/Erickpe8.png"
+                        src="https://avatars.githubusercontent.com/Erickpe8?s=256"
+                        srcset="
+                            https://avatars.githubusercontent.com/Erickpe8?s=128 128w,
+                            https://avatars.githubusercontent.com/Erickpe8?s=256 256w,
+                            https://avatars.githubusercontent.com/Erickpe8?s=352 352w
+                        "
+                        sizes="(min-width: 768px) 176px, 128px"
+                        width="176"
+                        height="176"
+                        loading="eager"
+                        decoding="async"
+                        fetchpriority="high"
                         class="w-32 h-32 md:w-44 md:h-44 rounded-full shadow-lg border-4 border-white object-cover
                             hover:scale-105 transition duration-300"
                         style="box-shadow: 0 0 25px rgba(67,197,239,0.25);"
