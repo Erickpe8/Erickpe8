@@ -8,13 +8,32 @@ class StatsSection extends HTMLElement {
 
                 <div class="flex flex-col items-center justify-center gap-8">
 
-                    <img src="./github-metrics.svg"
-                        class="w-full max-w-3xl rounded-xl shadow-lg" />
+                    <img data-metrics-img
+                        class="w-full max-w-3xl rounded-xl shadow-lg"
+                        alt="GitHub metrics" />
 
                 </div>
 
             </div>
         </section>`;
+
+        const img = this.querySelector("[data-metrics-img]");
+        if (!img) return;
+
+        const metricsPath = "./github-metrics.svg";
+        const updateMetricsSrc = () => {
+            const halfHourKey = Math.floor(Date.now() / (30 * 60 * 1000));
+            img.src = `${metricsPath}?v=${halfHourKey}`;
+        };
+
+        updateMetricsSrc();
+
+        if (this._metricsInterval) clearInterval(this._metricsInterval);
+        this._metricsInterval = setInterval(updateMetricsSrc, 30 * 60 * 1000);
+    }
+
+    disconnectedCallback() {
+        if (this._metricsInterval) clearInterval(this._metricsInterval);
     }
 }
 
