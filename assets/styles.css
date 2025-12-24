@@ -110,3 +110,110 @@ section[id] {
         transform: translateX(100%);
     }
 }
+
+.project-card {
+    min-height: 460px;
+}
+
+.project-body {
+    min-height: 280px;
+}
+
+.project-tech {
+    min-height: 72px;
+}
+
+.project-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    background: #f1f5f9;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.projects-carousel {
+    position: relative;
+}
+
+.projects-arrow {
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    border: none;
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
+    display: grid;
+    place-items: center;
+    color: #0f172a;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.projects-arrow:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 3px;
+}
+
+.projects-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    border: none;
+    background: #e2e8f0;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.projects-swiper {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-inline: clamp(1rem, 4vw, 3rem);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.projects-swiper::-webkit-scrollbar {
+    display: none;
+}
+
+.projects-swiper .swiper-wrapper {
+    display: flex;
+    gap: clamp(0.75rem, 2vw, 1.75rem);
+    width: max-content;
+    scroll-snap-align: start;
+}
+
+.projects-swiper .swiper-slide {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: min(280px, calc(100vw - 4rem));
+}
+
+@media (min-width: 768px) {
+    .projects-swiper .swiper-slide {
+        width: min(320px, calc((100vw - 6rem) / 2));
+    }
+}
+
+@media (min-width: 1024px) {
+    .projects-swiper .swiper-slide {
+        width: min(330px, calc((100vw - 8rem) / 3));
+    }
+}
+
+.project-card {
+    min-height: 460px;
+}
+
+.project-body {
+    min-height: 280px;
+}
+
+.project-tech {
+    min-height: 72px;
+}
+
+.projects-dot.active-dot {
+    background: linear-gradient(135deg, #2563eb, #0ea5e9);
+    transform: scale(1.1);
+}
