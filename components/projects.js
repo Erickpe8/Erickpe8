@@ -67,7 +67,7 @@ const projects = [
 class ProjectsSection extends HTMLElement {
   connectedCallback() {
     const groupA = projects.map((p, i) => this.projectCard(p, i)).join("");
-    const groupB = projects.map((p, i) => this.projectCard(p, i, { ariaHidden: true })).join("");
+    const groupB = projects.map((p) => this.projectCard(p, null, { duplicate: true })).join("");
 
     const durationSeconds = Math.max(22, projects.length * 7);
 
@@ -81,7 +81,7 @@ class ProjectsSection extends HTMLElement {
             </p>
           </div>
 
-          <div class="carousel relative overflow-hidden px-2 sm:px-4" aria-label="Carrusel infinito de proyectos">
+          <div class="carousel relative overflow-hidden px-2 sm:px-4" aria-label="Carrusel de proyectos">
             <div
               class="carousel-track flex w-max items-stretch gap-6"
               style="--duration:${durationSeconds}s;"
@@ -131,6 +131,32 @@ class ProjectsSection extends HTMLElement {
             animation-play-state: paused;
           }
 
+          /* Mobile/Tablet: swipe con scroll-snap */
+          @media (max-width: 1023px){
+            .carousel{
+              overflow-x: auto;
+              -webkit-overflow-scrolling: touch;
+              scroll-snap-type: x mandatory;
+              scroll-behavior: smooth;
+              touch-action: pan-x;
+              padding-bottom: 12px;
+            }
+
+            .carousel-track{
+              animation: none;
+              transform: none !important;
+              width: max-content;
+            }
+
+            .carousel-group{
+              padding-right: 0;
+            }
+
+            .carousel article{
+              scroll-snap-align: start;
+            }
+          }
+
           @media (prefers-reduced-motion: reduce){
             .carousel-track{ animation: none; }
           }
@@ -139,7 +165,7 @@ class ProjectsSection extends HTMLElement {
     `;
   }
 
-  projectCard(project, index, { ariaHidden = false } = {}) {
+  projectCard(project, index, { duplicate = false } = {}) {
     return `
       <article
         class="
@@ -180,21 +206,22 @@ class ProjectsSection extends HTMLElement {
 
   techBadge(name, iconUrl) {
     return `
-    <span class="inline-flex items-center gap-1.5 h-8 px-3 rounded-full bg-slate-100 text-slate-800 text-xs font-medium whitespace-nowrap">
-      <img
-        src="${iconUrl}"
-        alt="${name}"
-        class="w-4 h-4 object-contain shrink-0"
-        width="16"
-        height="16"
-        loading="lazy"
-        decoding="async"
-      />
-      <span class="leading-none">${name}</span>
-    </span>
-  `;
+      <span class="inline-flex items-center gap-1.5 h-8 px-3 rounded-full bg-slate-100 text-slate-800 text-xs font-medium whitespace-nowrap">
+        <img
+          src="${iconUrl}"
+          alt="${name}"
+          class="w-4 h-4 object-contain shrink-0"
+          width="16"
+          height="16"
+          loading="lazy"
+          decoding="async"
+        />
+        <span class="leading-none">${name}</span>
+      </span>
+    `;
   }
 }
+
 customElements.define("projects-section", ProjectsSection);
 
 export default ProjectsSection;
