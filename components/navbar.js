@@ -1,7 +1,7 @@
     class NavbarComponent extends HTMLElement {
         connectedCallback() {
             this.innerHTML = `
-            <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+            <nav class="navbar fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
                 <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
                     
                     <!-- Logo -->
@@ -22,19 +22,19 @@
 
                     <!-- Menú de escritorio (SOLO DESKTOP) -->
                     <div id="desktop-nav" class="hidden md:flex gap-6 text-gray-700 font-medium">
-                        <a href="#about" class="hover:text-blue-600">Sobre mí</a>
-                        <a href="#skills" class="hover:text-blue-600">Habilidades</a>
-                        <a href="#projects" class="hover:text-blue-600">Proyectos</a>
-                        <a href="#contact" class="hover:text-blue-600">Contacto</a>
+                        <a href="#about" class="nav-link hover:text-blue-600">Sobre mí</a>
+                        <a href="#skills" class="nav-link hover:text-blue-600">Habilidades</a>
+                        <a href="#projects" class="nav-link hover:text-blue-600">Proyectos</a>
+                        <a href="#contact" class="nav-link hover:text-blue-600">Contacto</a>
                     </div>
                 </div>
 
                 <!-- Menú desplegable en móvil -->
                 <div id="mobile-nav" class="md:hidden hidden border-t bg-white shadow-md">
-                    <a href="#about" class="block py-3 px-4 border-b hover:bg-gray-50">Sobre mí</a>
-                    <a href="#skills" class="block py-3 px-4 border-b hover:bg-gray-50">Habilidades</a>
-                    <a href="#projects" class="block py-3 px-4 border-b hover:bg-gray-50">Proyectos</a>
-                    <a href="#contact" class="block py-3 px-4 hover:bg-gray-50">Contacto</a>
+                    <a href="#about" class="nav-link block py-3 px-4 border-b hover:bg-gray-50">Sobre mí</a>
+                    <a href="#skills" class="nav-link block py-3 px-4 border-b hover:bg-gray-50">Habilidades</a>
+                    <a href="#projects" class="nav-link block py-3 px-4 border-b hover:bg-gray-50">Proyectos</a>
+                    <a href="#contact" class="nav-link block py-3 px-4 hover:bg-gray-50">Contacto</a>
                 </div>
             </nav>
             `;

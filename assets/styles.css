@@ -1,3 +1,21 @@
+:root {
+    --nav-height: 72px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section[id] {
+    scroll-margin-top: var(--nav-height);
+}
+
+.nav-link.active {
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+}
+
 .gradient-text {
     background: linear-gradient(135deg, #43c5ef, #0969da);
     -webkit-background-clip: text;
