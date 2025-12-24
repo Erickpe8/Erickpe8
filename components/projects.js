@@ -13,7 +13,6 @@ const projects = [
     ],
     url: "https://github.com/Erickpe8/SmartDifferentialCalc",
   },
-
   {
     title: "Arquitecturas CRUD Autores/Libros",
     gradient: "from-rose-500 to-orange-500",
@@ -26,7 +25,6 @@ const projects = [
     ],
     url: "https://github.com/Erickpe8/arquitecturas-crud-autores-libros",
   },
-
   {
     title: "TaskFlow Manager",
     gradient: "from-emerald-500 to-teal-600",
@@ -39,7 +37,6 @@ const projects = [
     ],
     url: "https://github.com/Erickpe8/TaskFlow-Manager",
   },
-
   {
     title: "QR Studio",
     gradient: "from-fuchsia-500 to-pink-600",
@@ -52,7 +49,6 @@ const projects = [
     ],
     url: "https://github.com/Erickpe8/QR-STUDIO",
   },
-
   {
     title: "Portafolio automatizado",
     gradient: "from-cyan-500 to-blue-600",
@@ -73,8 +69,7 @@ class ProjectsSection extends HTMLElement {
     const groupA = projects.map((p, i) => this.projectCard(p, i)).join("");
     const groupB = projects.map((p, i) => this.projectCard(p, i, { ariaHidden: true })).join("");
 
-    // Duración: entre más cards, más tiempo (ajústalo si lo quieres más rápido/lento)
-    const durationSeconds = Math.max(18, projects.length * 6);
+    const durationSeconds = Math.max(22, projects.length * 7);
 
     this.innerHTML = `
       <section id="projects" class="py-24 px-4 fade-in">
@@ -86,7 +81,6 @@ class ProjectsSection extends HTMLElement {
             </p>
           </div>
 
-          <!-- Carrusel infinito tipo A B C A B C -->
           <div class="carousel relative overflow-hidden px-2 sm:px-4" aria-label="Carrusel infinito de proyectos">
             <div
               class="carousel-track flex w-max items-stretch gap-6"
@@ -115,15 +109,13 @@ class ProjectsSection extends HTMLElement {
         </div>
 
         <style>
-          /* Clamp para que las cards queden compactas */
-          .clamp-4{
+          .clamp-6{
             display: -webkit-box;
-            -webkit-line-clamp: 4;
+            -webkit-line-clamp: 6;
             -webkit-box-orient: vertical;
             overflow: hidden;
           }
 
-          /* Animación infinita: mueve el track la mitad (porque hay 2 grupos iguales) */
           .carousel-track{
             animation: marquee var(--duration) linear infinite;
             will-change: transform;
@@ -134,13 +126,11 @@ class ProjectsSection extends HTMLElement {
             100% { transform: translateX(-50%); }
           }
 
-          /* Pausar al hover o al focus dentro (links/botones) */
           .carousel:hover .carousel-track,
           .carousel:focus-within .carousel-track{
             animation-play-state: paused;
           }
 
-          /* Si el usuario prefiere menos movimiento, no animamos */
           @media (prefers-reduced-motion: reduce){
             .carousel-track{ animation: none; }
           }
@@ -150,27 +140,27 @@ class ProjectsSection extends HTMLElement {
   }
 
   projectCard(project, index, { ariaHidden = false } = {}) {
-    // Nota: las duplicadas quedan aria-hidden en el contenedor, no hace falta aquí.
     return `
       <article
         class="
           card-hover bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col
           flex-none
-          w-[260px] sm:w-[280px] md:w-[300px] lg:w-[320px] xl:w-[340px]
+          w-[280px] sm:w-[300px] md:w-[320px] lg:w-[340px] xl:w-[360px]
+          h-[460px]
         "
       >
-        <div class="h-20 sm:h-24 bg-gradient-to-br ${project.gradient} flex items-center justify-center px-4">
+        <div class="h-20 sm:h-24 bg-gradient-to-br ${project.gradient} flex items-center justify-center px-5">
           <span class="text-white font-semibold text-base sm:text-lg tracking-tight text-center leading-tight">
             ${project.title}
           </span>
         </div>
 
-        <div class="flex flex-col flex-1 gap-3 p-3 sm:p-4 min-h-[220px]">
-          <p class="text-gray-700 text-sm leading-relaxed min-h-[84px] clamp-4">
+        <div class="flex flex-col flex-1 gap-4 p-5">
+          <p class="text-gray-700 text-sm leading-relaxed clamp-6">
             ${project.description}
           </p>
 
-          <div class="flex flex-wrap gap-1.5 text-[10px] min-h-[32px]">
+          <div class="flex flex-wrap gap-2 min-h-[64px]">
             ${project.tech.map(([name, icon]) => this.techBadge(name, icon)).join("")}
           </div>
 
@@ -178,7 +168,7 @@ class ProjectsSection extends HTMLElement {
             href="${project.url}"
             target="_blank"
             rel="noopener noreferrer"
-            class="mt-auto inline-flex items-center gap-1 text-blue-600 hover:text-blue-700 font-medium text-sm"
+            class="mt-auto inline-flex items-center gap-1 text-blue-600 hover:text-blue-700 font-semibold text-sm"
           >
             Ver proyecto en GitHub
             <span aria-hidden="true" class="text-sm">&rarr;</span>
@@ -190,16 +180,21 @@ class ProjectsSection extends HTMLElement {
 
   techBadge(name, iconUrl) {
     return `
-      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-gray-100 text-gray-800 text-[10px] font-medium">
-        <img src="${iconUrl}" alt="${name}" class="w-4 h-4 object-contain" width="16" height="16" loading="lazy" decoding="async"/>
-        <span>${name}</span>
-      </span>
-    `;
+    <span class="inline-flex items-center gap-1.5 h-8 px-3 rounded-full bg-slate-100 text-slate-800 text-xs font-medium whitespace-nowrap">
+      <img
+        src="${iconUrl}"
+        alt="${name}"
+        class="w-4 h-4 object-contain shrink-0"
+        width="16"
+        height="16"
+        loading="lazy"
+        decoding="async"
+      />
+      <span class="leading-none">${name}</span>
+    </span>
+  `;
   }
 }
-
 customElements.define("projects-section", ProjectsSection);
 
-customElements.define("projects-section", ProjectsSection);
-
-export default ProjectsSection; 
+export default ProjectsSection;
