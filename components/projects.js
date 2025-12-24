@@ -3,7 +3,7 @@ const projects = [
     title: "SmartDifferentialCalc",
     gradient: "from-sky-500 to-indigo-600",
     description:
-      "Aplicación web para resolver ecuaciones diferenciales ordinarias con IA. Combina Flask, DeepSeek, HTML/CSS/JS y validaciones simbólicas para entregar soluciones paso a paso.",
+      "Aplicación web para resolver ecuaciones diferenciales ordinarias con apoyo de IA. Integra Flask, DeepSeek y una interfaz en HTML/CSS/JS para generar soluciones paso a paso, con validaciones simbólicas que refuerzan la precisión del resultado.",
     tech: [
       ["Python", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"],
       ["Flask", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg"],
@@ -17,7 +17,7 @@ const projects = [
     title: "Arquitecturas CRUD Autores/Libros",
     gradient: "from-rose-500 to-orange-500",
     description:
-      "Comparativa de arquitecturas en Laravel para un CRUD de autores y libros, enfocada en mantener la misma lógica de negocio mientras se prueba la mantenibilidad del código.",
+      "Proyecto en Laravel que implementa un mismo CRUD comparando siete importantes patrones arquitectónicos. Mantiene la misma lógica de negocio en todos los enfoques para evaluar organización, claridad y mantenibilidad del código.",
     tech: [
       ["PHP", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"],
       ["Laravel", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg"],
@@ -29,7 +29,7 @@ const projects = [
     title: "TaskFlow Manager",
     gradient: "from-emerald-500 to-teal-600",
     description:
-      "Sistema full-stack con tablero Kanban interactivo para gestionar tareas y flujos de trabajo, enfocado en arquitectura limpia, escalabilidad y experiencia visual para equipos.",
+      "Sistema full-stack tipo todo-list con tablero Kanban interactivo. Desarrollado en colaboración con un compañero, permite autoasignarme tareas y visualizar fácilmente lo pendiente, en progreso y completado, con enfoque en arquitectura limpia.",
     tech: [
       [".NET", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg"],
       ["Angular", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"],
@@ -41,7 +41,7 @@ const projects = [
     title: "QR Studio",
     gradient: "from-fuchsia-500 to-pink-600",
     description:
-      "Generador de 9 tipos de QR, con edición y personalización rápida para distintos formatos de contenido y uso comercial.",
+      "Generador de QR con 9 tipos (URL, texto, WiFi, vCard, WhatsApp, email, SMS, ubicación y eventos), con personalización de colores y estilo del QR. Permite previsualizar cambios y descargar el resultado en PNG de forma rápida y sencilla.",
     tech: [
       ["JavaScript", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"],
       ["Tailwind", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"],
@@ -53,7 +53,7 @@ const projects = [
     title: "Portafolio automatizado",
     gradient: "from-cyan-500 to-blue-600",
     description:
-      "Portafolio con despliegue automático y actualización de métricas por hora o por push a main, manteniéndolo siempre al día con estadísticas recientes.",
+      "Portafolio web automatizado que reúne mis habilidades, proyectos y formas de contacto. Se despliega automáticamente y se actualiza al hacer push a main y también de forma programada (cada hora) para mantener métricas y estadísticas siempre al día.",
     tech: [
       ["JavaScript", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"],
       ["Tailwind", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"],
@@ -72,7 +72,7 @@ class ProjectsSection extends HTMLElement {
     const durationSeconds = Math.max(22, projects.length * 7);
 
     this.innerHTML = `
-      <section id="projects" class="py-24 px-4 fade-in">
+      <section id="projects" class="py-4 px-4 fade-in">
         <div class="max-w-6xl mx-auto space-y-10">
           <div class="space-y-3 text-center">
             <h2 class="text-4xl font-bold gradient-text">Proyectos destacados</h2>
@@ -146,7 +146,7 @@ class ProjectsSection extends HTMLElement {
           card-hover bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col
           flex-none
           w-[280px] sm:w-[300px] md:w-[320px] lg:w-[340px] xl:w-[360px]
-          h-[460px]
+          min-h-[380px] h-auto
         "
       >
         <div class="h-20 sm:h-24 bg-gradient-to-br ${project.gradient} flex items-center justify-center px-5">
@@ -160,7 +160,7 @@ class ProjectsSection extends HTMLElement {
             ${project.description}
           </p>
 
-          <div class="flex flex-wrap gap-2 min-h-[64px]">
+          <div class="flex flex-wrap gap-2">
             ${project.tech.map(([name, icon]) => this.techBadge(name, icon)).join("")}
           </div>
 
