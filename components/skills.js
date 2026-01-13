@@ -104,7 +104,7 @@ class SkillsSection extends HTMLElement {
 
     badge(name, icon) {
         return `
-        <span data-skeleton class="skill-badge inline-flex items-center gap-2 min-h-[44px] px-4 py-2 rounded-full bg-slate-100/70 border border-slate-200/60 text-slate-800 text-sm font-medium transition hover:bg-slate-100 hover:border-slate-300/70 dark:bg-white/5 shadow-sm dark:text-slate-100 dark:border-white/10 dark:hover:bg-white/10">
+        <span class="skill-badge inline-flex items-center gap-2 min-h-[44px] px-4 py-2 rounded-full bg-slate-100/70 border border-slate-200/60 text-slate-800 text-sm font-medium transition hover:bg-slate-100 hover:border-slate-300/70 dark:bg-white/5 shadow-sm dark:text-slate-100 dark:border-white/10 dark:hover:bg-white/10">
             <img src="${icon}" class="w-5 h-5 shrink-0 object-contain" alt="${name}" width="20" height="20" loading="lazy" decoding="async" />
             ${name}
         </span>`;

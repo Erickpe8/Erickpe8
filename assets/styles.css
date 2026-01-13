@@ -117,3 +117,12 @@ section[id] {
     transform: translateX(100%);
   }
 }
+
+.skill-badge {
+  color: #0f172a !important;
+  opacity: 1 !important;
+}
+
+.dark .skill-badge {
+  color: #f8fafc !important;
+}
