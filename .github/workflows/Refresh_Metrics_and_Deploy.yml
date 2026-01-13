@@ -2,7 +2,7 @@ name: Metrics + Deploy
 
 on:
   schedule:
-    - cron: "0 * * * *"
+    - cron: "0 */6 * * *"
   workflow_dispatch:
   push:
     branches: ["main"]
@@ -26,18 +26,23 @@ jobs:
       # 1) Traer el repo
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       # 2) Generar el SVG
       - name: Generate GitHub Metrics
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN_ERICK }}
+
           user: Erickpe8
           template: classic
           base: header, activity, community, repositories, metadata
           config_timezone: America/Bogota
-          retries: 3
-          delay: 20
+
+          retries: 1
+          delay: 5
+
           filename: github-metrics.svg
 
       # 2.1) Parchear el SVG: transparente, sin sombras, y contribs en azul
@@ -57,7 +62,6 @@ jobs:
           elif "preserveAspectRatio=" not in s:
               s = re.sub(r'<svg\b', '<svg preserveAspectRatio="xMidYMid meet"', s, count=1)
 
-          # --- CSS base (transparente + sin sombras) ---
           css = """
           svg{background:transparent!important}
           *{box-shadow:none!important;filter:none!important}
@@ -69,13 +73,12 @@ jobs:
           else:
               s = re.sub(r'(<svg[^>]*>)', r'\1\n<style>'+css+'</style>\n', s, count=1)
 
-          # --- Cambiar paleta verde -> azul (contrib squares) ---
           green_to_blue = {
-              "#ebedf0": "#ebedf0",  # sin contrib (lo dejamos igual)
-              "#9be9a8": "#cfe8ff",  # bajo
-              "#40c463": "#7bbcff",  # medio
-              "#30a14e": "#2f81f7",  # alto
-              "#216e39": "#1f6feb",  # muy alto
+              "#ebedf0": "#ebedf0",
+              "#9be9a8": "#cfe8ff",
+              "#40c463": "#7bbcff",
+              "#30a14e": "#2f81f7",
+              "#216e39": "#1f6feb",
           }
 
           for g, b in green_to_blue.items():
@@ -91,11 +94,33 @@ jobs:
               s = re.sub(re.escape(g), b, s, flags=re.IGNORECASE)
 
           p.write_text(s, encoding="utf-8")
-          print("✅ Patched:", p)
+          print("Patched:", p)
           PY
+
+      # 2.2) Si NO cambió el SVG vs lo que ya está en main, saltar deploy
+      - name: Check if metrics changed
+        id: diff
+        run: |
+          set -euo pipefail
+
+          # Asegura tener origin/main
+          git fetch origin main --depth=1 || true
+
+          if git cat-file -e origin/main:github-metrics.svg 2>/dev/null; then
+            git show origin/main:github-metrics.svg > /tmp/old.svg
+            if cmp -s /tmp/old.svg github-metrics.svg; then
+              echo "changed=false" >> "$GITHUB_OUTPUT"
+              echo "Metrics unchanged. Skipping Pages deploy."
+              exit 0
+            fi
+          fi
+
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          echo "Metrics changed. Will deploy."
 
       # 3) Armar carpeta del sitio a publicar
       - name: Prepare site
+        if: steps.diff.outputs.changed == 'true'
         run: |
           mkdir -p site
 
@@ -114,16 +139,19 @@ jobs:
 
           cp -r components site/
 
-      # 4) Configurar Pages 
+      # 4) Configurar Pages
       - name: Configure GitHub Pages
+        if: steps.diff.outputs.changed == 'true'
         uses: actions/configure-pages@v5
 
       # 5) Subir artefacto para Pages
       - name: Upload GitHub Pages artifact
+        if: steps.diff.outputs.changed == 'true'
         uses: actions/upload-pages-artifact@v3
         with:
           path: site
 
       # 6) Desplegar a GitHub Pages
       - name: Deploy to GitHub Pages
+        if: steps.diff.outputs.changed == 'true'
         uses: actions/deploy-pages@v4
