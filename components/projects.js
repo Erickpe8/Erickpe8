@@ -66,6 +66,8 @@ const projects = [
 
 class ProjectsSection extends HTMLElement {
   connectedCallback() {
+    const list = projects.map((p, i) => this.projectCard(p, i, { compact: true })).join("");
+
     const groupA = projects.map((p, i) => this.projectCard(p, i)).join("");
     const groupB = projects.map((p) => this.projectCard(p, null, { duplicate: true })).join("");
 
@@ -81,11 +83,14 @@ class ProjectsSection extends HTMLElement {
             </p>
           </div>
 
-          <div class="carousel relative overflow-hidden px-2 sm:px-4" aria-label="Carrusel de proyectos">
-            <div
-              class="carousel-track flex w-max items-stretch gap-6"
-              style="--duration:${durationSeconds}s;"
-            >
+          <!-- Mobile / Tablet -->
+          <div class="space-y-6 lg:hidden">
+            ${list}
+          </div>
+
+          <!-- Desktop -->
+          <div class="carousel relative overflow-hidden px-2 sm:px-4 hidden lg:block" aria-label="Carrusel de proyectos">
+            <div class="carousel-track flex w-max items-stretch gap-6" style="--duration:${durationSeconds}s;">
               <div class="carousel-group flex items-stretch gap-6 pr-6">
                 ${groupA}
               </div>
@@ -131,32 +136,6 @@ class ProjectsSection extends HTMLElement {
             animation-play-state: paused;
           }
 
-          /* Mobile/Tablet: swipe con scroll-snap */
-          @media (max-width: 1023px){
-            .carousel{
-              overflow-x: auto;
-              -webkit-overflow-scrolling: touch;
-              scroll-snap-type: x mandatory;
-              scroll-behavior: smooth;
-              touch-action: pan-x;
-              padding-bottom: 12px;
-            }
-
-            .carousel-track{
-              animation: none;
-              transform: none !important;
-              width: max-content;
-            }
-
-            .carousel-group{
-              padding-right: 0;
-            }
-
-            .carousel article{
-              scroll-snap-align: start;
-            }
-          }
-
           @media (prefers-reduced-motion: reduce){
             .carousel-track{ animation: none; }
           }
@@ -165,14 +144,16 @@ class ProjectsSection extends HTMLElement {
     `;
   }
 
-  projectCard(project, index, { duplicate = false } = {}) {
+  projectCard(project, index, { duplicate = false, compact = false } = {}) {
+    const sizeClasses = compact
+      ? "w-full"
+      : "flex-none w-[280px] sm:w-[300px] md:w-[320px] lg:w-[340px] xl:w-[360px] min-h-[380px]";
+
     return `
       <article
         class="
           card-hover bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col
-          flex-none
-          w-[280px] sm:w-[300px] md:w-[320px] lg:w-[340px] xl:w-[360px]
-          min-h-[380px] h-auto
+          ${sizeClasses}
         "
       >
         <div class="h-20 sm:h-24 bg-gradient-to-br ${project.gradient} flex items-center justify-center px-5">
@@ -223,5 +204,4 @@ class ProjectsSection extends HTMLElement {
 }
 
 customElements.define("projects-section", ProjectsSection);
-
 export default ProjectsSection;
