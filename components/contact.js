@@ -1,5 +1,10 @@
 class ContactSection extends HTMLElement {
     connectedCallback() {
+        const email = "ericksperezc@gmail.com";
+        const subject = "Contacto desde tu portafolio";
+        const body = "Hola Erick, vi tu portafolio y me gustaría hablar contigo.\n\nNombre:\nMotivo:\n";
+        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
         this.innerHTML = `
         <section id="contact" class="py-24 px-6 bg-gradient-to-br from-blue-50 to-cyan-50 fade-in">
             <div class="max-w-4xl mx-auto text-center">
@@ -14,7 +19,7 @@ class ContactSection extends HTMLElement {
                     ${this.card(
                         "Correo",
                         "ericksperezc@gmail.com",
-                        "mailto:ericksperezc@gmail.com",
+                        gmailUrl,
                         "mail"
                     )}
 
