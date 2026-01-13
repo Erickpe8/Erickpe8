@@ -8,7 +8,7 @@ on:
     branches: ["main"]
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -19,6 +19,8 @@ concurrency:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
 
     steps:
       # 1) Traer el repo
@@ -30,15 +32,12 @@ jobs:
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN_ERICK }}
-
           user: Erickpe8
           template: classic
           base: header, activity, community, repositories, metadata
           config_timezone: America/Bogota
-
           retries: 3
           delay: 20
-
           filename: github-metrics.svg
 
       # 2.1) Parchear el SVG: transparente, sin sombras, y contribs en azul
@@ -103,9 +102,10 @@ jobs:
           cp index.html site/
           cp github-metrics.svg site/
           cp main.js site/
-          cp assets/styles.css site/
 
           mkdir -p site/assets
+          cp assets/styles.css site/assets/styles.css
+
           rsync -av \
             --exclude="streak.svg" \
             --exclude="streak-template.svg" \
@@ -114,12 +114,16 @@ jobs:
 
           cp -r components site/
 
-      # 4) Subir artefacto para Pages
+      # 4) Configurar Pages 
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      # 5) Subir artefacto para Pages
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: site
 
-      # 5) Desplegar a GitHub Pages
+      # 6) Desplegar a GitHub Pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
