@@ -1,14 +1,14 @@
-name: Deploy Pages
+name: Metrics + Deploy
 
 on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
   push:
     branches: ["main"]
-  workflow_dispatch:
-  schedule:
-    - cron: "0 */6 * * *"
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -17,43 +17,109 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
 
     steps:
+      # 1) Traer el repo
       - name: Checkout
         uses: actions/checkout@v4
 
+      # 2) Generar el SVG
       - name: Generate GitHub Metrics
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN_ERICK }}
+
           user: Erickpe8
           template: classic
-          base: header, activity, metadata
+          base: header, activity, community, repositories, metadata
           config_timezone: America/Bogota
-          filename: github-metrics.svg
-          retries: 1
-          delay: 5
 
+          retries: 3
+          delay: 20
+
+          filename: github-metrics.svg
+
+      # 2.1) Parchear el SVG: transparente, sin sombras, y contribs en azul
+      - name: Patch metrics SVG (blue contrib squares)
+        run: |
+          python - << 'PY'
+          from pathlib import Path
+          import re
+
+          p = Path("github-metrics.svg")
+          s = p.read_text(encoding="utf-8")
+
+          m = re.search(r'<svg[^>]*\bwidth="(\d+)"[^>]*\bheight="(\d+)"', s)
+          if "viewBox=" not in s and m:
+              w, h = m.group(1), m.group(2)
+              s = re.sub(r'<svg\b', f'<svg viewBox="0 0 {w} {h}" preserveAspectRatio="xMidYMid meet"', s, count=1)
+          elif "preserveAspectRatio=" not in s:
+              s = re.sub(r'<svg\b', '<svg preserveAspectRatio="xMidYMid meet"', s, count=1)
+
+          # --- CSS base (transparente + sin sombras) ---
+          css = """
+          svg{background:transparent!important}
+          *{box-shadow:none!important;filter:none!important}
+          rect[fill="#fff"],rect[fill="#ffffff"],rect[fill="white"]{fill:transparent!important}
+          """
+
+          if "<style>" in s:
+              s = s.replace("<style>", "<style>\n"+css+"\n", 1)
+          else:
+              s = re.sub(r'(<svg[^>]*>)', r'\1\n<style>'+css+'</style>\n', s, count=1)
+
+          # --- Cambiar paleta verde -> azul (contrib squares) ---
+          green_to_blue = {
+              "#ebedf0": "#ebedf0",  # sin contrib (lo dejamos igual)
+              "#9be9a8": "#cfe8ff",  # bajo
+              "#40c463": "#7bbcff",  # medio
+              "#30a14e": "#2f81f7",  # alto
+              "#216e39": "#1f6feb",  # muy alto
+          }
+
+          for g, b in green_to_blue.items():
+              s = re.sub(re.escape(g), b, s, flags=re.IGNORECASE)
+
+          extra = {
+              "#c6e48b": "#cfe8ff",
+              "#7bc96f": "#7bbcff",
+              "#239a3b": "#2f81f7",
+              "#196127": "#1f6feb",
+          }
+          for g, b in extra.items():
+              s = re.sub(re.escape(g), b, s, flags=re.IGNORECASE)
+
+          p.write_text(s, encoding="utf-8")
+          print("Patched:", p)
+          PY
+
+      # 3) Armar carpeta del sitio a publicar
       - name: Prepare site
         run: |
-          mkdir -p site/assets
+          mkdir -p site
+
           cp index.html site/
           cp github-metrics.svg site/
           cp main.js site/
-          cp assets/styles.css site/assets/styles.css
-          cp -r components site/ || true
+          cp assets/styles.css site/
 
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
+          mkdir -p site/assets
+          rsync -av \
+            --exclude="streak.svg" \
+            --exclude="streak-template.svg" \
+            --exclude="*.json" \
+            assets/ site/assets/
 
-      - name: Upload artifact
+          cp -r components site/
+
+      # 4) Subir artefacto para Pages
+      - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: site
 
-      - name: Deploy
+      # 5) Desplegar a GitHub Pages
+      - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
