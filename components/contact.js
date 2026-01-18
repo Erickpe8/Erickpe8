@@ -38,6 +38,20 @@ class ContactSection extends HTMLElement {
                     )}
 
                     ${this.card(
+                        "LinkedIn",
+                        "Erick Sebastián Pérez Carvajal",
+                        "https://www.linkedin.com/in/erick-sebastian-perez-carvajal-11a2772b6/",
+                        "linkedin"
+                    )}
+
+                    ${this.card(
+                        "X",
+                        "@Erickperez_8",
+                        "https://x.com/Erickperez_8",
+                        "x"
+                    )}
+
+                    ${this.card(
                         "YouTube",
                         "ErickPerez_8",
                         "https://youtube.com/@ErickPerez_8",
@@ -86,6 +100,16 @@ class ContactSection extends HTMLElement {
                 return `
                 <img src="https://www.svgrepo.com/show/452229/instagram-1.svg"
                     alt="Instagram" class="w-7 h-7 object-contain" width="28" height="28" loading="lazy" decoding="async" />
+                `;
+            case "linkedin":
+                return `
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+                    alt="LinkedIn" class="w-7 h-7 object-contain" width="28" height="28" loading="lazy" decoding="async" />
+                `;
+            case "x":
+                return `
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg"
+                    alt="X" class="w-7 h-7 object-contain" width="28" height="28" loading="lazy" decoding="async" />
                 `;
             case "youtube":
                 return `
