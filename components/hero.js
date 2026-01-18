@@ -1,7 +1,8 @@
 class HeroSection extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-        <section class="hero-gradient pt-32 pb-24 px-4 text-center fade-in">
+        <section class="hero-gradient pt-20 md:pt-24 pb-20 px-4 text-center fade-in">
+
             <div class="max-w-6xl mx-auto">
 
                 <!-- Foto -->
