@@ -48,12 +48,36 @@ class LearningSection extends HTMLElement {
 
                     <!-- Arquitectura de Software -->
                     <div class="bg-white rounded-2xl p-8 shadow-lg flex items-start gap-4 hover:shadow-xl transition shadow-blue-100">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" 
-                            class="w-10 h-10 opacity-0" width="40" height="40" loading="lazy" decoding="async" alt="Figma"/> <!-- Ícono invisible para mantener alineación -->
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/devicon/devicon-original.svg" 
+                            class="w-10 h-10 mt-1" width="40" height="40" loading="lazy" decoding="async" alt="Arquitectura de Software"/>
                         <div>
                             <h3 class="text-xl font-semibold mb-2">Arquitectura de Software</h3>
                             <p class="text-gray-600 leading-relaxed">
                                 Patrones, principios SOLID, diseño modular, toma de decisiones técnicas y escalabilidad.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Figma -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg flex items-start gap-4 hover:shadow-xl transition shadow-blue-100">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" 
+                            class="w-10 h-10 mt-1" width="40" height="40" loading="lazy" decoding="async" alt="Figma"/>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Figma</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Aprendiendo maquetación, prototipado y diseño de interfaces para planear mejor antes de desarrollar.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Control de versiones -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg flex items-start gap-4 hover:shadow-xl transition shadow-blue-100">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" 
+                            class="w-10 h-10 mt-1" width="40" height="40" loading="lazy" decoding="async" alt="Control de versiones"/>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Control de versiones (Git/GitHub)</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Practicando ramas, commits claros, pull requests y flujo de trabajo colaborativo para proyectos reales.
                             </p>
                         </div>
                     </div>
