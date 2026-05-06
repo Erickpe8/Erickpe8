@@ -30,7 +30,7 @@ class HeroSection extends HTMLElement {
                 <h1 class="text-4xl md:text-6xl font-bold text-center leading-tight mb-6">
                     <span class="wave-animation inline-block text-5xl md:text-6xl">👋</span>
                     <span class="block md:inline">Hola, soy</span>
-                    <span class="gradient-text block md:inline md:ml-2">Erick Pérez</span>
+                    <span class="gradient-text gradient-text-animated block md:inline md:ml-2">Erick Pérez</span>
                 </h1>
 
                 <p class="text-xl text-gray-700 mb-4">
@@ -44,6 +44,7 @@ class HeroSection extends HTMLElement {
                 <div class="flex flex-wrap justify-center gap-3 mb-8">
                     <a href="https://www.youtube.com/@ErickPerez_8" class="btn btn-youtube">YouTube</a>
                     <a href="https://github.com/Erickpe8" class="btn btn-github">GitHub</a>
+                    <a href="https://www.linkedin.com/in/erick-sebastian-perez-carvajal-11a2772b6/" class="btn btn-linkedin">LinkedIn</a>
                     <a href="https://www.instagram.com/erickperez_8/" class="btn btn-instagram">Instagram</a>
                 </div>
 

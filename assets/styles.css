@@ -22,6 +22,36 @@ section[id] {
   -webkit-text-fill-color: transparent;
 }
 
+.gradient-text-animated {
+  background: linear-gradient(
+    110deg,
+    #43c5ef 0%,
+    #0ea5e9 20%,
+    #0969da 45%,
+    #38bdf8 70%,
+    #1d4ed8 100%
+  );
+  background-size: 220% 100%;
+  background-position: 0% 50%;
+  animation: move-blue-gradient 3s linear infinite;
+}
+
+@keyframes move-blue-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 220% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gradient-text-animated {
+    animation: none;
+    background-position: 50% 50%;
+  }
+}
+
 .wave-animation {
   animation: wave 2.5s ease-in-out infinite;
   transform-origin: 70% 70%;
@@ -79,6 +109,12 @@ section[id] {
   background: #111827;
   color: #ffffff;
   box-shadow: 0 8px 20px rgba(17, 24, 39, 0.2);
+}
+
+.btn-linkedin {
+  background: #0a66c2;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(10, 102, 194, 0.25);
 }
 
 .btn-instagram {
