@@ -18,7 +18,9 @@ section[id] {
 
 .gradient-text {
   background: linear-gradient(135deg, #43c5ef, #0969da);
+  background-clip: text;
   -webkit-background-clip: text;
+  color: transparent;
   -webkit-text-fill-color: transparent;
 }
 
@@ -33,6 +35,10 @@ section[id] {
   );
   background-size: 220% 100%;
   background-position: 0% 50%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
   animation: move-blue-gradient 3s linear infinite;
 }
 

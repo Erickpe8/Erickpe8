@@ -2,6 +2,7 @@ const projects = [
   {
     title: "Entre-Sabores",
     gradient: "from-amber-500 to-red-500",
+    image: "https://opengraph.githubassets.com/1/Erickpe8/Entre-Sabores",
     description:
       "Red social gastronómica orientada al intercambio cultural: publicaciones con etiquetas, muro con exploración y modo siguiendo, likes, comentarios en hilos, perfiles públicos, notificaciones y análisis de maridaje asistido por IA.",
     tech: [
@@ -15,6 +16,7 @@ const projects = [
   {
     title: "SmartDifferentialCalc",
     gradient: "from-sky-500 to-indigo-600",
+    image: "https://opengraph.githubassets.com/1/Erickpe8/SmartDifferentialCalc",
     description:
       "Aplicación web para resolver ecuaciones diferenciales ordinarias con apoyo de IA. Integra Flask, DeepSeek y una interfaz en HTML/CSS/JS para generar soluciones paso a paso, con validaciones simbólicas que refuerzan la precisión del resultado.",
     tech: [
@@ -29,6 +31,7 @@ const projects = [
   {
     title: "Arquitecturas CRUD Autores/Libros",
     gradient: "from-rose-500 to-orange-500",
+    image: "https://opengraph.githubassets.com/1/Erickpe8/arquitecturas-crud-autores-libros",
     description:
       "Proyecto en Laravel que implementa un mismo CRUD comparando siete importantes patrones arquitectónicos. Mantiene la misma lógica de negocio en todos los enfoques para evaluar organización, claridad y mantenibilidad del código.",
     tech: [
@@ -41,6 +44,7 @@ const projects = [
   {
     title: "TaskFlow Manager",
     gradient: "from-emerald-500 to-teal-600",
+    image: "https://opengraph.githubassets.com/1/Erickpe8/TaskFlow-Manager",
     description:
       "Sistema full-stack tipo todo-list con tablero Kanban interactivo. Desarrollado en colaboración con un compañero, permite autoasignarme tareas y visualizar fácilmente lo pendiente, en progreso y completado, con enfoque en arquitectura limpia.",
     tech: [
@@ -53,6 +57,7 @@ const projects = [
   {
     title: "QR Studio",
     gradient: "from-fuchsia-500 to-pink-600",
+    image: "https://opengraph.githubassets.com/1/Erickpe8/QR-STUDIO",
     description:
       "Generador de QR con 9 tipos (URL, texto, WiFi, vCard, WhatsApp, email, SMS, ubicación y eventos), con personalización de colores y estilo del QR. Permite previsualizar cambios y descargar el resultado en PNG de forma rápida y sencilla.",
     tech: [
@@ -65,6 +70,7 @@ const projects = [
   {
     title: "Portafolio automatizado",
     gradient: "from-cyan-500 to-blue-600",
+    image: "https://opengraph.githubassets.com/1/Erickpe8/Erickpe8",
     description:
       "Portafolio web automatizado que reúne mis habilidades, proyectos y formas de contacto. Se despliega automáticamente y se actualiza al hacer push a main y también de forma programada (cada hora) para mantener métricas y estadísticas siempre al día.",
     tech: [
@@ -169,8 +175,16 @@ class ProjectsSection extends HTMLElement {
           ${sizeClasses}
         "
       >
-        <div class="h-20 sm:h-24 bg-gradient-to-br ${project.gradient} flex items-center justify-center px-5">
-          <span class="text-white font-semibold text-base sm:text-lg tracking-tight text-center leading-tight">
+        <div class="h-20 sm:h-24 relative overflow-hidden flex items-center justify-center px-5 bg-slate-800">
+          <img
+            src="${project.image}"
+            alt="Vista previa de ${project.title}"
+            class="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="absolute inset-0 bg-slate-900/45"></div>
+          <span class="relative text-white font-semibold text-base sm:text-lg tracking-tight text-center leading-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.45)]">
             ${project.title}
           </span>
         </div>

@@ -21,7 +21,7 @@ class AboutSection extends HTMLElement {
     }
 
     connectedCallback() {
-        const startDate = new Date("2024-08-04");
+        const startDate = new Date("2025-08-04");
         const experience = this.getExperienceFrom(startDate);
 
         this.innerHTML = `
