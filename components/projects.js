@@ -1,5 +1,18 @@
 const projects = [
   {
+    title: "Entre-Sabores",
+    gradient: "from-amber-500 to-red-500",
+    description:
+      "Red social gastronómica orientada al intercambio cultural: publicaciones con etiquetas, muro con exploración y modo siguiendo, likes, comentarios en hilos, perfiles públicos, notificaciones y análisis de maridaje asistido por IA.",
+    tech: [
+      ["Laravel", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg"],
+      ["PHP", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"],
+      ["JavaScript", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"],
+      ["MySQL", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"],
+    ],
+    url: "https://github.com/Erickpe8/Entre-Sabores",
+  },
+  {
     title: "SmartDifferentialCalc",
     gradient: "from-sky-500 to-indigo-600",
     description:

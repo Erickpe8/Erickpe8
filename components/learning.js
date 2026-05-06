@@ -15,9 +15,9 @@ class LearningSection extends HTMLElement {
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" 
                             class="w-10 h-10 mt-1" width="40" height="40" loading="lazy" decoding="async" alt="Laravel"/>
                         <div>
-                            <h3 class="text-xl font-semibold mb-2">Laravel 10.x</h3>
+                            <h3 class="text-xl font-semibold mb-2">Laravel 12.x y 13.x</h3>
                             <p class="text-gray-600 leading-relaxed">
-                                Profundizando en backend monolítico, arquitectura limpia, servicios, colas y optimización.
+                                Profundizando en nuevas versiones del framework, arquitectura limpia, servicios, colas y optimización.
                             </p>
                         </div>
                     </div>
