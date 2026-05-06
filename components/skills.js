@@ -55,10 +55,12 @@ class SkillsSection extends HTMLElement {
                     <div class="w-full h-full rounded-2xl border border-slate-200/70 bg-white/40 p-6 sm:p-7 dark:border-white/10 dark:bg-white/5 shadow-sm fade-in delay-700 lg:max-w-[520px] lg:mx-auto">
                         <h3 class="text-2xl font-bold mb-4">Herramientas de Desarrollo</h3>
                         <div class="flex flex-wrap gap-3 sm:gap-4">
+                            ${this.badge("Cursor", "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/cursor-text.svg")}
                             ${this.badge("Docker", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg")}
                             ${this.badge("Figma", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg")}
                             ${this.badge("Git", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg")}
                             ${this.badge("GitHub", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg")}
+                            ${this.badge("Herd", "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/brand-laravel.svg")}
                             ${this.badge("Laragon", "https://media.imgcdn.org/repo/2025/07/laragon/6889e2c12df61-laragon-Icon.webp")}
                             ${this.badge("Trello", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg")}
                             ${this.badge("VS Code", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg")}
