@@ -129,6 +129,19 @@ section[id] {
   box-shadow: 0 8px 20px rgba(236, 72, 153, 0.25);
 }
 
+.btn-cv {
+  background: linear-gradient(135deg, #0284c7, #1d4ed8);
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(29, 78, 216, 0.3);
+}
+
+.btn-contact {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
 .btn-dark {
   background: #111827;
   reduce-motion: no-preference;

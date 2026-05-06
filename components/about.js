@@ -32,7 +32,7 @@ class AboutSection extends HTMLElement {
                 <h2 class="text-4xl font-bold text-center mb-8 gradient-text">Sobre mí</h2>
 
                 <p class="text-lg text-gray-700 mb-6">
-                    Soy un desarrollador <strong>fullstack</strong>, con especial interés en la construcción de sistemas sólidos, escalables y alineados con buenas prácticas de ingeniería. 
+                    Soy un desarrollador <strong>fullstack</strong> con enfoque en backend, especializado en construir sistemas sólidos, escalables y alineados con buenas prácticas de ingeniería. 
                     Soy <strong>tecnólogo en desarrollo de software</strong>, he cursado <strong>siete semestres de Ingeniería de Software</strong>, tengo <strong>${experience}</strong> de experiencia laboral en una <strong>fábrica de desarrollo de software</strong> y cuento con un <strong>diplomado en Arquitecturas de Software</strong>.
                 </p>
 

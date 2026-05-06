@@ -175,21 +175,21 @@ class ProjectsSection extends HTMLElement {
           ${sizeClasses}
         "
       >
-        <div class="h-20 sm:h-24 relative overflow-hidden flex items-center justify-center px-5 bg-slate-800">
+        <div class="h-32 sm:h-36 relative overflow-hidden bg-slate-800">
           <img
             src="${project.image}"
             alt="Vista previa de ${project.title}"
-            class="absolute inset-0 w-full h-full object-cover"
+            class="absolute inset-0 w-full h-full object-cover object-top"
             loading="lazy"
             decoding="async"
           />
-          <div class="absolute inset-0 bg-slate-900/45"></div>
-          <span class="relative text-white font-semibold text-base sm:text-lg tracking-tight text-center leading-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.45)]">
-            ${project.title}
-          </span>
+          <div class="absolute inset-0 bg-slate-900/20"></div>
         </div>
 
         <div class="flex flex-col flex-1 gap-4 p-5">
+          <h3 class="text-lg font-semibold text-slate-900 leading-tight">
+            ${project.title}
+          </h3>
           <p class="text-gray-700 text-sm leading-relaxed clamp-6">
             ${project.description}
           </p>
