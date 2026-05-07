@@ -16,13 +16,15 @@
 <br>
 
 <!-- Redes Sociales -->
-<p align="center">
-  <a href="https://www.linkedin.com/in/erick-sebastian-perez-carvajal-11a2772b6/"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/LinkedIn.svg" width="64" height="64" alt="LinkedIn"></a>
-  <a href="https://github.com/Erickpe8"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Github-Dark.svg" width="64" height="64" alt="GitHub"></a>
-  <a href="mailto:ericksperezc@gmail.com"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Gmail-Dark.svg" width="64" height="64" alt="Email"></a>
-  <a href="https://www.instagram.com/erickperez_8"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Instagram.svg" width="64" height="64" alt="Instagram"></a>
-  <a href="https://www.youtube.com/@ErickPerez_8"><img src="https://img.icons8.com/color/48/youtube-play.png" width="64" height="64" alt="YouTube"></a>
-</p>
+<table align="center">
+  <tr>
+    <td><a href="https://www.linkedin.com/in/erick-sebastian-perez-carvajal-11a2772b6/"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/LinkedIn.svg" width="64" height="64" alt="LinkedIn"></a></td>
+    <td><a href="https://github.com/Erickpe8"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Github-Dark.svg" width="64" height="64" alt="GitHub"></a></td>
+    <td><a href="mailto:ericksperezc@gmail.com"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Gmail-Dark.svg" width="64" height="64" alt="Email"></a></td>
+    <td><a href="https://www.instagram.com/erickperez_8"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Instagram.svg" width="64" height="64" alt="Instagram"></a></td>
+    <td><a href="https://www.youtube.com/@ErickPerez_8"><img src="https://img.icons8.com/color/48/youtube-play.png" width="64" height="64" alt="YouTube"></a></td>
+  </tr>
+</table>
 
 <br>
 
