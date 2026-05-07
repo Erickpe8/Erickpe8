@@ -12,6 +12,13 @@ on:
   push:
     branches:
       - main
+    paths:
+      - .github/workflows/generate-snake.yml
+      - README.md
+
+concurrency:
+  group: snake
+  cancel-in-progress: true
 
 jobs:
   generate:

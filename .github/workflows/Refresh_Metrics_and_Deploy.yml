@@ -7,6 +7,12 @@ on:
 
   push:
     branches: ["main"]
+    paths:
+      - .github/workflows/Refresh_Metrics_and_Deploy.yml
+      - index.html
+      - main.js
+      - components/**
+      - assets/**
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
