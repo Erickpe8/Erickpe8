@@ -80,6 +80,20 @@
 
 <br>
 
+<!-- GitHub Streak -->
+<p align="center">
+  <img
+    alt="GitHub Streak"
+    src="https://streak-stats.demolab.com?user=Erickpe8&theme=transparent&hide_border=true&dates=7F7F7F"
+  />
+</p>
+
+<br>
+
+---
+
+<br>
+
 <!-- GitHub Metrics -->
 <p align="center">
   <img src="./github-metrics.svg" width="90%" alt="GitHub Metrics"/>
