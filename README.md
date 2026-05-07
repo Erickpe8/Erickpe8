@@ -20,19 +20,19 @@
   <a href="https://www.linkedin.com/in/erick-sebastian-perez-carvajal-11a2772b6/">
     <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/LinkedIn.svg" width="64" height="64" alt="LinkedIn">
   </a>
-  <br><br>
+  &nbsp;&nbsp;
   <a href="https://github.com/Erickpe8">
     <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Github-Dark.svg" width="64" height="64" alt="GitHub">
   </a>
-  <br><br>
+  &nbsp;&nbsp;
   <a href="mailto:ericksperezc@gmail.com">
     <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Gmail-Dark.svg" width="64" height="64" alt="Email">
   </a>
-  <br><br>
+  &nbsp;&nbsp;
   <a href="https://www.instagram.com/erickperez_8/">
     <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Instagram.svg" width="64" height="64" alt="Instagram">
   </a>
-  <br><br>
+  &nbsp;&nbsp;
   <a href="https://www.youtube.com/@ErickPerez_8">
     <img src="https://img.icons8.com/color/48/youtube-play.png" width="64" height="64" alt="YouTube">
   </a>
