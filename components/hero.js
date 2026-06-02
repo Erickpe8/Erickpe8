@@ -45,17 +45,11 @@ class HeroSection extends HTMLElement {
                     Me apasiona la gestión de proyectos de software, la toma de requerimientos, la documentación técnica y el trabajo con equipos ágiles. 
                 </p>
 
-                <div class="flex flex-wrap justify-center gap-3 mb-8">
+                <div class="flex flex-wrap sm:flex-nowrap justify-center items-center gap-2 sm:gap-3 max-w-3xl mx-auto">
                     <a href="#projects" class="btn btn-cv">Ver proyectos</a>
                     <a href="${cvPdf}" target="_blank" rel="noopener noreferrer" class="btn btn-cv">Descargar CV</a>
-                    <a href="#contact" class="btn btn-contact">Contactar</a>
-                </div>
-
-                <div class="flex flex-wrap justify-center gap-3">
-                    <a href="https://www.youtube.com/@ErickPerez_8" class="btn btn-youtube">YouTube</a>
-                    <a href="https://github.com/Erickpe8" class="btn btn-github">GitHub</a>
-                    <a href="https://www.linkedin.com/in/erick-sebastian-perez-carvajal-11a2772b6/" class="btn btn-linkedin">LinkedIn</a>
-                    <a href="https://www.instagram.com/erickperez_8/" class="btn btn-instagram">Instagram</a>
+                    <a href="https://github.com/Erickpe8" target="_blank" rel="noopener noreferrer" class="btn btn-github">GitHub</a>
+                    <a href="https://www.linkedin.com/in/erick-sebastian-perez-carvajal-11a2772b6/" target="_blank" rel="noopener noreferrer" class="btn btn-linkedin">LinkedIn</a>
                 </div>
 
             </div>
