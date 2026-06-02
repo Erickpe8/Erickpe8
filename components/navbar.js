@@ -1,5 +1,9 @@
     class NavbarComponent extends HTMLElement {
         connectedCallback() {
+            const cvPdf =
+                window.assetUrl?.("assets/cv/Erick-Perez-CV.pdf") ??
+                "https://erickpe8.github.io/Erickpe8/assets/cv/Erick-Perez-CV.pdf";
+
             this.innerHTML = `
             <nav class="navbar fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
                 <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
@@ -21,11 +25,12 @@
                     </button>
 
                     <!-- Menú de escritorio (SOLO DESKTOP) -->
-                    <div id="desktop-nav" class="hidden md:flex gap-6 text-gray-700 font-medium">
+                    <div id="desktop-nav" class="hidden md:flex gap-6 text-gray-700 font-medium items-center">
                         <a href="#about" class="nav-link hover:text-blue-600">Sobre mí</a>
                         <a href="#skills" class="nav-link hover:text-blue-600">Habilidades</a>
                         <a href="#projects" class="nav-link hover:text-blue-600">Proyectos</a>
                         <a href="#contact" class="nav-link hover:text-blue-600">Contacto</a>
+                        <a href="${cvPdf}" target="_blank" rel="noopener noreferrer" class="rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800">CV</a>
                     </div>
                 </div>
 
@@ -34,7 +39,8 @@
                     <a href="#about" class="nav-link block py-3 px-4 border-b hover:bg-gray-50">Sobre mí</a>
                     <a href="#skills" class="nav-link block py-3 px-4 border-b hover:bg-gray-50">Habilidades</a>
                     <a href="#projects" class="nav-link block py-3 px-4 border-b hover:bg-gray-50">Proyectos</a>
-                    <a href="#contact" class="nav-link block py-3 px-4 hover:bg-gray-50">Contacto</a>
+                    <a href="#contact" class="nav-link block py-3 px-4 border-b hover:bg-gray-50">Contacto</a>
+                    <a href="${cvPdf}" target="_blank" rel="noopener noreferrer" class="block py-3 px-4 font-semibold text-blue-600 hover:bg-gray-50">Descargar CV</a>
                 </div>
             </nav>
             `;

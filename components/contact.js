@@ -1,5 +1,9 @@
 class ContactSection extends HTMLElement {
     connectedCallback() {
+        const cvPdf =
+            window.assetUrl?.("assets/cv/Erick-Perez-CV.pdf") ??
+            "https://erickpe8.github.io/Erickpe8/assets/cv/Erick-Perez-CV.pdf";
+
         const email = "ericksperezc@gmail.com";
         const subject = "Contacto desde tu portafolio";
         const body = "Hola Erick, vi tu portafolio y me gustaría hablar contigo.\n\nNombre:\nMotivo:\n";
@@ -16,8 +20,9 @@ class ContactSection extends HTMLElement {
 
                 <div class="mb-10">
                     <a
-                        href="assets/cv/Erick-Perez-CV.pdf"
-                        download="Erick-Perez-CV.pdf"
+                        href="${cvPdf}"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
                     >
                         Descargar currículum (PDF)

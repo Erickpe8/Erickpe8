@@ -71,6 +71,25 @@
       }
     </script>
 
+    <script>
+      (function () {
+        function getSiteBase() {
+          const { protocol, hostname, pathname } = location;
+          if (protocol === "file:") {
+            return new URL("./", location.href).href;
+          }
+          if (hostname.endsWith("github.io")) {
+            const repo = pathname.split("/").filter(Boolean)[0];
+            return repo ? `${location.origin}/${repo}/` : `${location.origin}/`;
+          }
+          return new URL("./", location.href).href;
+        }
+
+        window.assetUrl = (relativePath) =>
+          new URL(relativePath.replace(/^\//, ""), getSiteBase()).href;
+      })();
+    </script>
+
 </head>
 <body class="bg-gray-50 font-[Inter] is-loading">
 

@@ -1,5 +1,9 @@
 class HeroSection extends HTMLElement {
     connectedCallback() {
+        const cvPdf =
+            window.assetUrl?.("assets/cv/Erick-Perez-CV.pdf") ??
+            "https://erickpe8.github.io/Erickpe8/assets/cv/Erick-Perez-CV.pdf";
+
         this.innerHTML = `
         <section class="hero-gradient pt-20 md:pt-24 pb-20 px-4 text-center fade-in">
 
@@ -43,7 +47,7 @@ class HeroSection extends HTMLElement {
 
                 <div class="flex flex-wrap justify-center gap-3 mb-8">
                     <a href="#projects" class="btn btn-cv">Ver proyectos</a>
-                    <a href="assets/cv/Erick-Perez-CV.pdf" download="Erick-Perez-CV.pdf" class="btn btn-cv">Descargar CV</a>
+                    <a href="${cvPdf}" target="_blank" rel="noopener noreferrer" class="btn btn-cv">Descargar CV</a>
                     <a href="#contact" class="btn btn-contact">Contactar</a>
                 </div>
 
