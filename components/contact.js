@@ -14,6 +14,16 @@ class ContactSection extends HTMLElement {
                     ¿Tienes un proyecto, una idea o colaboración en mente? Podemos hablar.
                 </p>
 
+                <div class="mb-10">
+                    <a
+                        href="assets/cv/Erick-Perez-CV.pdf"
+                        download="Erick-Perez-CV.pdf"
+                        class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+                    >
+                        Descargar currículum (PDF)
+                    </a>
+                </div>
+
                 <div class="grid md:grid-cols-2 gap-8">
 
                     ${this.card(

@@ -42,6 +42,12 @@ class HeroSection extends HTMLElement {
                 </p>
 
                 <div class="flex flex-wrap justify-center gap-3 mb-8">
+                    <a href="#projects" class="btn btn-cv">Ver proyectos</a>
+                    <a href="assets/cv/Erick-Perez-CV.pdf" download="Erick-Perez-CV.pdf" class="btn btn-cv">Descargar CV</a>
+                    <a href="#contact" class="btn btn-contact">Contactar</a>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-3">
                     <a href="https://www.youtube.com/@ErickPerez_8" class="btn btn-youtube">YouTube</a>
                     <a href="https://github.com/Erickpe8" class="btn btn-github">GitHub</a>
                     <a href="https://www.linkedin.com/in/erick-sebastian-perez-carvajal-11a2772b6/" class="btn btn-linkedin">LinkedIn</a>

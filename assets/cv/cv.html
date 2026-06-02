@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Erick Pérez — Currículum Vitae</title>
+  <style>
+    @page { size: A4; margin: 14mm 16mm; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Segoe UI", Inter, system-ui, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.45;
+      color: #0f172a;
+    }
+    .header {
+      border-bottom: 2px solid #0969da;
+      padding-bottom: 10px;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-size: 22pt;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .role {
+      font-size: 11pt;
+      color: #0969da;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+    .contact {
+      margin-top: 8px;
+      font-size: 9.5pt;
+      color: #475569;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 14px;
+    }
+    .contact a { color: #0969da; text-decoration: none; }
+    h2 {
+      font-size: 10.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #0969da;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 3px;
+      margin: 14px 0 8px;
+    }
+    p { margin-bottom: 6px; color: #334155; }
+    .summary { text-align: justify; }
+    .entry { margin-bottom: 10px; }
+    .entry-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .entry-title { font-weight: 700; font-size: 10.5pt; }
+    .entry-meta { font-size: 9pt; color: #64748b; white-space: nowrap; }
+    ul { margin: 4px 0 0 16px; color: #334155; }
+    li { margin-bottom: 3px; }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 16px;
+      font-size: 9.5pt;
+    }
+    .skill-cat strong { color: #0f172a; display: block; margin-bottom: 2px; }
+    .projects { font-size: 9.5pt; }
+    .project-name { font-weight: 600; color: #0f172a; }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .footer-note {
+      margin-top: 12px;
+      font-size: 8.5pt;
+      color: #94a3b8;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Erick Sebastián Pérez Carvajal</h1>
+    <p class="role">Desarrollador Fullstack · Enfoque Backend</p>
+    <div class="contact">
+      <span>Bogotá, Colombia</span>
+      <a href="mailto:ericksperezc@gmail.com">ericksperezc@gmail.com</a>
+      <a href="https://github.com/Erickpe8">github.com/Erickpe8</a>
+      <a href="https://www.linkedin.com/in/erick-sebastian-perez-carvajal-11a2772b6/">LinkedIn</a>
+      <a href="https://erickpe8.github.io/Erickpe8/">erickpe8.github.io/Erickpe8</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>Perfil profesional</h2>
+    <p class="summary">
+      Desarrollador fullstack con enfoque en backend y arquitectura de software. Tecnólogo en Desarrollo de Software,
+      con formación complementaria en Ingeniería de Software y diplomado en Arquitecturas de Software. Experiencia en
+      fábrica de desarrollo aplicando buenas prácticas, documentación técnica, toma de requerimientos y trabajo en equipos ágiles.
+      Me interesa construir sistemas escalables, mantenibles y con propósito claro de negocio.
+    </p>
+  </section>
+
+  <section>
+    <h2>Experiencia laboral</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Desarrollador de software — Fábrica de desarrollo de software</span>
+        <span class="entry-meta">Ago 2025 — Actualidad</span>
+      </div>
+      <ul>
+        <li>Desarrollo y mantenimiento de aplicaciones web con énfasis en backend y calidad de código.</li>
+        <li>Participación en ciclo completo: requerimientos, análisis funcional, implementación y documentación técnica.</li>
+        <li>Colaboración en equipos ágiles con control de versiones (Git/GitHub) y entregas iterativas.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Formación académica</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Tecnólogo en Desarrollo de Software</span>
+        <span class="entry-meta">Completado</span>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Ingeniería de Software (en curso, 7 semestres)</span>
+        <span class="entry-meta">En progreso</span>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Diplomado en Arquitecturas de Software</span>
+        <span class="entry-meta">Completado</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Proyectos destacados</h2>
+    <div class="projects">
+      <p><span class="project-name">Entre-Sabores</span> — Red social gastronómica (Laravel, PHP, MySQL, JS). Publicaciones, muro, notificaciones e IA para maridaje.</p>
+      <p><span class="project-name">TaskFlow Manager</span> — Kanban full-stack (.NET, Angular, TypeScript) con arquitectura limpia.</p>
+      <p><span class="project-name">SmartDifferentialCalc</span> — Resolución de EDOs con Flask, Python e integración de IA.</p>
+      <p><span class="project-name">Arquitecturas CRUD Autores/Libros</span> — Mismo dominio con 7 patrones arquitectónicos en Laravel.</p>
+      <p><span class="project-name">QR Studio</span> — Generador de códigos QR personalizables (HTML, JS, Tailwind).</p>
+      <p><span class="project-name">Portafolio automatizado</span> — GitHub Pages con métricas y despliegue vía GitHub Actions.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Habilidades técnicas</h2>
+    <div class="skills-grid">
+      <div class="skill-cat">
+        <strong>Lenguajes</strong>
+        PHP, JavaScript, HTML, CSS, Python, TypeScript
+      </div>
+      <div class="skill-cat">
+        <strong>Frameworks</strong>
+        Laravel, Flask, Angular, Tailwind CSS, Flowbite
+      </div>
+      <div class="skill-cat">
+        <strong>Bases de datos</strong>
+        MySQL, PostgreSQL
+      </div>
+      <div class="skill-cat">
+        <strong>Herramientas</strong>
+        Git, GitHub, Docker, VS Code, Cursor, Figma, GitHub Actions
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Habilidades blandas</h2>
+    <p>Comunicación · Trabajo en equipo · Liderazgo · Adaptabilidad · Gestión del tiempo · Documentación técnica · Integración eficiente de IA</p>
+  </section>
+
+  <section>
+    <h2>Aprendizaje actual</h2>
+    <p>Laravel 12/13, Docker, arquitectura de software (SOLID, patrones), JavaScript avanzado y prototipado en Figma.</p>
+  </section>
+
+  <p class="footer-note">CV generado desde portafolio personal · Junio 2026</p>
+</body>
+</html>
