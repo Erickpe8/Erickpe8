@@ -32,12 +32,11 @@ class AboutSection extends HTMLElement {
                 <h2 class="text-4xl font-bold text-center mb-8 gradient-text">Sobre mí</h2>
 
                 <p class="text-lg text-gray-700 mb-6">
-                    Soy un desarrollador <strong>fullstack</strong> con enfoque en backend, especializado en construir sistemas sólidos, escalables y alineados con buenas prácticas de ingeniería. 
-                    Soy <strong>tecnólogo en desarrollo de software de la FESC</strong> (2023–2026), estudio <strong>Ingeniería de Software en la FESC</strong> (7.º semestre), llevo <strong>${experience}</strong> en el <strong>Laboratorio de Software</strong> de la FESC (como practicante y actualmente <strong>técnico asistente en desarrollo de software</strong>) y cuento con un <strong>diplomado en Arquitecturas de Software de la FESC</strong>. Formación previa como <strong>bachiller técnico en diseño de software</strong> en San Francisco de Sales.
+                    Soy desarrollador <strong>Full Stack</strong> con enfoque en backend, apasionado por la construcción de sistemas sólidos, escalables y alineados con buenas prácticas de ingeniería de software. Actualmente curso <strong>séptimo semestre de Ingeniería de Software en la FESC</strong>, soy <strong>tecnólogo en Desarrollo de Software</strong> y cuento con formación complementaria en <strong>Arquitecturas de Software</strong>, fortaleciendo constantemente mis conocimientos en desarrollo, análisis y diseño de soluciones tecnológicas.
                 </p>
 
-                <p class="text-lg text-gray-700 mb-6">
-                    Disfruto profundamente todo el ciclo de vida del software: desde la <strong>toma de requerimientos</strong> y el <strong>análisis funcional</strong>, hasta la <strong>documentación técnica</strong> y la colaboración en <strong>equipos ágiles</strong>. Me motiva crear soluciones que no solo funcionen bien, sino que tengan un propósito claro dentro de una arquitectura bien pensada.
+                <p class="text-lg text-gray-700">
+                    Llevo <strong>${experience}</strong> de experiencia en el <strong>Laboratorio de Software de la FESC</strong>, donde me desempeñé como practicante y actualmente como <strong>Técnico Asistente en Desarrollo de Software</strong>. Disfruto participar en todas las etapas del ciclo de vida del software, desde el <strong>levantamiento de requerimientos</strong> y el <strong>análisis funcional</strong> hasta la implementación, <strong>documentación</strong> y trabajo en <strong>equipos ágiles</strong>, siempre enfocado en crear soluciones eficientes, mantenibles y de valor para las organizaciones.
                 </p>
 
             </div>
