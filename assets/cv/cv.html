@@ -2,190 +2,412 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Erick Pérez — Currículum Vitae</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV – Erick Pérez</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
-    @page { size: A4; margin: 14mm 16mm; }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    @page { size: A4; margin: 0; }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1a2340;
+      --accent: #c9a84c;
+      --light: #f7f5f0;
+      --muted: #7a7a7a;
+      --sidebar-bg: #1a2340;
+      --sidebar-text: #e8e4d9;
+      --rule: #d6cfc0;
+    }
+
     body {
-      font-family: "Segoe UI", Inter, system-ui, sans-serif;
-      font-size: 10.5pt;
-      line-height: 1.45;
-      color: #0f172a;
+      font-family: "DM Sans", sans-serif;
+      background: #fff;
+      color: #2c2c2c;
     }
-    .header {
-      border-bottom: 2px solid #0969da;
-      padding-bottom: 10px;
-      margin-bottom: 14px;
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      display: grid;
+      grid-template-columns: 72mm 1fr;
+      background: #fff;
     }
-    h1 {
-      font-size: 22pt;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-    .role {
-      font-size: 11pt;
-      color: #0969da;
-      font-weight: 600;
-      margin-top: 2px;
-    }
-    .contact {
-      margin-top: 8px;
-      font-size: 9.5pt;
-      color: #475569;
+
+    .sidebar {
+      background: var(--sidebar-bg);
+      color: var(--sidebar-text);
+      padding: 10mm 7mm;
       display: flex;
-      flex-wrap: wrap;
-      gap: 6px 14px;
+      flex-direction: column;
+      gap: 7mm;
     }
-    .contact a { color: #0969da; text-decoration: none; }
-    h2 {
-      font-size: 10.5pt;
+
+    .photo-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .photo-wrap img {
+      width: 32mm;
+      height: 32mm;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+    }
+
+    .sidebar-section h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 9pt;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: #0969da;
-      border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 3px;
-      margin: 14px 0 8px;
+      color: var(--accent);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.35);
+      padding-bottom: 4px;
+      margin-bottom: 6px;
     }
-    p { margin-bottom: 6px; color: #334155; }
-    .summary { text-align: justify; }
-    .entry { margin-bottom: 10px; }
-    .entry-head {
+
+    .sidebar-section p,
+    .sidebar-section li {
+      font-size: 8.5pt;
+      line-height: 1.55;
+      color: #c8c2b4;
+      text-align: justify;
+    }
+
+    .sidebar-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar-section ul li {
+      margin-bottom: 3px;
+    }
+
+    .sidebar-section ul li::before {
+      content: "▸";
+      color: var(--accent);
+      margin-right: 5px;
+      font-size: 8pt;
+    }
+
+    .sidebar-section a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 8.5pt;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .lang-tag {
+      display: inline-block;
+      background: rgba(201, 168, 76, 0.15);
+      border: 1px solid rgba(201, 168, 76, 0.4);
+      color: var(--accent);
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 8.5pt;
+    }
+
+    .main {
+      padding: 10mm 9mm 10mm 8mm;
+      background: var(--light);
+      display: flex;
+      flex-direction: column;
+      gap: 6mm;
+    }
+
+    .header {
+      border-bottom: 2px solid var(--navy);
+      padding-bottom: 5mm;
+    }
+
+    .header h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 34pt;
+      color: var(--navy);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      line-height: 1.05;
+    }
+
+    .header .subtitle {
+      color: var(--accent);
+      font-size: 12.5pt;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 8px;
+    }
+
+    .contact-row {
+      display: flex;
+      gap: 5mm;
+      margin-top: 5mm;
+      flex-wrap: wrap;
+    }
+
+    .contact-item label {
+      display: block;
+      font-size: 7pt;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1px;
+    }
+
+    .contact-item span {
+      font-size: 8.5pt;
+      color: var(--navy);
+      font-weight: 500;
+    }
+
+    .section h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 13pt;
+      color: var(--navy);
+      position: relative;
+      margin-bottom: 4mm;
+      padding-bottom: 3px;
+    }
+
+    .section h2::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 12mm;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .entry { margin-bottom: 4mm; }
+    .entry:last-child { margin-bottom: 0; }
+
+    .entry-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      gap: 8px;
       flex-wrap: wrap;
+      gap: 2px;
     }
-    .entry-title { font-weight: 700; font-size: 10.5pt; }
-    .entry-meta { font-size: 9pt; color: #64748b; white-space: nowrap; }
-    ul { margin: 4px 0 0 16px; color: #334155; }
-    li { margin-bottom: 3px; }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px 16px;
-      font-size: 9.5pt;
-    }
-    .skill-cat strong { color: #0f172a; display: block; margin-bottom: 2px; }
-    .projects { font-size: 9.5pt; }
-    .project-name { font-weight: 600; color: #0f172a; }
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-    .footer-note {
-      margin-top: 12px;
+
+    .entry-org {
       font-size: 8.5pt;
-      color: #94a3b8;
-      text-align: center;
+      font-weight: 500;
+      color: var(--navy);
+    }
+
+    .entry-period {
+      font-size: 7.5pt;
+      color: var(--accent);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .entry-title {
+      font-size: 9pt;
+      font-weight: 600;
+      color: #2c2c2c;
+      margin-top: 2px;
+    }
+
+    .entry-note {
+      font-size: 8pt;
+      color: var(--muted);
+      font-style: italic;
+      margin-top: 1px;
+    }
+
+    .entry-desc {
+      font-size: 8.5pt;
+      color: #555;
+      line-height: 1.55;
+      margin-top: 3px;
+      text-align: justify;
+    }
+
+    .entry-desc ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 3px;
+    }
+
+    .entry-desc ul li {
+      padding-left: 10px;
+      position: relative;
+      margin-bottom: 2px;
+    }
+
+    .entry-desc ul li::before {
+      content: "•";
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 3mm 0;
+    }
+
+    .complement {
+      font-size: 8.5pt;
+      color: #555;
+      line-height: 1.55;
+      text-align: justify;
     }
   </style>
 </head>
 <body>
-  <header class="header">
-    <h1>Erick Sebastián Pérez Carvajal</h1>
-    <p class="role">Desarrollador Fullstack · Enfoque Backend</p>
-    <div class="contact">
-      <span>Bogotá, Colombia</span>
-      <a href="mailto:ericksperezc@gmail.com">ericksperezc@gmail.com</a>
-      <a href="https://github.com/Erickpe8">github.com/Erickpe8</a>
-      <a href="https://www.linkedin.com/in/erick-sebastian-perez-carvajal-11a2772b6/">LinkedIn</a>
-      <a href="https://erickpe8.github.io/Erickpe8/">erickpe8.github.io/Erickpe8</a>
-    </div>
-  </header>
-
-  <section>
-    <h2>Perfil profesional</h2>
-    <p class="summary">
-      Desarrollador fullstack con enfoque en backend y arquitectura de software. Tecnólogo en Desarrollo de Software,
-      con formación complementaria en Ingeniería de Software y diplomado en Arquitecturas de Software. Experiencia en
-      fábrica de desarrollo aplicando buenas prácticas, documentación técnica, toma de requerimientos y trabajo en equipos ágiles.
-      Me interesa construir sistemas escalables, mantenibles y con propósito claro de negocio.
-    </p>
-  </section>
-
-  <section>
-    <h2>Experiencia laboral</h2>
-    <div class="entry">
-      <div class="entry-head">
-        <span class="entry-title">Desarrollador de software — Fábrica de desarrollo de software</span>
-        <span class="entry-meta">Ago 2025 — Actualidad</span>
+  <div class="page">
+    <aside class="sidebar">
+      <div class="photo-wrap">
+        <img
+          src="https://avatars.githubusercontent.com/Erickpe8?s=200"
+          alt="Erick Pérez"
+          width="120"
+          height="120"
+        />
       </div>
-      <ul>
-        <li>Desarrollo y mantenimiento de aplicaciones web con énfasis en backend y calidad de código.</li>
-        <li>Participación en ciclo completo: requerimientos, análisis funcional, implementación y documentación técnica.</li>
-        <li>Colaboración en equipos ágiles con control de versiones (Git/GitHub) y entregas iterativas.</li>
-      </ul>
-    </div>
-  </section>
 
-  <section>
-    <h2>Formación académica</h2>
-    <div class="entry">
-      <div class="entry-head">
-        <span class="entry-title">Tecnólogo en Desarrollo de Software</span>
-        <span class="entry-meta">Completado</span>
+      <div class="sidebar-section">
+        <h3>Sobre mí</h3>
+        <p>
+          Desarrollador fullstack en formación, orientado a ingeniería de software, gestión de proyectos,
+          toma de requerimientos y documentación técnica. Tecnólogo en Desarrollo de Software de la FESC,
+          estudiante de Ingeniería de Software y más de 11 meses en el Laboratorio de Software de la FESC,
+          actualmente como técnico asistente en desarrollo de software.
+        </p>
       </div>
-    </div>
-    <div class="entry">
-      <div class="entry-head">
-        <span class="entry-title">Ingeniería de Software (en curso, 7 semestres)</span>
-        <span class="entry-meta">En progreso</span>
-      </div>
-    </div>
-    <div class="entry">
-      <div class="entry-head">
-        <span class="entry-title">Diplomado en Arquitecturas de Software</span>
-        <span class="entry-meta">Completado</span>
-      </div>
-    </div>
-  </section>
 
-  <section>
-    <h2>Proyectos destacados</h2>
-    <div class="projects">
-      <p><span class="project-name">Entre-Sabores</span> — Red social gastronómica (Laravel, PHP, MySQL, JS). Publicaciones, muro, notificaciones e IA para maridaje.</p>
-      <p><span class="project-name">TaskFlow Manager</span> — Kanban full-stack (.NET, Angular, TypeScript) con arquitectura limpia.</p>
-      <p><span class="project-name">SmartDifferentialCalc</span> — Resolución de EDOs con Flask, Python e integración de IA.</p>
-      <p><span class="project-name">Arquitecturas CRUD Autores/Libros</span> — Mismo dominio con 7 patrones arquitectónicos en Laravel.</p>
-      <p><span class="project-name">QR Studio</span> — Generador de códigos QR personalizables (HTML, JS, Tailwind).</p>
-      <p><span class="project-name">Portafolio automatizado</span> — GitHub Pages con métricas y despliegue vía GitHub Actions.</p>
-    </div>
-  </section>
-
-  <section>
-    <h2>Habilidades técnicas</h2>
-    <div class="skills-grid">
-      <div class="skill-cat">
-        <strong>Lenguajes</strong>
-        PHP, JavaScript, HTML, CSS, Python, TypeScript
+      <div class="sidebar-section">
+        <h3>Habilidades</h3>
+        <ul>
+          <li>Desarrollo backend con PHP y Laravel</li>
+          <li>JavaScript, HTML, CSS y MySQL</li>
+          <li>Análisis y levantamiento de requerimientos</li>
+          <li>Documentación técnica</li>
+          <li>Trabajo colaborativo en equipos ágiles</li>
+          <li>Arquitectura y buenas prácticas de software</li>
+        </ul>
       </div>
-      <div class="skill-cat">
-        <strong>Frameworks</strong>
-        Laravel, Flask, Angular, Tailwind CSS, Flowbite
-      </div>
-      <div class="skill-cat">
-        <strong>Bases de datos</strong>
-        MySQL, PostgreSQL
-      </div>
-      <div class="skill-cat">
-        <strong>Herramientas</strong>
-        Git, GitHub, Docker, VS Code, Cursor, Figma, GitHub Actions
-      </div>
-    </div>
-  </section>
 
-  <section>
-    <h2>Habilidades blandas</h2>
-    <p>Comunicación · Trabajo en equipo · Liderazgo · Adaptabilidad · Gestión del tiempo · Documentación técnica · Integración eficiente de IA</p>
-  </section>
+      <div class="sidebar-section">
+        <h3>Portafolio</h3>
+        <a href="https://erickpe8.github.io/Erickpe8/">Portafolio personal</a>
+        <a href="https://github.com/Erickpe8">Repositorio GitHub</a>
+      </div>
 
-  <section>
-    <h2>Aprendizaje actual</h2>
-    <p>Laravel 12/13, Docker, arquitectura de software (SOLID, patrones), JavaScript avanzado y prototipado en Figma.</p>
-  </section>
+      <div class="sidebar-section">
+        <h3>Idiomas</h3>
+        <span class="lang-tag">Español — nativo</span>
+      </div>
+    </aside>
 
-  <p class="footer-note">CV generado desde portafolio personal · Junio 2026</p>
+    <main class="main">
+      <div class="header">
+        <h1>Erick Pérez</h1>
+        <div class="subtitle">Desarrollador en formación</div>
+        <div class="contact-row">
+          <div class="contact-item">
+            <label>Email</label>
+            <span>ericksperezc@gmail.com</span>
+          </div>
+          <div class="contact-item">
+            <label>Portafolio</label>
+            <span>erickpe8.github.io/Erickpe8</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Educación</h2>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-org">Fundación de Estudios Superiores Comfanorte (FESC)</span>
+            <span class="entry-period">2026 — Actualidad</span>
+          </div>
+          <div class="entry-title">Ingeniería de Software (Ciclo Profesional)</div>
+          <div class="entry-note">7.º semestre en curso</div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-org">Fundación de Estudios Superiores Comfanorte (FESC)</span>
+            <span class="entry-period">Feb 2023 — Abr 2026</span>
+          </div>
+          <div class="entry-title">Tecnólogo en Desarrollo de Software</div>
+          <div class="entry-note">Tecnología en Desarrollo de Software — FESC</div>
+          <div class="entry-desc">
+            Formación en desarrollo de software y gestión de proyectos: arquitecturas, metodologías ágiles,
+            análisis y diseño de soluciones, desarrollo web, documentación técnica y buenas prácticas.
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-org">FESC</span>
+            <span class="entry-period">Completado</span>
+          </div>
+          <div class="entry-title">Diplomado en Arquitecturas de Software</div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-org">San Francisco de Sales</span>
+            <span class="entry-period">Ene 2021 — Nov 2022</span>
+          </div>
+          <div class="entry-title">Bachiller Técnico en Diseño de Software</div>
+        </div>
+
+        <hr class="divider" />
+
+        <p class="complement">
+          <strong>Formación complementaria:</strong> participación en semilleros de investigación y ponencias
+          académicas (FESC, UFPS Ocaña); cursos SENA en Power BI, metodologías de programación e inteligencia emocional.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Experiencia</h2>
+        <p class="entry-org" style="margin-bottom: 4mm;">FESC · Presencial · San José de Cúcuta</p>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">Técnico Asistente en Desarrollo de Software</span>
+            <span class="entry-period">Feb 2026 — Actualidad</span>
+          </div>
+          <div class="entry-note">Jornada completa · Laboratorio de Software</div>
+          <div class="entry-desc">
+            <ul>
+              <li>Desarrollo y soporte de sistemas y software institucionales.</li>
+              <li>Apoyo técnico a ingenieros líderes en backend, frontend y gestión de proyectos.</li>
+              <li>Participación en análisis, desarrollo, pruebas y soporte de soluciones tecnológicas.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">Auxiliar de desarrollo de software</span>
+            <span class="entry-period">Ago 2025 — Feb 2026</span>
+          </div>
+          <div class="entry-note">Contrato de prácticas · Practicante de Tecnólogo</div>
+          <div class="entry-desc">
+            <ul>
+              <li>Desarrollo y soporte de sistemas institucionales en el Laboratorio de Software.</li>
+              <li>Apoyo a ingenieros líderes en backend, frontend y labores de proyectos.</li>
+              <li>Análisis, desarrollo, pruebas, documentación técnica y trabajo con Git/GitHub.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
 </body>
 </html>

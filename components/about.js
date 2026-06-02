@@ -33,7 +33,7 @@ class AboutSection extends HTMLElement {
 
                 <p class="text-lg text-gray-700 mb-6">
                     Soy un desarrollador <strong>fullstack</strong> con enfoque en backend, especializado en construir sistemas sólidos, escalables y alineados con buenas prácticas de ingeniería. 
-                    Soy <strong>tecnólogo en desarrollo de software</strong>, he cursado <strong>siete semestres de Ingeniería de Software</strong>, tengo <strong>${experience}</strong> de experiencia laboral en una <strong>fábrica de desarrollo de software</strong> y cuento con un <strong>diplomado en Arquitecturas de Software</strong>.
+                    Soy <strong>tecnólogo en desarrollo de software de la FESC</strong> (2023–2026), estudio <strong>Ingeniería de Software en la FESC</strong> (7.º semestre), llevo <strong>${experience}</strong> en el <strong>Laboratorio de Software</strong> de la FESC (como practicante y actualmente <strong>técnico asistente en desarrollo de software</strong>) y cuento con un <strong>diplomado en Arquitecturas de Software de la FESC</strong>. Formación previa como <strong>bachiller técnico en diseño de software</strong> en San Francisco de Sales.
                 </p>
 
                 <p class="text-lg text-gray-700 mb-6">
