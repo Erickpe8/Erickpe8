@@ -114,8 +114,8 @@ class ProjectsSection extends HTMLElement {
           </div>
 
           <!-- Desktop -->
-          <div class="carousel relative overflow-hidden px-2 sm:px-4 hidden lg:block" aria-label="Carrusel de proyectos">
-            <div class="carousel-track flex w-max items-stretch gap-6" style="--duration:${durationSeconds}s;">
+          <div class="carousel relative overflow-x-hidden overflow-y-visible py-4 pb-10 px-2 sm:px-4 hidden lg:block" aria-label="Carrusel de proyectos">
+            <div class="carousel-track flex w-max items-stretch gap-6 py-2" style="--duration:${durationSeconds}s;">
               <div class="carousel-group flex items-stretch gap-6 pr-6">
                 ${groupA}
               </div>
@@ -163,6 +163,15 @@ class ProjectsSection extends HTMLElement {
 
           @media (prefers-reduced-motion: reduce){
             .carousel-track{ animation: none; }
+          }
+
+          .carousel{
+            overflow-x: clip;
+            overflow-y: visible;
+          }
+
+          .carousel article{
+            margin-bottom: 0.25rem;
           }
         </style>
       </section>
@@ -218,16 +227,16 @@ class ProjectsSection extends HTMLElement {
   projectCard(project, index, { duplicate = false, compact = false } = {}) {
     const sizeClasses = compact
       ? "w-full"
-      : "flex-none w-[280px] sm:w-[300px] md:w-[320px] lg:w-[340px] xl:w-[360px] min-h-[380px]";
+      : "flex-none w-[280px] sm:w-[300px] md:w-[320px] lg:w-[340px] xl:w-[360px]";
 
     return `
       <article
         class="
-          card-hover bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col
+          card-hover bg-white rounded-2xl shadow-lg flex flex-col h-full
           ${sizeClasses}
         "
       >
-        <div class="h-32 sm:h-36 relative overflow-hidden bg-slate-800">
+        <div class="h-32 sm:h-36 relative overflow-hidden rounded-t-2xl bg-slate-800 shrink-0">
           <img
             src="${project.image}"
             alt="Vista previa de ${project.title}"
@@ -241,7 +250,7 @@ class ProjectsSection extends HTMLElement {
           <div class="absolute inset-0 bg-slate-900/20"></div>
         </div>
 
-        <div class="flex flex-col flex-1 gap-4 p-5">
+        <div class="flex flex-col flex-1 gap-4 p-5 pb-6">
           <h3 class="text-lg font-semibold text-slate-900 leading-tight">
             ${project.title}
           </h3>
