@@ -8,19 +8,64 @@ class NavbarComponent extends HTMLElement {
 
   disconnectedCallback() {
     unbindLocale(this);
+    window.clearTimeout(this._langSwitchTimer);
+    this._langResizeObserver?.disconnect();
   }
 
   langSwitcher() {
-    const locale = getLocale();
-    const btnClass = (code) =>
-      `transition ${locale === code ? "text-slate-900 font-semibold" : "text-slate-500 hover:text-slate-800"}`;
-
     return `
-      <div class="flex items-center gap-1.5 text-xs font-medium" role="group" aria-label="${t("nav.langSelector")}">
-        <button type="button" data-lang="es" class="${btnClass("es")}" aria-pressed="${locale === "es"}">ES</button>
-        <span class="text-slate-300 select-none" aria-hidden="true">·</span>
-        <button type="button" data-lang="en" class="${btnClass("en")}" aria-pressed="${locale === "en"}">EN</button>
+      <div class="lang-switcher" data-lang-track role="group" aria-label="${t("nav.langSelector")}">
+        <span class="lang-switcher-indicator" data-lang-indicator aria-hidden="true"></span>
+        <button type="button" data-lang="es" class="lang-switcher-btn">ES</button>
+        <button type="button" data-lang="en" class="lang-switcher-btn">EN</button>
       </div>`;
+  }
+
+  setupLangSwitcher() {
+    const track = this.querySelector("[data-lang-track]");
+    const indicator = this.querySelector("[data-lang-indicator]");
+    const buttons = this.querySelectorAll("[data-lang]");
+    if (!track || !indicator || !buttons.length) return;
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const moveTo = (lang, animate = true) => {
+      const button = track.querySelector(`[data-lang="${lang}"]`);
+      if (!button) return;
+
+      indicator.style.transition = animate && !reduceMotion
+        ? "transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), width 0.28s cubic-bezier(0.4, 0, 0.2, 1)"
+        : "none";
+
+      const trackRect = track.getBoundingClientRect();
+      const btnRect = button.getBoundingClientRect();
+      indicator.style.width = `${btnRect.width}px`;
+      indicator.style.transform = `translateX(${btnRect.left - trackRect.left}px)`;
+
+      buttons.forEach((btn) => {
+        const isActive = btn.dataset.lang === lang;
+        btn.classList.toggle("lang-active", isActive);
+        btn.setAttribute("aria-pressed", String(isActive));
+      });
+    };
+
+    moveTo(getLocale(), false);
+
+    this._langResizeObserver?.disconnect();
+    this._langResizeObserver = new ResizeObserver(() => moveTo(getLocale(), false));
+    this._langResizeObserver.observe(track);
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const lang = button.dataset.lang;
+        if (!lang || lang === getLocale()) return;
+
+        moveTo(lang, true);
+        window.clearTimeout(this._langSwitchTimer);
+        const delay = reduceMotion ? 0 : 220;
+        this._langSwitchTimer = window.setTimeout(() => setLocale(lang), delay);
+      });
+    });
   }
 
   render() {
@@ -69,9 +114,7 @@ class NavbarComponent extends HTMLElement {
                 </div>
             </nav>`;
 
-    this.querySelectorAll("[data-lang]").forEach((button) => {
-      button.addEventListener("click", () => setLocale(button.dataset.lang));
-    });
+    this.setupLangSwitcher();
 
     const toggle = this.querySelector("#menu-toggle");
     const mobileNav = this.querySelector("#mobile-nav");
