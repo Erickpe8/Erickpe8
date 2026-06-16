@@ -35,7 +35,7 @@ class NavbarComponent extends HTMLElement {
             <nav class="navbar fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
                 <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between gap-3">
                     <a href="#" class="inline-flex items-center shrink-0 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2" aria-label="${t("nav.home")}">
-                        <img src="${favicon}" alt="Erick Pérez" width="40" height="40" class="h-10 w-10 object-contain" loading="eager" decoding="async" />
+                        <img src="${favicon}" alt="Erick Pérez" width="40" height="40" class="h-10 w-10 rounded-full object-cover ring-2 ring-white shadow-sm" loading="eager" decoding="async" />
                     </a>
 
                     <div class="flex items-center gap-3 md:hidden">
