@@ -32,7 +32,7 @@ class AboutSection extends HTMLElement {
                 <h2 class="text-4xl font-bold text-center mb-8 gradient-text">Sobre mí</h2>
 
                 <p class="text-lg text-gray-700 mb-6">
-                    Soy desarrollador <strong>Full Stack</strong> con enfoque en backend, apasionado por la construcción de sistemas sólidos, escalables y alineados con buenas prácticas de ingeniería de software. Actualmente curso <strong>séptimo semestre de Ingeniería de Software en la FESC</strong>, soy <strong>tecnólogo en Desarrollo de Software</strong> y cuento con formación complementaria en <strong>Arquitecturas de Software</strong>, fortaleciendo constantemente mis conocimientos en desarrollo, análisis y diseño de soluciones tecnológicas.
+                    Soy desarrollador <strong>Full Stack</strong> con enfoque en backend, apasionado por la construcción de sistemas sólidos, escalables y alineados con buenas prácticas de ingeniería de software. Actualmente curso <strong>octavo semestre de Ingeniería de Software en la FESC</strong>, soy <strong>tecnólogo en Desarrollo de Software</strong> y cuento con formación complementaria en <strong>Arquitecturas de Software</strong>, fortaleciendo constantemente mis conocimientos en desarrollo, análisis y diseño de soluciones tecnológicas.
                 </p>
 
                 <p class="text-lg text-gray-700">
