@@ -16,6 +16,7 @@ updateNavHeightCSS();
 
 window.addEventListener("load", () => {
     document.body.classList.remove("is-loading");
+    document.documentElement.classList.remove("play-entrance-animations");
     updateNavHeightCSS();
 });
 

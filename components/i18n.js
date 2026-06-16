@@ -311,6 +311,11 @@ export function getLocale() {
   return currentLocale;
 }
 
+export function revealSections() {
+  document.documentElement.classList.remove("play-entrance-animations");
+  document.querySelectorAll(".fade-in").forEach((el) => el.classList.add("visible"));
+}
+
 export function setLocale(locale) {
   if (!messages[locale] || locale === currentLocale) return;
   currentLocale = locale;
@@ -323,6 +328,7 @@ export function setLocale(locale) {
       console.error("Error al cambiar idioma:", error);
     }
   });
+  revealSections();
 }
 
 export function t(key, vars = {}) {

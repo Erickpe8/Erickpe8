@@ -21,7 +21,7 @@ class StatsSection extends HTMLElement {
 
   renderShell() {
     this.innerHTML = `
-        <section class="py-24 px-4 bg-white fade-in min-h-screen flex items-center justify-center">
+        <section class="py-24 px-4 bg-white fade-in visible min-h-screen flex items-center justify-center">
             <div class="max-w-6xl mx-auto text-center">
                 <h2 data-i18n-title class="text-4xl font-bold mb-12 gradient-text">${t("stats.title")}</h2>
                 <div class="flex flex-col items-center justify-center gap-8" aria-live="polite">

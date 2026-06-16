@@ -74,12 +74,17 @@ section[id] {
 }
 
 .fade-in {
-  opacity: 0;
-  transform: translateY(40px);
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
-.fade-in.visible {
+html.play-entrance-animations .fade-in:not(.visible) {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+html.play-entrance-animations .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
 }
