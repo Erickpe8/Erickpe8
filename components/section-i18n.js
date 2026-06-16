@@ -1,7 +1,10 @@
 import { onLocaleChange } from "./i18n.js";
 
 export function bindLocale(element, render) {
-  const run = () => render.call(element);
+  const run = () => {
+    render.call(element);
+    element.querySelectorAll(".fade-in").forEach((el) => el.classList.add("visible"));
+  };
   element._localeUnsub = onLocaleChange(run);
   run();
 }

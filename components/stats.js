@@ -41,6 +41,7 @@ class StatsSection extends HTMLElement {
   updateTexts() {
     const title = this.querySelector("[data-i18n-title]");
     const img = this.querySelector("[data-metrics-img]");
+    const placeholder = this.querySelector("[data-metrics-placeholder]");
     const placeholderText = this.querySelector("[data-metrics-placeholder-text]");
     if (title) title.textContent = t("stats.title");
     if (img) img.alt = t("stats.alt");

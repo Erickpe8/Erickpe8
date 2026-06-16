@@ -316,7 +316,13 @@ export function setLocale(locale) {
   currentLocale = locale;
   localStorage.setItem(STORAGE_KEY, locale);
   applyDocumentLocale();
-  listeners.forEach((callback) => callback(currentLocale));
+  listeners.forEach((callback) => {
+    try {
+      callback(currentLocale);
+    } catch (error) {
+      console.error("Error al cambiar idioma:", error);
+    }
+  });
 }
 
 export function t(key, vars = {}) {
