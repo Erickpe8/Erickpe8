@@ -13,23 +13,17 @@ const skillGroups = [
     ],
   },
   {
-    key: "frameworks",
+    key: "frameworksAndLibraries",
     delay: 200,
     items: [
       ["Laravel", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg"],
       ["TailwindCSS", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"],
-    ],
-  },
-  {
-    key: "uiLibraries",
-    delay: 300,
-    items: [
       ["Flowbite", "https://flowbite.com/docs/images/logo.svg"],
     ],
   },
   {
     key: "databases",
-    delay: 400,
+    delay: 300,
     items: [
       ["MySQL", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"],
       ["PostgreSQL", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"],
@@ -37,7 +31,7 @@ const skillGroups = [
   },
   {
     key: "productivity",
-    delay: 500,
+    delay: 400,
     items: [
       ["Google Workspace", "https://truecontext.com/wp-content/uploads/2023/10/logo_google-workspace_big.png"],
       ["Microsoft Office", "https://e7.pngegg.com/pngimages/434/143/png-clipart-microsoft-office-365-patch-tuesday-service-pack-microsoft-angle-rectangle-thumbnail.png"],
@@ -46,7 +40,7 @@ const skillGroups = [
   },
   {
     key: "devTools",
-    delay: 600,
+    delay: 500,
     items: [
       ["Cursor", "https://img.icons8.com/?size=100&id=4gUIAQbx9oh5&format=png&color=000000"],
       ["DBeaver", "https://image.pngaaa.com/94/6692094-middle.png"],
@@ -61,16 +55,20 @@ const skillGroups = [
       ["XAMPP", "https://www.apachefriends.org/images/xampp-logo-ac950edf.svg"],
     ],
   },
-];
-
-const softSkillItems = [
-  ["adaptability", "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/refresh.svg"],
-  ["communication", "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/message-circle.svg"],
-  ["timeManagement", "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/clock.svg"],
-  ["aiIntegration", "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/cpu.svg"],
-  ["leadership", "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/users.svg"],
-  ["teamwork", "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/users-group.svg"],
-  ["efficientAi", "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/robot.svg"],
+  {
+    key: "softSkills",
+    delay: 600,
+    soft: true,
+    items: [
+      ["adaptability", "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/refresh.svg"],
+      ["communication", "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/message-circle.svg"],
+      ["timeManagement", "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/clock.svg"],
+      ["aiIntegration", "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/cpu.svg"],
+      ["leadership", "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/users.svg"],
+      ["teamwork", "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/users-group.svg"],
+      ["efficientAi", "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/robot.svg"],
+    ],
+  },
 ];
 
 class SkillsSection extends HTMLElement {
@@ -84,7 +82,7 @@ class SkillsSection extends HTMLElement {
 
   card(title, badges, { delay = 0, headerExtra = "" } = {}) {
     return `
-      <div class="w-full h-full rounded-2xl border border-slate-200/70 bg-white/40 p-6 sm:p-7 shadow-sm fade-in delay-${delay} lg:max-w-[520px] lg:mx-auto">
+      <div class="w-full h-full rounded-2xl border border-slate-200/70 bg-white/40 p-6 sm:p-7 shadow-sm fade-in delay-${delay}">
         <div class="flex flex-wrap items-center gap-3 mb-4">
           <h3 class="text-2xl font-bold">${title}</h3>
           ${headerExtra}
@@ -94,26 +92,22 @@ class SkillsSection extends HTMLElement {
   }
 
   render() {
-    const groups = skillGroups
-      .map((group) =>
-        this.card(
-          t(`skills.${group.key}`),
-          group.items.map(([name, icon]) => this.badge(name, icon)).join(""),
-          { delay: group.delay },
-        ),
-      )
-      .join("");
+    const cards = skillGroups
+      .map((group) => {
+        const badges = group.soft
+          ? group.items.map(([key, icon]) => this.badge(t(`skills.items.${key}`), icon)).join("")
+          : group.items.map(([name, icon]) => this.badge(name, icon)).join("");
 
-    const softSkills = this.card(
-      t("skills.softSkills"),
-      softSkillItems
-        .map(([key, icon]) => this.badge(t(`skills.items.${key}`), icon))
-        .join(""),
-      {
-        delay: 700,
-        headerExtra: `<span class="inline-flex items-center rounded-full bg-slate-100/80 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-600">${t("skills.softSkillsTag")}</span>`,
-      },
-    );
+        const headerExtra = group.soft
+          ? `<span class="inline-flex items-center rounded-full bg-slate-100/80 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-600">${t("skills.softSkillsTag")}</span>`
+          : "";
+
+        return this.card(t(`skills.${group.key}`), badges, {
+          delay: group.delay,
+          headerExtra,
+        });
+      })
+      .join("");
 
     this.innerHTML = `
         <section id="skills" class="py-24 px-4 bg-white fade-in">
@@ -121,9 +115,8 @@ class SkillsSection extends HTMLElement {
                 <h2 class="text-4xl font-bold text-center gradient-text">${t("skills.title")}</h2>
                 <p class="mt-4 text-center text-base text-slate-600 max-w-2xl mx-auto">${t("skills.subtitle")}</p>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-12">
-                    ${groups}
-                    ${softSkills}
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 items-stretch">
+                    ${cards}
                 </div>
             </div>
         </section>`;
