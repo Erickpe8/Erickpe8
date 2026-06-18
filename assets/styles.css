@@ -72,37 +72,12 @@ section[id] {
 }
 
 .gradient-text-animated {
-  background: linear-gradient(
-    110deg,
-    #43c5ef 0%,
-    #0ea5e9 20%,
-    #0969da 45%,
-    #38bdf8 70%,
-    #1d4ed8 100%
-  );
-  background-size: 220% 100%;
-  background-position: 0% 50%;
+  background: linear-gradient(100deg, #0969da 0%, #2a9ae6 55%, #43c5ef 100%);
+  background-size: 100% 100%;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-  animation: move-blue-gradient 3s linear infinite;
-}
-
-@keyframes move-blue-gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 220% 50%;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .gradient-text-animated {
-    animation: none;
-    background-position: 50% 50%;
-  }
 }
 
 .wave-animation {
