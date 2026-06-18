@@ -61,10 +61,15 @@ section[id] {
   .lang-switcher-indicator {
     transition: none;
   }
+
+  .gradient-text-hero {
+    animation: none;
+    background-size: 100% 100%;
+    background-position: 50% 50%;
+  }
 }
 
 .gradient-text {
-  display: inline-block;
   background-image: linear-gradient(120deg, #43c5ef 0%, #0ea5e9 45%, #0969da 100%);
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -76,13 +81,32 @@ section[id] {
 
 .gradient-text-hero {
   display: inline-block;
-  background-image: linear-gradient(120deg, #0558b8 0%, #0969da 35%, #38bdf8 70%, #43c5ef 100%);
+  background-image: linear-gradient(
+    125deg,
+    #43c5ef 0%,
+    #38bdf8 18%,
+    #0ea5e9 38%,
+    #0969da 58%,
+    #1d4ed8 78%,
+    #43c5ef 100%
+  );
+  background-size: 320% 320%;
+  background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
+  animation: gradient-hero-shimmer 9s ease-in-out infinite alternate;
+}
+
+@keyframes gradient-hero-shimmer {
+  0% {
+    background-position: 44% 47%;
+  }
+  100% {
+    background-position: 56% 53%;
+  }
 }
 
 @supports not ((-webkit-background-clip: text) or (background-clip: text)) {
@@ -91,6 +115,7 @@ section[id] {
     background: none;
     color: #0969da;
     -webkit-text-fill-color: #0969da;
+    animation: none;
   }
 }
 
