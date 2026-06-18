@@ -64,20 +64,34 @@ section[id] {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #43c5ef, #0969da);
-  background-clip: text;
+  display: inline-block;
+  background-image: linear-gradient(120deg, #43c5ef 0%, #0ea5e9 45%, #0969da 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   -webkit-background-clip: text;
-  color: transparent;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
-.gradient-text-animated {
-  background: linear-gradient(100deg, #0969da 0%, #2a9ae6 55%, #43c5ef 100%);
+.gradient-text-hero {
+  display: inline-block;
+  background-image: linear-gradient(120deg, #0558b8 0%, #0969da 35%, #38bdf8 70%, #43c5ef 100%);
+  background-repeat: no-repeat;
   background-size: 100% 100%;
-  background-clip: text;
   -webkit-background-clip: text;
-  color: transparent;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+  .gradient-text,
+  .gradient-text-hero {
+    background: none;
+    color: #0969da;
+    -webkit-text-fill-color: #0969da;
+  }
 }
 
 .wave-animation {

@@ -1,6 +1,78 @@
 import { t } from "./i18n.js";
 import { bindLocale, unbindLocale } from "./section-i18n.js";
 
+const skillGroups = [
+  {
+    key: "languages",
+    delay: 100,
+    items: [
+      ["HTML", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"],
+      ["CSS", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"],
+      ["JavaScript", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"],
+      ["PHP", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"],
+    ],
+  },
+  {
+    key: "frameworks",
+    delay: 200,
+    items: [
+      ["Laravel", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg"],
+      ["TailwindCSS", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"],
+    ],
+  },
+  {
+    key: "uiLibraries",
+    delay: 300,
+    items: [
+      ["Flowbite", "https://flowbite.com/docs/images/logo.svg"],
+    ],
+  },
+  {
+    key: "databases",
+    delay: 400,
+    items: [
+      ["MySQL", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"],
+      ["PostgreSQL", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"],
+    ],
+  },
+  {
+    key: "productivity",
+    delay: 500,
+    items: [
+      ["Google Workspace", "https://truecontext.com/wp-content/uploads/2023/10/logo_google-workspace_big.png"],
+      ["Microsoft Office", "https://e7.pngegg.com/pngimages/434/143/png-clipart-microsoft-office-365-patch-tuesday-service-pack-microsoft-angle-rectangle-thumbnail.png"],
+      ["Trello", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg"],
+    ],
+  },
+  {
+    key: "devTools",
+    delay: 600,
+    items: [
+      ["Cursor", "https://img.icons8.com/?size=100&id=4gUIAQbx9oh5&format=png&color=000000"],
+      ["DBeaver", "https://image.pngaaa.com/94/6692094-middle.png"],
+      ["Docker", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"],
+      ["Figma", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"],
+      ["Git", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"],
+      ["GitHub", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"],
+      ["GitHub Actions", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg"],
+      ["Herd", "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/brand-laravel.svg"],
+      ["Laragon", "https://media.imgcdn.org/repo/2025/07/laragon/6889e2c12df61-laragon-Icon.webp"],
+      ["VS Code", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"],
+      ["XAMPP", "https://www.apachefriends.org/images/xampp-logo-ac950edf.svg"],
+    ],
+  },
+];
+
+const softSkillItems = [
+  ["adaptability", "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/refresh.svg"],
+  ["communication", "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/message-circle.svg"],
+  ["timeManagement", "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/clock.svg"],
+  ["aiIntegration", "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/cpu.svg"],
+  ["leadership", "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/users.svg"],
+  ["teamwork", "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/users-group.svg"],
+  ["efficientAi", "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/robot.svg"],
+];
+
 class SkillsSection extends HTMLElement {
   connectedCallback() {
     bindLocale(this, this.render);
@@ -10,8 +82,38 @@ class SkillsSection extends HTMLElement {
     unbindLocale(this);
   }
 
+  card(title, badges, { delay = 0, headerExtra = "" } = {}) {
+    return `
+      <div class="w-full h-full rounded-2xl border border-slate-200/70 bg-white/40 p-6 sm:p-7 shadow-sm fade-in delay-${delay} lg:max-w-[520px] lg:mx-auto">
+        <div class="flex flex-wrap items-center gap-3 mb-4">
+          <h3 class="text-2xl font-bold">${title}</h3>
+          ${headerExtra}
+        </div>
+        <div class="flex flex-wrap gap-3 sm:gap-4">${badges}</div>
+      </div>`;
+  }
+
   render() {
-    const s = (key) => t(`skills.items.${key}`);
+    const groups = skillGroups
+      .map((group) =>
+        this.card(
+          t(`skills.${group.key}`),
+          group.items.map(([name, icon]) => this.badge(name, icon)).join(""),
+          { delay: group.delay },
+        ),
+      )
+      .join("");
+
+    const softSkills = this.card(
+      t("skills.softSkills"),
+      softSkillItems
+        .map(([key, icon]) => this.badge(t(`skills.items.${key}`), icon))
+        .join(""),
+      {
+        delay: 700,
+        headerExtra: `<span class="inline-flex items-center rounded-full bg-slate-100/80 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-600">${t("skills.softSkillsTag")}</span>`,
+      },
+    );
 
     this.innerHTML = `
         <section id="skills" class="py-24 px-4 bg-white fade-in">
@@ -20,73 +122,8 @@ class SkillsSection extends HTMLElement {
                 <p class="mt-4 text-center text-base text-slate-600 max-w-2xl mx-auto">${t("skills.subtitle")}</p>
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-12">
-                    <div class="w-full h-full rounded-2xl border border-slate-200/70 bg-white/40 p-6 sm:p-7 shadow-sm fade-in delay-100 lg:max-w-[520px] lg:mx-auto">
-                        <h3 class="text-2xl font-bold mb-4">${t("skills.languages")}</h3>
-                        <div class="flex flex-wrap gap-3 sm:gap-4">
-                            ${this.badge("CSS", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg")}
-                            ${this.badge("HTML", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg")}
-                            ${this.badge("JavaScript", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg")}
-                            ${this.badge("PHP", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg")}
-                        </div>
-                    </div>
-
-                    <div class="w-full h-full rounded-2xl border border-slate-200/70 bg-white/40 p-6 sm:p-7 shadow-sm fade-in delay-200 lg:max-w-[520px] lg:mx-auto">
-                        <h3 class="text-2xl font-bold mb-4">${t("skills.frameworks")}</h3>
-                        <div class="flex flex-wrap gap-3 sm:gap-4">
-                            ${this.badge("Flowbite", "https://flowbite.com/docs/images/logo.svg")}
-                            ${this.badge("Laravel", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg")}
-                            ${this.badge("TailwindCSS", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg")}
-                        </div>
-                    </div>
-
-                    <div class="w-full h-full rounded-2xl border border-slate-200/70 bg-white/40 p-6 sm:p-7 shadow-sm fade-in delay-300 lg:max-w-[520px] lg:mx-auto">
-                        <h3 class="text-2xl font-bold mb-4">${t("skills.databases")}</h3>
-                        <div class="flex flex-wrap gap-3 sm:gap-4">
-                            ${this.badge("DBeaver", "https://image.pngaaa.com/94/6692094-middle.png")}
-                            ${this.badge("MySQL", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg")}
-                            ${this.badge("PostgreSQL", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg")}
-                        </div>
-                    </div>
-
-                    <div class="w-full h-full rounded-2xl border border-slate-200/70 bg-white/40 p-6 sm:p-7 shadow-sm fade-in delay-500 lg:max-w-[520px] lg:mx-auto">
-                        <h3 class="text-2xl font-bold mb-4">${t("skills.productivity")}</h3>
-                        <div class="flex flex-wrap gap-3 sm:gap-4">
-                            ${this.badge("Google Workspace", "https://truecontext.com/wp-content/uploads/2023/10/logo_google-workspace_big.png")}
-                            ${this.badge("Microsoft Office", "https://e7.pngegg.com/pngimages/434/143/png-clipart-microsoft-office-365-patch-tuesday-service-pack-microsoft-angle-rectangle-thumbnail.png")}
-                        </div>
-                    </div>
-
-                    <div class="w-full h-full rounded-2xl border border-slate-200/70 bg-white/40 p-6 sm:p-7 shadow-sm fade-in delay-700 lg:max-w-[520px] lg:mx-auto">
-                        <h3 class="text-2xl font-bold mb-4">${t("skills.devTools")}</h3>
-                        <div class="flex flex-wrap gap-3 sm:gap-4">
-                            ${this.badge("Cursor", "https://img.icons8.com/?size=100&id=4gUIAQbx9oh5&format=png&color=000000")}
-                            ${this.badge("Docker", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg")}
-                            ${this.badge("Figma", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg")}
-                            ${this.badge("Git", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg")}
-                            ${this.badge("GitHub", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg")}
-                            ${this.badge("Herd", "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/brand-laravel.svg")}
-                            ${this.badge("Laragon", "https://media.imgcdn.org/repo/2025/07/laragon/6889e2c12df61-laragon-Icon.webp")}
-                            ${this.badge("Trello", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg")}
-                            ${this.badge("VS Code", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg")}
-                            ${this.badge("XAMPP", "https://www.apachefriends.org/images/xampp-logo-ac950edf.svg")}
-                        </div>
-                    </div>
-
-                    <div class="w-full h-full rounded-2xl border border-slate-200/70 bg-white/40 p-6 sm:p-7 shadow-sm fade-in delay-1000 lg:max-w-[520px] lg:mx-auto">
-                        <div class="flex flex-wrap items-center gap-3 mb-4">
-                            <h3 class="text-2xl font-bold">${t("skills.softSkills")}</h3>
-                            <span class="inline-flex items-center rounded-full bg-slate-100/80 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-600">${t("skills.softSkillsTag")}</span>
-                        </div>
-                        <div class="flex flex-wrap gap-3 sm:gap-4">
-                            ${this.badge(s("adaptability"), "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/refresh.svg")}
-                            ${this.badge(s("communication"), "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/message-circle.svg")}
-                            ${this.badge(s("timeManagement"), "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/clock.svg")}
-                            ${this.badge(s("aiIntegration"), "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/cpu.svg")}
-                            ${this.badge(s("leadership"), "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/users.svg")}
-                            ${this.badge(s("teamwork"), "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/users-group.svg")}
-                            ${this.badge(s("efficientAi"), "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/robot.svg")}
-                        </div>
-                    </div>
+                    ${groups}
+                    ${softSkills}
                 </div>
             </div>
         </section>`;

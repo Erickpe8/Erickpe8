@@ -40,7 +40,7 @@ class HeroSection extends HTMLElement {
                 <h1 class="text-4xl md:text-6xl font-bold text-center leading-tight mb-6">
                     <span class="wave-animation inline-block text-5xl md:text-6xl">👋</span>
                     <span class="block md:inline">${t("hero.greeting")}</span>
-                    <span class="gradient-text gradient-text-animated block md:inline md:ml-2">Erick Pérez</span>
+                    <span class="gradient-text-hero block md:inline md:ml-2">Erick Pérez</span>
                 </h1>
 
                 <p class="text-xl text-gray-700 mb-4">${t("hero.role")}</p>
