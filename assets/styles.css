@@ -67,6 +67,15 @@ section[id] {
     background-size: 100% 100%;
     background-position: 50% 50%;
   }
+
+  .btn-cv,
+  .btn-projects,
+  .btn-github,
+  .btn-linkedin {
+    animation: none;
+    background-size: 100% 100%;
+    background-position: 50% 50%;
+  }
 }
 
 .gradient-text {
@@ -82,30 +91,33 @@ section[id] {
 .gradient-text-hero {
   display: inline-block;
   background-image: linear-gradient(
-    125deg,
-    #43c5ef 0%,
-    #38bdf8 18%,
-    #0ea5e9 38%,
-    #0969da 58%,
-    #1d4ed8 78%,
-    #43c5ef 100%
+    90deg,
+    #1d4ed8 0%,
+    #0969da 12%,
+    #0ea5e9 25%,
+    #43c5ef 38%,
+    #38bdf8 50%,
+    #43c5ef 62%,
+    #0ea5e9 75%,
+    #0969da 88%,
+    #1d4ed8 100%
   );
-  background-size: 320% 320%;
-  background-position: 50% 50%;
+  background-size: 220% 100%;
+  background-position: 0% 50%;
   background-repeat: no-repeat;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  animation: gradient-hero-shimmer 9s ease-in-out infinite alternate;
+  animation: gradient-hero-flow 3s ease-in-out infinite alternate;
 }
 
-@keyframes gradient-hero-shimmer {
+@keyframes gradient-hero-flow {
   0% {
-    background-position: 44% 47%;
+    background-position: 0% 50%;
   }
   100% {
-    background-position: 56% 53%;
+    background-position: 100% 50%;
   }
 }
 
@@ -177,28 +189,75 @@ html.play-entrance-animations .fade-in.visible {
   box-shadow: 0 8px 20px rgba(239, 68, 68, 0.25);
 }
 
-.btn-github {
-  background: #111827;
+.btn-cv,
+.btn-projects,
+.btn-github,
+.btn-linkedin {
   color: #ffffff;
-  box-shadow: 0 8px 20px rgba(17, 24, 39, 0.2);
+  background-size: 220% 100%;
+  background-position: 0% 50%;
+  background-repeat: no-repeat;
+  animation: gradient-hero-flow 3s ease-in-out infinite alternate;
+}
+
+.btn-projects {
+  background-image: linear-gradient(
+    90deg,
+    #0284c7 0%,
+    #0ea5e9 20%,
+    #38bdf8 40%,
+    #43c5ef 55%,
+    #38bdf8 70%,
+    #0ea5e9 85%,
+    #0284c7 100%
+  );
+  box-shadow: 0 8px 20px rgba(14, 165, 233, 0.35);
+}
+
+.btn-cv {
+  background-image: linear-gradient(
+    90deg,
+    #1e3a8a 0%,
+    #1d4ed8 18%,
+    #0969da 38%,
+    #0ea5e9 55%,
+    #0969da 72%,
+    #1d4ed8 88%,
+    #1e3a8a 100%
+  );
+  box-shadow: 0 8px 20px rgba(29, 78, 216, 0.35);
+}
+
+.btn-github {
+  background-image: linear-gradient(
+    90deg,
+    #0d1117 0%,
+    #1f2937 22%,
+    #374151 45%,
+    #4b5563 55%,
+    #374151 72%,
+    #1f2937 88%,
+    #0d1117 100%
+  );
+  box-shadow: 0 8px 20px rgba(17, 24, 39, 0.35);
 }
 
 .btn-linkedin {
-  background: #0a66c2;
-  color: #ffffff;
-  box-shadow: 0 8px 20px rgba(10, 102, 194, 0.25);
+  background-image: linear-gradient(
+    90deg,
+    #004182 0%,
+    #0a66c2 25%,
+    #378fe9 50%,
+    #0a66c2 75%,
+    #004182 100%
+  );
+  box-shadow: 0 8px 20px rgba(10, 102, 194, 0.35);
 }
 
 .btn-instagram {
   background: linear-gradient(135deg, #ec4899, #8b5cf6);
   color: #ffffff;
   box-shadow: 0 8px 20px rgba(236, 72, 153, 0.25);
-}
-
-.btn-cv {
-  background: linear-gradient(135deg, #0284c7, #1d4ed8);
-  color: #ffffff;
-  box-shadow: 0 8px 20px rgba(29, 78, 216, 0.3);
 }
 
 .btn-contact {

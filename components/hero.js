@@ -47,7 +47,7 @@ class HeroSection extends HTMLElement {
                 <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-8">${t("hero.bio")}</p>
 
                 <div class="flex flex-wrap sm:flex-nowrap justify-center items-center gap-2 sm:gap-3 max-w-3xl mx-auto">
-                    <a href="#projects" class="btn btn-cv">${t("hero.viewProjects")}</a>
+                    <a href="#projects" class="btn btn-projects">${t("hero.viewProjects")}</a>
                     <a href="${cvPdf}" target="_blank" rel="noopener noreferrer" class="btn btn-cv">${t("hero.downloadCv")}</a>
                     <a href="https://github.com/Erickpe8" target="_blank" rel="noopener noreferrer" class="btn btn-github">GitHub</a>
                     <a href="https://www.linkedin.com/in/erick-sebastian-perez-carvajal-11a2772b6/" target="_blank" rel="noopener noreferrer" class="btn btn-linkedin">LinkedIn</a>

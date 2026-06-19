@@ -110,7 +110,7 @@ class SkillsSection extends HTMLElement {
       .join("");
 
     this.innerHTML = `
-        <section id="skills" class="py-24 px-4 bg-white fade-in">
+        <section id="skills" class="pt-8 pb-16 md:pt-10 md:pb-20 px-4 bg-white fade-in">
             <div class="max-w-6xl mx-auto">
                 <h2 class="text-4xl font-bold text-center gradient-text">${t("skills.title")}</h2>
                 <p class="mt-4 text-center text-base text-slate-600 max-w-2xl mx-auto">${t("skills.subtitle")}</p>
