@@ -79,6 +79,8 @@ jobs:
         run: |
           sudo mv /metrics_renders/github-metrics.svg .
           [ -f /metrics_renders/github-stargazers.svg ] && sudo mv /metrics_renders/github-stargazers.svg . || true
+          sudo chown "$USER:$USER" github-metrics.svg
+          [ -f github-stargazers.svg ] && sudo chown "$USER:$USER" github-stargazers.svg
 
       - name: Verify generated files
         run: |
