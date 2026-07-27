@@ -72,7 +72,7 @@
 <p align="center">
   <img
     alt="GitHub Streak"
-    src="https://streak-stats.demolab.com?user=Erickpe8&theme=transparent&hide_border=true&dates=7F7F7F"
+    src="./github-streak.svg"
   />
 </p>
 
