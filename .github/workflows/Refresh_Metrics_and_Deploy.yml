@@ -36,6 +36,8 @@ jobs:
       # 1) Traer el repo
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
 
       # 2) Generar el SVG
       - name: Generate GitHub Metrics
@@ -52,6 +54,7 @@ jobs:
           delay: 20
 
           filename: github-metrics.svg
+          output_action: none
 
       - name: Generate Stargazers chart
         uses: lowlighter/metrics@latest
@@ -63,13 +66,24 @@ jobs:
           base: ""
           plugin_stargazers: yes
           plugin_stargazers_charts: yes
-          plugin_stargazers_charts_type: graph
+          plugin_stargazers_charts_type: classic
           config_timezone: America/Bogota
 
           retries: 3
           delay: 20
 
           filename: github-stargazers.svg
+          output_action: none
+
+      - name: Collect generated SVGs
+        run: |
+          sudo mv /metrics_renders/github-metrics.svg .
+          [ -f /metrics_renders/github-stargazers.svg ] && sudo mv /metrics_renders/github-stargazers.svg . || true
+
+      - name: Verify generated files
+        run: |
+          ls -la github-*.svg || true
+          [ -f github-metrics.svg ] || { echo "github-metrics.svg missing"; exit 1; }
 
       # 2.1) Parchear SVGs: transparente, sin sombras, y contribs en azul
       - name: Patch metrics SVGs
@@ -133,7 +147,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add github-metrics.svg github-stargazers.svg
+
+          git add github-metrics.svg
+          [ -f github-stargazers.svg ] && git add github-stargazers.svg || true
+
           git diff --staged --quiet || git commit -m "chore: update GitHub metrics and stargazers charts"
           git push
 
