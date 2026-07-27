@@ -86,14 +86,3 @@
 <p align="center">
   <img src="./github-metrics.svg" width="90%" alt="GitHub Metrics"/>
 </p>
-
-<br>
-
----
-
-<br>
-
-<!-- GitHub Stargazers -->
-<p align="center">
-  <img src="./github-stargazers.svg" width="90%" alt="GitHub Stargazers evolution"/>
-</p>
