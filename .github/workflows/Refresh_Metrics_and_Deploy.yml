@@ -53,59 +53,89 @@ jobs:
 
           filename: github-metrics.svg
 
-      # 2.1) Parchear el SVG: transparente, sin sombras, y contribs en azul
-      - name: Patch metrics SVG (blue contrib squares)
+      - name: Generate Stargazers chart
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN_ERICK }}
+
+          user: Erickpe8
+          template: classic
+          base: ""
+          plugin_stargazers: yes
+          plugin_stargazers_charts: yes
+          plugin_stargazers_charts_type: graph
+          config_timezone: America/Bogota
+
+          retries: 3
+          delay: 20
+
+          filename: github-stargazers.svg
+
+      # 2.1) Parchear SVGs: transparente, sin sombras, y contribs en azul
+      - name: Patch metrics SVGs
         run: |
           python - << 'PY'
           from pathlib import Path
           import re
 
-          p = Path("github-metrics.svg")
-          s = p.read_text(encoding="utf-8")
+          def patch_metrics(path):
+              p = Path(path)
+              if not p.exists():
+                  print("Skip (not found):", p)
+                  return
+              s = p.read_text(encoding="utf-8")
 
-          m = re.search(r'<svg[^>]*\bwidth="(\d+)"[^>]*\bheight="(\d+)"', s)
-          if "viewBox=" not in s and m:
-              w, h = m.group(1), m.group(2)
-              s = re.sub(r'<svg\b', f'<svg viewBox="0 0 {w} {h}" preserveAspectRatio="xMidYMid meet"', s, count=1)
-          elif "preserveAspectRatio=" not in s:
-              s = re.sub(r'<svg\b', '<svg preserveAspectRatio="xMidYMid meet"', s, count=1)
+              m = re.search(r'<svg[^>]*\bwidth="(\d+)"[^>]*\bheight="(\d+)"', s)
+              if "viewBox=" not in s and m:
+                  w, h = m.group(1), m.group(2)
+                  s = re.sub(r'<svg\b', f'<svg viewBox="0 0 {w} {h}" preserveAspectRatio="xMidYMid meet"', s, count=1)
+              elif "preserveAspectRatio=" not in s:
+                  s = re.sub(r'<svg\b', '<svg preserveAspectRatio="xMidYMid meet"', s, count=1)
 
-          # --- CSS base (transparente + sin sombras) ---
-          css = """
-          svg{background:transparent!important}
-          *{box-shadow:none!important;filter:none!important}
-          rect[fill="#fff"],rect[fill="#ffffff"],rect[fill="white"]{fill:transparent!important}
-          """
+              css = """
+              svg{background:transparent!important}
+              *{box-shadow:none!important;filter:none!important}
+              rect[fill="#fff"],rect[fill="#ffffff"],rect[fill="white"]{fill:transparent!important}
+              """
 
-          if "<style>" in s:
-              s = s.replace("<style>", "<style>\n"+css+"\n", 1)
-          else:
-              s = re.sub(r'(<svg[^>]*>)', r'\1\n<style>'+css+'</style>\n', s, count=1)
+              if "<style>" in s:
+                  s = s.replace("<style>", "<style>\n"+css+"\n", 1)
+              else:
+                  s = re.sub(r'(<svg[^>]*>)', r'\1\n<style>'+css+'</style>\n', s, count=1)
 
-          # --- Cambiar paleta verde -> azul (contrib squares) ---
-          green_to_blue = {
-              "#ebedf0": "#ebedf0",  # sin contrib (lo dejamos igual)
-              "#9be9a8": "#cfe8ff",  # bajo
-              "#40c463": "#7bbcff",  # medio
-              "#30a14e": "#2f81f7",  # alto
-              "#216e39": "#1f6feb",  # muy alto
-          }
+              if path == "github-metrics.svg":
+                  green_to_blue = {
+                      "#ebedf0": "#ebedf0",
+                      "#9be9a8": "#cfe8ff",
+                      "#40c463": "#7bbcff",
+                      "#30a14e": "#2f81f7",
+                      "#216e39": "#1f6feb",
+                  }
+                  for g, b in green_to_blue.items():
+                      s = re.sub(re.escape(g), b, s, flags=re.IGNORECASE)
+                  extra = {
+                      "#c6e48b": "#cfe8ff",
+                      "#7bc96f": "#7bbcff",
+                      "#239a3b": "#2f81f7",
+                      "#196127": "#1f6feb",
+                  }
+                  for g, b in extra.items():
+                      s = re.sub(re.escape(g), b, s, flags=re.IGNORECASE)
 
-          for g, b in green_to_blue.items():
-              s = re.sub(re.escape(g), b, s, flags=re.IGNORECASE)
+              p.write_text(s, encoding="utf-8")
+              print("Patched:", p)
 
-          extra = {
-              "#c6e48b": "#cfe8ff",
-              "#7bc96f": "#7bbcff",
-              "#239a3b": "#2f81f7",
-              "#196127": "#1f6feb",
-          }
-          for g, b in extra.items():
-              s = re.sub(re.escape(g), b, s, flags=re.IGNORECASE)
-
-          p.write_text(s, encoding="utf-8")
-          print("Patched:", p)
+          patch_metrics("github-metrics.svg")
+          patch_metrics("github-stargazers.svg")
           PY
+
+      - name: Commit metrics SVGs to repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add github-metrics.svg github-stargazers.svg
+          git diff --staged --quiet || git commit -m "chore: update GitHub metrics and stargazers charts"
+          git push
 
       # 3) Armar carpeta del sitio a publicar
       - name: Prepare site
@@ -114,6 +144,7 @@ jobs:
 
           cp index.html site/
           cp github-metrics.svg site/
+          cp github-stargazers.svg site/ 2>/dev/null || true
           cp main.js site/
           cp assets/styles.css site/
 
