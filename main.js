@@ -1,5 +1,5 @@
 const elements = document.querySelectorAll(".fade-in");
-const navSelector = "navbar-component nav";
+const navSelector = "navbar-component .nav-shell";
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 const getNavHeight = () => {
@@ -34,6 +34,14 @@ const observer = new IntersectionObserver(
 );
 
 elements.forEach(el => observer.observe(el));
+
+document.addEventListener("mousemove", (e) => {
+    const card = e.target.closest(".glass-hover");
+    if (!card) return;
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty("--glass-glow-x", `${e.clientX - rect.left}px`);
+    card.style.setProperty("--glass-glow-y", `${e.clientY - rect.top}px`);
+});
 
 (function initAnchorNavigation() {
     const navLinks = Array.from(document.querySelectorAll(".nav-link"));

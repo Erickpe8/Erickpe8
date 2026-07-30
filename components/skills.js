@@ -82,7 +82,7 @@ class SkillsSection extends HTMLElement {
 
   card(title, badges, { delay = 0, headerExtra = "" } = {}) {
     return `
-      <div class="w-full h-full rounded-2xl border border-slate-200/70 bg-white/40 p-6 sm:p-7 shadow-sm fade-in delay-${delay}">
+      <div class="w-full h-full glass-card glass-hover p-6 sm:p-7 fade-in delay-${delay}">
         <div class="flex flex-wrap items-center gap-3 mb-4">
           <h3 class="text-2xl font-bold">${title}</h3>
           ${headerExtra}
@@ -110,10 +110,10 @@ class SkillsSection extends HTMLElement {
       .join("");
 
     this.innerHTML = `
-        <section id="skills" class="pt-8 pb-16 md:pt-10 md:pb-20 px-4 bg-white fade-in">
+        <section id="skills" class="section-shell px-4 fade-in">
             <div class="max-w-6xl mx-auto">
-                <h2 class="text-4xl font-bold text-center gradient-text">${t("skills.title")}</h2>
-                <p class="mt-4 text-center text-base text-slate-600 max-w-2xl mx-auto">${t("skills.subtitle")}</p>
+                <h2 class="section-title text-center gradient-text">${t("skills.title")}</h2>
+                <p class="mt-4 text-center section-subtitle max-w-2xl mx-auto">${t("skills.subtitle")}</p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 items-stretch">
                     ${cards}
@@ -124,7 +124,7 @@ class SkillsSection extends HTMLElement {
 
   badge(name, icon) {
     return `
-        <span class="skill-badge inline-flex items-center gap-2 min-h-[44px] px-4 py-2 rounded-full bg-slate-100/70 border border-slate-200/60 text-slate-800 text-sm font-medium transition hover:bg-slate-100 hover:border-slate-300/70 shadow-sm">
+        <span class="skill-badge glass-chip min-h-[44px] px-4 py-2 text-slate-800 text-sm font-medium">
             <img src="${icon}" class="w-5 h-5 shrink-0 object-contain" alt="${name}" width="20" height="20" loading="lazy" decoding="async" />
             ${name}
         </span>`;

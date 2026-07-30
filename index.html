@@ -61,6 +61,7 @@
 
     <!-- CSS opcional -->
     <link rel="stylesheet" href="./assets/styles.css" />
+    <link rel="stylesheet" href="./assets/glass.css" />
     <link rel="icon" type="image/png" href="./assets/images/favicon.png" />
 
     <!-- i18n (debe cargar antes que los componentes) -->
@@ -98,8 +99,15 @@
     </script>
 
 </head>
-<body class="bg-gray-50 font-[Inter] is-loading">
+<body class="site-body font-[Inter] is-loading">
 
+    <div class="ambient-bg" aria-hidden="true">
+        <div class="ambient-blob ambient-blob--1"></div>
+        <div class="ambient-blob ambient-blob--2"></div>
+        <div class="ambient-blob ambient-blob--3"></div>
+    </div>
+
+    <div class="site-content">
     <navbar-component></navbar-component>
 
     <hero-section></hero-section>
@@ -118,5 +126,6 @@
 
     <footer-component></footer-component>
 
+    </div>
 </body>
 </html>

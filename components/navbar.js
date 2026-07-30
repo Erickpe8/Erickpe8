@@ -22,42 +22,42 @@ class NavbarComponent extends HTMLElement {
       "https://erickpe8.github.io/Erickpe8/assets/images/favicon.png";
 
     this.innerHTML = `
-            <nav class="navbar fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
-                <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-                    <div class="flex items-center gap-3">
-                        <a href="#" class="inline-flex items-center shrink-0 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2" aria-label="${t("nav.home")}">
-                            <img src="${favicon}" alt="Erick Pérez" width="40" height="40" class="h-10 w-10 rounded-full object-cover ring-2 ring-white shadow-sm" loading="eager" decoding="async" />
+            <header class="nav-shell fixed top-0 left-0 right-0 z-50">
+                <nav class="nav-glass navbar flex items-center justify-between gap-3" aria-label="Principal">
+                    <div class="flex items-center gap-3 min-w-0">
+                        <a href="#" class="inline-flex items-center shrink-0 rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2" aria-label="${t("nav.home")}">
+                            <img src="${favicon}" alt="Erick Pérez" width="40" height="40" class="h-10 w-10 rounded-full object-cover ring-2 ring-white/80 shadow-sm" loading="eager" decoding="async" />
                         </a>
                         ${langPickerMarkup()}
                     </div>
 
                     <button id="menu-toggle" 
-                            class="md:hidden flex flex-col justify-between w-7 h-6 focus:outline-none"
+                            class="md:hidden flex flex-col justify-between w-7 h-6 focus:outline-none shrink-0"
                             aria-controls="mobile-nav"
                             aria-expanded="false"
                             aria-label="${t("nav.openMenu")}">
-                        <span class="block h-[2px] bg-gray-800 rounded-full"></span>
-                        <span class="block h-[2px] bg-gray-800 rounded-full"></span>
-                        <span class="block h-[2px] bg-gray-800 rounded-full"></span>
+                        <span class="block h-[2px] bg-slate-800 rounded-full"></span>
+                        <span class="block h-[2px] bg-slate-800 rounded-full"></span>
+                        <span class="block h-[2px] bg-slate-800 rounded-full"></span>
                     </button>
 
-                    <div id="desktop-nav" class="hidden md:flex gap-6 text-gray-700 font-medium items-center">
-                        <a href="#about" class="nav-link hover:text-blue-600">${t("nav.about")}</a>
-                        <a href="#skills" class="nav-link hover:text-blue-600">${t("nav.skills")}</a>
-                        <a href="#projects" class="nav-link hover:text-blue-600">${t("nav.projects")}</a>
-                        <a href="#contact" class="nav-link hover:text-blue-600">${t("nav.contact")}</a>
-                        <a href="${cvPdf}" target="_blank" rel="noopener noreferrer" class="rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800">${t("nav.cv")}</a>
+                    <div id="desktop-nav" class="hidden md:flex gap-5 lg:gap-6 text-sm font-medium items-center">
+                        <a href="#about" class="nav-link">${t("nav.about")}</a>
+                        <a href="#skills" class="nav-link">${t("nav.skills")}</a>
+                        <a href="#projects" class="nav-link">${t("nav.projects")}</a>
+                        <a href="#contact" class="nav-link">${t("nav.contact")}</a>
+                        <a href="${cvPdf}" target="_blank" rel="noopener noreferrer" class="btn-nav-cv">${t("nav.cv")}</a>
                     </div>
-                </div>
+                </nav>
 
-                <div id="mobile-nav" class="md:hidden hidden border-t bg-white shadow-md">
-                    <a href="#about" class="nav-link block py-3 px-4 border-b hover:bg-gray-50">${t("nav.about")}</a>
-                    <a href="#skills" class="nav-link block py-3 px-4 border-b hover:bg-gray-50">${t("nav.skills")}</a>
-                    <a href="#projects" class="nav-link block py-3 px-4 border-b hover:bg-gray-50">${t("nav.projects")}</a>
-                    <a href="#contact" class="nav-link block py-3 px-4 border-b hover:bg-gray-50">${t("nav.contact")}</a>
-                    <a href="${cvPdf}" target="_blank" rel="noopener noreferrer" class="block py-3 px-4 font-semibold text-blue-600 hover:bg-gray-50">${t("nav.downloadCv")}</a>
+                <div id="mobile-nav" class="nav-mobile-panel md:hidden hidden max-w-6xl mx-auto overflow-hidden">
+                    <a href="#about" class="nav-link block py-3 px-4 border-b border-white/30 hover:bg-white/40">${t("nav.about")}</a>
+                    <a href="#skills" class="nav-link block py-3 px-4 border-b border-white/30 hover:bg-white/40">${t("nav.skills")}</a>
+                    <a href="#projects" class="nav-link block py-3 px-4 border-b border-white/30 hover:bg-white/40">${t("nav.projects")}</a>
+                    <a href="#contact" class="nav-link block py-3 px-4 border-b border-white/30 hover:bg-white/40">${t("nav.contact")}</a>
+                    <a href="${cvPdf}" target="_blank" rel="noopener noreferrer" class="block py-3 px-4 font-semibold text-blue-700 hover:bg-white/40">${t("nav.downloadCv")}</a>
                 </div>
-            </nav>`;
+            </header>`;
 
     this._langPickerCleanup?.();
     this._langPickerCleanup = setupLangPicker(this);

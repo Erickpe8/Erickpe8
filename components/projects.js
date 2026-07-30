@@ -106,11 +106,11 @@ class ProjectsSection extends HTMLElement {
     const durationSeconds = Math.max(22, items.length * 7);
 
     this.innerHTML = `
-      <section id="projects" class="py-4 px-4 fade-in">
+      <section id="projects" class="section-shell px-4 fade-in">
         <div class="max-w-6xl mx-auto space-y-10">
           <div class="space-y-3 text-center">
-            <h2 class="text-4xl font-bold gradient-text">${t("projects.title")}</h2>
-            <p class="text-sm text-slate-600 max-w-2xl mx-auto">${t("projects.subtitle")}</p>
+            <h2 class="section-title gradient-text">${t("projects.title")}</h2>
+            <p class="text-sm section-subtitle max-w-2xl mx-auto">${t("projects.subtitle")}</p>
           </div>
 
           <div class="space-y-6 lg:hidden">${list}</div>
@@ -124,7 +124,7 @@ class ProjectsSection extends HTMLElement {
 
           <div class="text-center">
             <a href="https://github.com/Erickpe8?tab=repositories" target="_blank" rel="noopener noreferrer"
-              class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-900 px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-900 hover:text-white">
+              class="btn btn-dark inline-flex items-center justify-center gap-2">
               ${t("projects.viewAll")}
             </a>
           </div>
@@ -189,8 +189,8 @@ class ProjectsSection extends HTMLElement {
       : "flex-none w-[280px] sm:w-[300px] md:w-[320px] lg:w-[340px] xl:w-[360px]";
 
     return `
-      <article class="card-hover bg-white rounded-2xl shadow-lg flex flex-col h-full ${sizeClasses}">
-        <div class="h-32 sm:h-36 relative overflow-hidden rounded-t-2xl bg-slate-800 shrink-0">
+      <article class="glass-card glass-hover project-card flex flex-col h-full ${sizeClasses}">
+        <div class="h-32 sm:h-36 relative overflow-hidden project-media bg-slate-800 shrink-0">
           <img src="${project.image}" alt="${t("projects.previewAlt")} ${project.title}"
             class="absolute inset-0 w-full h-full object-cover object-top" loading="lazy" decoding="async"
             data-project-image data-primary-src="${project.image}" data-fallback-src="${project.fallbackImage}" />
@@ -213,7 +213,7 @@ class ProjectsSection extends HTMLElement {
 
   techBadge(name, iconUrl) {
     return `
-      <span class="inline-flex items-center gap-1.5 h-8 px-3 rounded-full bg-slate-100 text-slate-800 text-xs font-medium whitespace-nowrap">
+      <span class="glass-chip h-8 px-3 text-slate-800 text-xs font-medium whitespace-nowrap">
         <img src="${iconUrl}" alt="${name}" class="w-4 h-4 object-contain shrink-0" width="16" height="16" loading="lazy" decoding="async" />
         <span class="leading-none">${name}</span>
       </span>`;

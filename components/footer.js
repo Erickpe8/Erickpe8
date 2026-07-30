@@ -12,7 +12,7 @@ class FooterComponent extends HTMLElement {
 
   render() {
     this.innerHTML = `
-        <footer class="py-6 bg-gray-900 text-gray-300 text-center">
+        <footer class="footer-glass py-8 text-gray-300 text-center">
             <p class="text-sm">${t("footer.text", { year: new Date().getFullYear() })}</p>
         </footer>`;
   }

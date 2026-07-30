@@ -21,14 +21,13 @@ class ContactSection extends HTMLElement {
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     this.innerHTML = `
-        <section id="contact" class="py-8 md:py-10 px-6 bg-gradient-to-br from-blue-50 to-cyan-50 fade-in">
+        <section id="contact" class="section-shell px-6 fade-in">
             <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-5xl font-bold mb-6 gradient-text">${t("contact.title")}</h2>
-                <p class="text-xl text-gray-700 mb-14">${t("contact.subtitle")}</p>
+                <h2 class="section-title mb-6 gradient-text">${t("contact.title")}</h2>
+                <p class="text-xl text-slate-700 mb-14 leading-relaxed">${t("contact.subtitle")}</p>
 
                 <div class="mb-10">
-                    <a href="${cvPdf}" target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
+                    <a href="${cvPdf}" target="_blank" rel="noopener noreferrer" class="btn btn-dark">
                         ${t("contact.downloadCv")}
                     </a>
                 </div>
@@ -48,15 +47,15 @@ class ContactSection extends HTMLElement {
   card(label, value, link, iconType) {
     return `
         <a href="${link}" target="_blank" rel="noopener noreferrer"
-            class="card-hover bg-white rounded-2xl p-8 shadow-lg flex items-center gap-4 hover:shadow-xl transition shadow-blue-100">
+            class="glass-card glass-hover p-8 flex items-center gap-4 text-left no-underline">
             <div class="flex-shrink-0">
-                <div class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-white/40 border border-white/50 flex items-center justify-center shadow-sm">
                     ${this.renderIcon(iconType)}
                 </div>
             </div>
             <div class="text-left">
-                <p class="text-gray-600 text-sm">${label}</p>
-                <p class="text-gray-900 font-semibold break-all">${value}</p>
+                <p class="text-slate-600 text-sm">${label}</p>
+                <p class="text-slate-900 font-semibold break-all">${value}</p>
             </div>
         </a>`;
   }
