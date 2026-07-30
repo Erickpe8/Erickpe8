@@ -14,7 +14,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const localesDir = path.join(root, "assets", "locales");
 const targets = process.argv.slice(2).length
   ? process.argv.slice(2)
-  : ["fr", "de", "it", "pt", "ja"];
+  : ["fr", "de", "it", "pt", "ja", "ko", "zh"];
 
 const REQUEST_DELAY_MS = 350;
 

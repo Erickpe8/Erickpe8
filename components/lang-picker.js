@@ -10,6 +10,8 @@ const LANG_TO_FLAG = {
   it: "it",
   pt: "pt",
   ja: "jp",
+  ko: "kr",
+  zh: "cn",
 };
 
 function flagCountryForLanguage(code) {

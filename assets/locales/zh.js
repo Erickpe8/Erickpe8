@@ -1,0 +1,144 @@
+export default {
+  "meta": {
+    "title": "埃里克·佩雷斯 |全栈开发人员",
+    "description": "Erick Pérez 的作品集，他是一位专注于后端的全栈开发人员。项目、技能、经验和联系方式。"
+  },
+  "nav": {
+    "home": "开始",
+    "about": "关于我",
+    "skills": "技能",
+    "projects": "项目",
+    "contact": "接触",
+    "cv": "简历",
+    "downloadCv": "下载简历",
+    "openMenu": "打开菜单",
+    "closeMenu": "关闭菜单",
+    "langSelector": "选择语言",
+    "searchLang": "搜索语言",
+    "loadingLangs": "正在加载语言...",
+    "translatingSite": "翻译网站...",
+    "langsError": "无法加载语言",
+    "localeNotAvailable": "目前该网站仅提供西班牙语和英语版本。",
+    "translateRateLimit": "翻译受服务限制。稍后尝试或使用西班牙语或英语。"
+  },
+  "hero": {
+    "greeting": "你好，我是",
+    "role": "全栈开发人员正在接受培训",
+    "bio": "我热衷于软件项目管理、需求收集、技术文档以及与敏捷团队合作。",
+    "viewProjects": "查看项目",
+    "downloadCv": "下载简历"
+  },
+  "about": {
+    "title": "关于我",
+    "p1": "我是一名全栈开发人员，专注于后端，热衷于构建符合良好软件工程实践的可靠、可扩展的系统。我目前正在 FESC 学习软件工程第八学期</strong>，我是一名<strong>软件开发技术专家</strong>，并且接受过<strong>软件架构</strong>方面的补充培训，不断加强我在技术解决方案的开发、分析和设计方面的知识。",
+    "p2": "我在<strong>FESC 软件实验室</strong>拥有<strong>{{experience}}</strong>的经验，我在那里担任实习生，目前担任<strong>软件开发助理技术员</strong>。我喜欢参与软件生命周期的所有阶段，从需​​求收集和功能分析到实施、文档和敏捷团队工作，始终专注于为组织创建高效、可维护和有价值的解决方案。"
+  },
+  "skills": {
+    "title": "技能",
+    "subtitle": "我用来创建清晰且可维护的解决方案的技术和工具。",
+    "languages": "语言",
+    "frameworksAndLibraries": "框架和库",
+    "databases": "数据库",
+    "productivity": "生产力和套件",
+    "devTools": "开发工具",
+    "softSkills": "软技能",
+    "softSkillsTag": "软技能",
+    "items": {
+      "adaptability": "适应性",
+      "communication": "沟通",
+      "timeManagement": "时间管理",
+      "aiIntegration": "AI模型整合",
+      "leadership": "领导",
+      "teamwork": "团队合作",
+      "efficientAi": "有效利用人工智能"
+    }
+  },
+  "learning": {
+    "title": "我正在学习什么",
+    "items": {
+      "laravel": {
+        "title": "Laravel 12.x 和 13.x",
+        "desc": "深入研究新版本的框架、干净的架构、服务、队列和优化。"
+      },
+      "javascript": {
+        "title": "JavaScript",
+        "desc": "DOM 操作、异步、模块、设计模式和复杂结构。"
+      },
+      "docker": {
+        "title": "码头工人",
+        "desc": "创建可复制的环境、高效的映像、容器和简单的 DevOps 流程。"
+      },
+      "architecture": {
+        "title": "软件架构",
+        "desc": "模式、SOLID 原则、模块化设计、技术决策和可扩展性。"
+      },
+      "figma": {
+        "title": "菲格玛",
+        "desc": "布局、原型设计和界面设计，以便在开发前更好地规划。"
+      },
+      "git": {
+        "title": "版本控制（Git/GitHub）",
+        "desc": "真实项目的分支、明确的提交、拉取请求和协作流程。"
+      }
+    }
+  },
+  "projects": {
+    "title": "特色项目",
+    "subtitle": "精选具有代表性的实际开发产品，重点关注结果、用户体验和现代技术。",
+    "carousel": "项目轮播",
+    "viewOnGithub": "在 GitHub 上查看项目",
+    "viewAll": "查看所有存储库",
+    "previewAlt": "预览",
+    "items": {
+      "entreSabores": {
+        "title": "口味之间",
+        "desc": "面向文化交流的美食社交网络：带有标签的帖子、带有探索和关注模式的墙、点赞、帖子中的评论、公共资料、通知和人工智能辅助配对分析。"
+      },
+      "smartCalc": {
+        "title": "智能微分计算",
+        "desc": "在 AI 支持下求解常微分方程的 Web 应用程序。它集成了 Flask、DeepSeek 和 HTML/CSS/JS 接口来生成分步解决方案，并通过符号验证来增强结果的准确性。"
+      },
+      "crudArch": {
+        "title": "CRUD 架构作者/书籍",
+        "desc": "Laravel 中的项目实现了相同的 CRUD，比较了七种架构模式。在评估代码组织、清晰度和可维护性的所有方法中保持相同的业务逻辑。"
+      },
+      "taskflow": {
+        "title": "任务流管理器",
+        "desc": "带有交互式看板的全栈待办事项列表系统。它是协作开发的，允许您自动分配任务并查看待处理、进行中和已完成的任务，重点关注干净的架构。"
+      },
+      "qrStudio": {
+        "title": "二维码工作室",
+        "desc": "具有 9 种类型（URL、文本、WiFi、vCard、WhatsApp、电子邮件、短信、位置和事件）的 QR 生成器，可自定义颜色和样式。允许您预览更改并下载 PNG 格式的结果。"
+      },
+      "portfolio": {
+        "title": "自动化投资组合",
+        "desc": "包含技能、项目和联系信息的自动化网络投资组合。它与 GitHub Pages 一起部署，并通过推送和按计划进行更新，以保持指标最新。"
+      }
+    }
+  },
+  "stats": {
+    "title": "GitHub 统计",
+    "loading": "正在更新指标...",
+    "error": "无法加载。正在重试...",
+    "alt": "GitHub 指标每 30 分钟更新一次"
+  },
+  "contact": {
+    "title": "与我联系",
+    "subtitle": "您有一个项目、想法或合作吗？我们可以谈谈。",
+    "downloadCv": "下载简历 (PDF)",
+    "email": "邮件",
+    "mailSubject": "您的投资组合中的联系方式",
+    "mailBody": "你好，埃里克，我看到了你的作品集，我想和你谈谈。\n\n姓名：\n原因："
+  },
+  "footer": {
+    "text": "© {{year}} Erick Pérez — 有目的地构建软件。"
+  },
+  "time": {
+    "year": "年",
+    "years": "年",
+    "month": "月",
+    "months": "月",
+    "and": "和",
+    "lessThanMonth": "不到1个月"
+  }
+};

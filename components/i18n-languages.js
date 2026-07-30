@@ -6,6 +6,8 @@ export const LOCALE_CATALOG = [
   { code: "it", name: "Italiano" },
   { code: "pt", name: "Português" },
   { code: "ja", name: "日本語" },
+  { code: "ko", name: "한국어" },
+  { code: "zh", name: "中文" },
 ];
 
 export const SUPPORTED_LOCALE_CODES = LOCALE_CATALOG.map((entry) => entry.code);
@@ -19,6 +21,14 @@ export function resolveBuiltinLocale(browserLang) {
 
 export function matchBrowserToSupportedLocale(browserLang) {
   const lower = String(browserLang).trim().toLowerCase();
+  const aliases = {
+    "zh-cn": "zh",
+    "zh-hans": "zh",
+    "zh-sg": "zh",
+    "ko-kr": "ko",
+  };
+  if (aliases[lower]) return aliases[lower];
+
   for (const code of SUPPORTED_LOCALE_CODES) {
     if (code.toLowerCase() === lower) return code;
     if (lower.startsWith(`${code.toLowerCase()}-`)) return code;
