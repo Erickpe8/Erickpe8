@@ -1,4 +1,5 @@
-import { t, getLocale, setLocale } from "./i18n.js";
+import { t } from "./i18n.js";
+import { langPickerMarkup, setupLangPicker } from "./lang-picker.js";
 import { bindLocale, unbindLocale } from "./section-i18n.js";
 
 class NavbarComponent extends HTMLElement {
@@ -8,64 +9,8 @@ class NavbarComponent extends HTMLElement {
 
   disconnectedCallback() {
     unbindLocale(this);
-    window.clearTimeout(this._langSwitchTimer);
-    this._langResizeObserver?.disconnect();
-  }
-
-  langSwitcher() {
-    return `
-      <div class="lang-switcher" data-lang-track role="group" aria-label="${t("nav.langSelector")}">
-        <span class="lang-switcher-indicator" data-lang-indicator aria-hidden="true"></span>
-        <button type="button" data-lang="es" class="lang-switcher-btn">ES</button>
-        <button type="button" data-lang="en" class="lang-switcher-btn">EN</button>
-      </div>`;
-  }
-
-  setupLangSwitcher() {
-    const track = this.querySelector("[data-lang-track]");
-    const indicator = this.querySelector("[data-lang-indicator]");
-    const buttons = this.querySelectorAll("[data-lang]");
-    if (!track || !indicator || !buttons.length) return;
-
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    const moveTo = (lang, animate = true) => {
-      const button = track.querySelector(`[data-lang="${lang}"]`);
-      if (!button) return;
-
-      indicator.style.transition = animate && !reduceMotion
-        ? "transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), width 0.28s cubic-bezier(0.4, 0, 0.2, 1)"
-        : "none";
-
-      const trackRect = track.getBoundingClientRect();
-      const btnRect = button.getBoundingClientRect();
-      indicator.style.width = `${btnRect.width}px`;
-      indicator.style.transform = `translateX(${btnRect.left - trackRect.left}px)`;
-
-      buttons.forEach((btn) => {
-        const isActive = btn.dataset.lang === lang;
-        btn.classList.toggle("lang-active", isActive);
-        btn.setAttribute("aria-pressed", String(isActive));
-      });
-    };
-
-    moveTo(getLocale(), false);
-
-    this._langResizeObserver?.disconnect();
-    this._langResizeObserver = new ResizeObserver(() => moveTo(getLocale(), false));
-    this._langResizeObserver.observe(track);
-
-    buttons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const lang = button.dataset.lang;
-        if (!lang || lang === getLocale()) return;
-
-        moveTo(lang, true);
-        window.clearTimeout(this._langSwitchTimer);
-        const delay = reduceMotion ? 0 : 220;
-        this._langSwitchTimer = window.setTimeout(() => setLocale(lang), delay);
-      });
-    });
+    this._langPickerCleanup?.();
+    this._langPickerCleanup = null;
   }
 
   render() {
@@ -83,7 +28,7 @@ class NavbarComponent extends HTMLElement {
                         <a href="#" class="inline-flex items-center shrink-0 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2" aria-label="${t("nav.home")}">
                             <img src="${favicon}" alt="Erick Pérez" width="40" height="40" class="h-10 w-10 rounded-full object-cover ring-2 ring-white shadow-sm" loading="eager" decoding="async" />
                         </a>
-                        ${this.langSwitcher()}
+                        ${langPickerMarkup()}
                     </div>
 
                     <button id="menu-toggle" 
@@ -114,7 +59,8 @@ class NavbarComponent extends HTMLElement {
                 </div>
             </nav>`;
 
-    this.setupLangSwitcher();
+    this._langPickerCleanup?.();
+    this._langPickerCleanup = setupLangPicker(this);
 
     const toggle = this.querySelector("#menu-toggle");
     const mobileNav = this.querySelector("#mobile-nav");

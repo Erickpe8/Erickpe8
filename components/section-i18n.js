@@ -1,4 +1,4 @@
-import { onLocaleChange } from "./i18n.js";
+import { onLocaleChange, whenI18nReady } from "./i18n.js";
 
 export function bindLocale(element, render) {
   const run = () => {
@@ -8,7 +8,7 @@ export function bindLocale(element, render) {
     }
   };
   element._localeUnsub = onLocaleChange(run);
-  run();
+  whenI18nReady().then(run);
 }
 
 export function unbindLocale(element) {

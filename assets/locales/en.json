@@ -1,0 +1,144 @@
+{
+  "meta": {
+    "title": "Erick Pérez | Fullstack Developer",
+    "description": "Portfolio of Erick Pérez, fullstack developer with a backend focus. Projects, skills, experience, and contact."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact",
+    "cv": "CV",
+    "downloadCv": "Download CV",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "langSelector": "Select language",
+    "searchLang": "Search language",
+    "loadingLangs": "Loading languages…",
+    "translatingSite": "Translating site…",
+    "langsError": "Could not load languages",
+    "localeNotAvailable": "This site is currently available only in Spanish and English.",
+    "translateRateLimit": "Translation is limited by the service. Try later or use Spanish or English."
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "role": "Full Stack Developer in training",
+    "bio": "I'm passionate about software project management, requirements gathering, technical documentation, and working with agile teams.",
+    "viewProjects": "View projects",
+    "downloadCv": "Download CV"
+  },
+  "about": {
+    "title": "About me",
+    "p1": "I'm a <strong>Full Stack</strong> developer focused on the backend, passionate about building solid, scalable systems aligned with software engineering best practices. I'm currently in my <strong>eighth semester of Software Engineering at FESC</strong>, hold a <strong>Associate Degree in Software Development</strong>, and have complementary training in <strong>Software Architectures</strong>, constantly strengthening my skills in development, analysis, and solution design.",
+    "p2": "I have <strong>{{experience}}</strong> of experience at the <strong>FESC Software Laboratory</strong>, where I worked as an intern and now serve as a <strong>Software Development Technical Assistant</strong>. I enjoy every stage of the software lifecycle, from <strong>requirements gathering</strong> and <strong>functional analysis</strong> to implementation, <strong>documentation</strong>, and <strong>agile teamwork</strong>, always focused on efficient, maintainable, high-value solutions."
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Technologies and tools I use to build clear, maintainable solutions.",
+    "languages": "Languages",
+    "frameworksAndLibraries": "Frameworks & libraries",
+    "databases": "Databases",
+    "productivity": "Productivity & suites",
+    "devTools": "Development tools",
+    "softSkills": "Soft Skills",
+    "softSkillsTag": "Soft Skills",
+    "items": {
+      "adaptability": "Adaptability",
+      "communication": "Communication",
+      "timeManagement": "Time management",
+      "aiIntegration": "AI model integration",
+      "leadership": "Leadership",
+      "teamwork": "Teamwork",
+      "efficientAi": "Efficient use of AI"
+    }
+  },
+  "learning": {
+    "title": "Currently learning",
+    "items": {
+      "laravel": {
+        "title": "Laravel 12.x & 13.x",
+        "desc": "Deepening knowledge of new framework versions, clean architecture, services, queues, and optimization."
+      },
+      "javascript": {
+        "title": "JavaScript",
+        "desc": "DOM manipulation, async patterns, modules, design patterns, and complex data structures."
+      },
+      "docker": {
+        "title": "Docker",
+        "desc": "Reproducible environments, efficient images, containers, and simple DevOps workflows."
+      },
+      "architecture": {
+        "title": "Software Architecture",
+        "desc": "Patterns, SOLID principles, modular design, technical decisions, and scalability."
+      },
+      "figma": {
+        "title": "Figma",
+        "desc": "Layout, prototyping, and interface design to plan better before coding."
+      },
+      "git": {
+        "title": "Version control (Git/GitHub)",
+        "desc": "Branches, clear commits, pull requests, and collaborative workflows on real projects."
+      }
+    }
+  },
+  "projects": {
+    "title": "Featured projects",
+    "subtitle": "A representative selection of real products built with a focus on outcomes, user experience, and modern technologies.",
+    "carousel": "Projects carousel",
+    "viewOnGithub": "View project on GitHub",
+    "viewAll": "View all repositories",
+    "previewAlt": "Preview of",
+    "items": {
+      "entreSabores": {
+        "title": "Entre-Sabores",
+        "desc": "Culinary social network for cultural exchange: tagged posts, explore and following feeds, likes, threaded comments, public profiles, notifications, and AI-assisted pairing analysis."
+      },
+      "smartCalc": {
+        "title": "SmartDifferentialCalc",
+        "desc": "Web app to solve ordinary differential equations with AI support. Integrates Flask, DeepSeek, and an HTML/CSS/JS UI for step-by-step solutions with symbolic validation."
+      },
+      "crudArch": {
+        "title": "CRUD Architectures Authors/Books",
+        "desc": "Laravel project implementing the same CRUD across seven architectural patterns, keeping the same business logic to compare organization, clarity, and maintainability."
+      },
+      "taskflow": {
+        "title": "TaskFlow Manager",
+        "desc": "Full-stack todo system with an interactive Kanban board. Built collaboratively; supports self-assigned tasks and clear pending, in-progress, and done views with clean architecture."
+      },
+      "qrStudio": {
+        "title": "QR Studio",
+        "desc": "QR generator with 9 types (URL, text, WiFi, vCard, WhatsApp, email, SMS, location, events), color and style customization, live preview, and PNG export."
+      },
+      "portfolio": {
+        "title": "Automated portfolio",
+        "desc": "Automated web portfolio with skills, projects, and contact. Deployed on GitHub Pages and updated on push and on a schedule to keep metrics current."
+      }
+    }
+  },
+  "stats": {
+    "title": "GitHub stats",
+    "loading": "Updating metrics...",
+    "error": "Could not load. Retrying...",
+    "alt": "GitHub metrics updated every 30 minutes"
+  },
+  "contact": {
+    "title": "Get in touch",
+    "subtitle": "Have a project, idea, or collaboration in mind? Let's talk.",
+    "downloadCv": "Download resume (PDF)",
+    "email": "Email",
+    "mailSubject": "Contact from your portfolio",
+    "mailBody": "Hi Erick, I saw your portfolio and would like to talk.\n\nName:\nReason:\n"
+  },
+  "footer": {
+    "text": "© {{year}} Erick Pérez — Building software with purpose."
+  },
+  "time": {
+    "year": "year",
+    "years": "years",
+    "month": "month",
+    "months": "months",
+    "and": "and",
+    "lessThanMonth": "less than 1 month"
+  }
+}

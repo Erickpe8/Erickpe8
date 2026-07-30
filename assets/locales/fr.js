@@ -1,0 +1,144 @@
+export default {
+  "meta": {
+    "title": "Érick Pérez | Développeur Fullstack",
+    "description": "Portfolio d'Erick Pérez, développeur fullstack axé backend. Projets, compétences, expérience et contact."
+  },
+  "nav": {
+    "home": "Commencer",
+    "about": "sur moi",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "contact": "Contact",
+    "cv": "CV",
+    "downloadCv": "Télécharger CV",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "langSelector": "Sélectionnez la langue",
+    "searchLang": "Langue de recherche",
+    "loadingLangs": "Chargement des langues…",
+    "translatingSite": "Traduire le site…",
+    "langsError": "Les langues n'ont pas pu être chargées",
+    "localeNotAvailable": "Pour l'instant, le site n'est disponible qu'en espagnol et en anglais.",
+    "translateRateLimit": "Traduction limitée par le service. Essayez plus tard ou utilisez l'espagnol ou l'anglais."
+  },
+  "hero": {
+    "greeting": "Bonjour, je suis",
+    "role": "Développeur Full Stack en formation",
+    "bio": "Je suis passionné par la gestion de projets logiciels, la collecte des exigences, la documentation technique et le travail avec des équipes agiles.",
+    "viewProjects": "Voir les projets",
+    "downloadCv": "Télécharger CV"
+  },
+  "about": {
+    "title": "sur moi",
+    "p1": "Je suis un développeur Full Stack axé sur le backend, passionné par la construction de systèmes solides et évolutifs alignés sur les bonnes pratiques d'ingénierie logicielle. J'étudie actuellement le <strong>huitième semestre de génie logiciel à la FESC</strong>, je suis <strong>Technologue en développement logiciel</strong> et j'ai une formation complémentaire en <strong>Architectures logicielles</strong>, renforçant constamment mes connaissances en développement, analyse et conception de solutions technologiques.",
+    "p2": "J'ai <strong>{{experience}}</strong> d'expérience au sein du <strong>Laboratoire Logiciel FESC</strong>, où j'ai travaillé comme stagiaire et actuellement comme <strong>Technicien Assistant en Développement Logiciel</strong>. J'aime participer à toutes les étapes du cycle de vie des logiciels, depuis la collecte des exigences et l'analyse fonctionnelle jusqu'à la mise en œuvre, la documentation et le travail au sein d'équipes agiles, toujours concentrées sur la création de solutions efficaces, maintenables et précieuses pour les organisations."
+  },
+  "skills": {
+    "title": "Compétences",
+    "subtitle": "Technologies et outils que j'utilise pour créer des solutions claires et maintenables.",
+    "languages": "Langues",
+    "frameworksAndLibraries": "Frameworks et bibliothèques",
+    "databases": "Bases de données",
+    "productivity": "Productivité et suites",
+    "devTools": "Outils de développement",
+    "softSkills": "Compétences générales",
+    "softSkillsTag": "Compétences générales",
+    "items": {
+      "adaptability": "Adaptabilité",
+      "communication": "Communication",
+      "timeManagement": "gestion du temps",
+      "aiIntegration": "Intégration de modèles d'IA",
+      "leadership": "Direction",
+      "teamwork": "Travail d'équipe",
+      "efficientAi": "Utilisation efficace de l'IA"
+    }
+  },
+  "learning": {
+    "title": "Ce que j'apprends",
+    "items": {
+      "laravel": {
+        "title": "Laravel 12.x et 13.x",
+        "desc": "Plonger dans les nouvelles versions du framework, l'architecture propre, les services, les files d'attente et l'optimisation."
+      },
+      "javascript": {
+        "title": "Javascript",
+        "desc": "Manipulation DOM, asynchronie, modules, modèles de conception et structures complexes."
+      },
+      "docker": {
+        "title": "Docker",
+        "desc": "Créer des environnements réplicables, des images efficaces, des conteneurs et des flux DevOps simples."
+      },
+      "architecture": {
+        "title": "Architecture logicielle",
+        "desc": "Modèles, principes SOLID, conception modulaire, prise de décision technique et évolutivité."
+      },
+      "figma": {
+        "title": "figma",
+        "desc": "Layout, prototypage et conception d'interface pour mieux planifier avant de développer."
+      },
+      "git": {
+        "title": "Contrôle de version (Git/GitHub)",
+        "desc": "Branches, commits clairs, pull request et flux collaboratif pour de vrais projets."
+      }
+    }
+  },
+  "projects": {
+    "title": "Projets en vedette",
+    "subtitle": "Sélection représentative de produits réels développés en mettant l'accent sur les résultats, l'expérience utilisateur et les technologies modernes.",
+    "carousel": "Carrousel de projets",
+    "viewOnGithub": "Voir le projet sur GitHub",
+    "viewAll": "Voir tous les dépôts",
+    "previewAlt": "Aperçu de",
+    "items": {
+      "entreSabores": {
+        "title": "Entre-saveurs",
+        "desc": "Réseau social gastronomique orienté vers l'échange culturel : posts avec tags, mur avec mode exploration et suivi, likes, commentaires dans les fils de discussion, profils publics, notifications et analyse d'appariement assistée par l'IA."
+      },
+      "smartCalc": {
+        "title": "SmartDifferentialCalc",
+        "desc": "Application Web pour résoudre des équations différentielles ordinaires avec prise en charge de l'IA. Il intègre Flask, DeepSeek et une interface HTML/CSS/JS pour générer des solutions étape par étape, avec des validations symboliques qui renforcent la précision du résultat."
+      },
+      "crudArch": {
+        "title": "CRUD Architectures Auteurs/Livres",
+        "desc": "Projet dans Laravel qui implémente le même CRUD en comparant sept modèles architecturaux. Maintient la même logique métier dans toutes les approches pour évaluer l’organisation, la clarté et la maintenabilité du code."
+      },
+      "taskflow": {
+        "title": "Gestionnaire de flux de tâches",
+        "desc": "Système de liste de tâches complète avec tableau Kanban interactif. Développé en collaboration, il vous permet d'attribuer automatiquement les tâches et de visualiser les tâches en attente, en cours et terminées, en mettant l'accent sur une architecture épurée."
+      },
+      "qrStudio": {
+        "title": "QR-Studio",
+        "desc": "Générateur QR avec 9 types (URL, texte, WiFi, vCard, WhatsApp, email, SMS, localisation et événements), avec personnalisation des couleurs et du style. Vous permet de prévisualiser les modifications et de télécharger le résultat au format PNG."
+      },
+      "portfolio": {
+        "title": "Portefeuille automatisé",
+        "desc": "Portfolio Web automatisé avec compétences, projets et contacts. Il est déployé avec GitHub Pages et est mis à jour par push et selon un calendrier pour maintenir les métriques à jour."
+      }
+    }
+  },
+  "stats": {
+    "title": "Statistiques GitHub",
+    "loading": "Mise à jour des métriques...",
+    "error": "Impossible de charger. Nouvelle tentative...",
+    "alt": "Métriques GitHub mises à jour toutes les 30 minutes"
+  },
+  "contact": {
+    "title": "connectez-vous avec moi",
+    "subtitle": "Vous avez un projet, une idée ou une collaboration en tête ? Nous pouvons parler.",
+    "downloadCv": "Télécharger le CV (PDF)",
+    "email": "Mail",
+    "mailSubject": "Contact depuis votre portfolio",
+    "mailBody": "Bonjour Erick, j'ai vu votre portfolio et j'aimerais vous parler.\n\nNom :\nRaison :"
+  },
+  "footer": {
+    "text": "© {{year}} Erick Pérez — Créer des logiciels avec un but."
+  },
+  "time": {
+    "year": "année",
+    "years": "années",
+    "month": "mois",
+    "months": "mois",
+    "and": "et",
+    "lessThanMonth": "moins d'1 mois"
+  }
+};

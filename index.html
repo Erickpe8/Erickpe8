@@ -21,6 +21,25 @@
     <meta name="twitter:image" content="https://avatars.githubusercontent.com/Erickpe8?s=352" />
     <meta name="twitter:creator" content="@Erickperez_8" />
 
+    <script>
+      (function () {
+        function getSiteBase() {
+          const { protocol, hostname, pathname } = location;
+          if (protocol === "file:") {
+            return new URL("./", location.href).href;
+          }
+          if (hostname.endsWith("github.io")) {
+            const repo = pathname.split("/").filter(Boolean)[0];
+            return repo ? `${location.origin}/${repo}/` : `${location.origin}/`;
+          }
+          return new URL("./", location.href).href;
+        }
+
+        window.assetUrl = (relativePath) =>
+          new URL(relativePath.replace(/^\//, ""), getSiteBase()).href;
+      })();
+    </script>
+
     <!-- Tailwind -->
     <link rel="preconnect" href="https://cdn.tailwindcss.com" />
     <script defer src="https://cdn.tailwindcss.com"></script>
@@ -29,6 +48,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"
+    />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="preconnect" href="https://avatars.githubusercontent.com" />
     <link rel="preload" as="image"
@@ -72,25 +95,6 @@
           "https://x.com/Erickperez_8"
         ]
       }
-    </script>
-
-    <script>
-      (function () {
-        function getSiteBase() {
-          const { protocol, hostname, pathname } = location;
-          if (protocol === "file:") {
-            return new URL("./", location.href).href;
-          }
-          if (hostname.endsWith("github.io")) {
-            const repo = pathname.split("/").filter(Boolean)[0];
-            return repo ? `${location.origin}/${repo}/` : `${location.origin}/`;
-          }
-          return new URL("./", location.href).href;
-        }
-
-        window.assetUrl = (relativePath) =>
-          new URL(relativePath.replace(/^\//, ""), getSiteBase()).href;
-      })();
     </script>
 
 </head>
