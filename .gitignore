@@ -14,7 +14,6 @@ Thumbs.db
 # Archivo generado por script
 streak-data.json
 .deployments.json
-package-lock.json
 
 # VSCode 
 .vscode/
