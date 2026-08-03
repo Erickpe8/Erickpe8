@@ -140,6 +140,7 @@ jobs:
 
       - name: Prepare site
         run: |
+          VERSION="${GITHUB_SHA:0:12}"
           mkdir -p site
 
           cp index.html site/
@@ -154,7 +155,12 @@ jobs:
             --exclude="tailwind-input.css" \
             assets/ site/assets/
 
-          cp -r components site/
+          cp -r components "site/c-${VERSION}"
+
+      - name: Stamp cache-bust version on deploy
+        run: node scripts/stamp-site-version.mjs site/index.html
+        env:
+          BUILD_VERSION: ${{ github.sha }}
 
       # 4) Subir artefacto para Pages
       - name: Upload GitHub Pages artifact

@@ -17,8 +17,12 @@ const USER_PICKED_KEY = "portfolio-locale-user-picked";
 async function loadLocale(code) {
   if (messages[code]) return messages[code];
 
-  const moduleUrl = new URL(`../assets/locales/${code}.js`, import.meta.url).href;
-  const module = await import(moduleUrl);
+  const moduleUrl = new URL(`../assets/locales/${code}.js`, import.meta.url);
+  const version = document.querySelector('meta[name="asset-version"]')?.content?.trim();
+  if (version && version !== "dev") {
+    moduleUrl.searchParams.set("v", version);
+  }
+  const module = await import(moduleUrl.href);
   messages[code] = module.default;
   return messages[code];
 }

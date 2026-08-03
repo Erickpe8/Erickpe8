@@ -20,6 +20,10 @@
     <meta name="twitter:description" content="Conoce proyectos, experiencia y habilidades de Erick Pérez para oportunidades laborales y colaboraciones." />
     <meta name="twitter:image" content="https://avatars.githubusercontent.com/Erickpe8?s=352" />
     <meta name="twitter:creator" content="@Erickperez_8" />
+    <meta name="asset-version" content="dev" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
 
     <script>
       (function () {
@@ -35,8 +39,17 @@
           return new URL("./", location.href).href;
         }
 
-        window.assetUrl = (relativePath) =>
-          new URL(relativePath.replace(/^\//, ""), getSiteBase()).href;
+        function getAssetVersion() {
+          const v = document.querySelector('meta[name="asset-version"]')?.content?.trim();
+          return v && v !== "dev" ? v : "";
+        }
+
+        window.assetUrl = (relativePath) => {
+          const url = new URL(relativePath.replace(/^\//, ""), getSiteBase());
+          const version = getAssetVersion();
+          if (version) url.searchParams.set("v", version);
+          return url.href;
+        };
 
         document.querySelectorAll("[data-asset-href]").forEach((el) => {
           const path = el.getAttribute("data-asset-href");
