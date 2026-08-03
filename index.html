@@ -50,11 +50,6 @@
           if (version) url.searchParams.set("v", version);
           return url.href;
         };
-
-        document.querySelectorAll("[data-asset-href]").forEach((el) => {
-          const path = el.getAttribute("data-asset-href");
-          if (path) el.setAttribute("href", window.assetUrl(path));
-        });
       })();
     </script>
 
@@ -74,10 +69,17 @@
           imagesizes="(min-width: 768px) 176px, 128px" />
 
   <!-- CSS (Tailwind compilado: no depende de CDN ni del orden de los componentes) -->
-    <link rel="stylesheet" data-asset-href="assets/tailwind-built.css" />
-    <link rel="stylesheet" data-asset-href="assets/styles.css" />
-    <link rel="stylesheet" data-asset-href="assets/glass.css" />
-    <link rel="icon" type="image/png" data-asset-href="assets/images/favicon.png" />
+    <link rel="stylesheet" href="./assets/tailwind-built.css" data-asset-path="assets/tailwind-built.css" />
+    <link rel="stylesheet" href="./assets/styles.css" data-asset-path="assets/styles.css" />
+    <link rel="stylesheet" href="./assets/glass.css" data-asset-path="assets/glass.css" />
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png" data-asset-path="assets/images/favicon.png" />
+
+    <script>
+      document.querySelectorAll("[data-asset-path]").forEach((el) => {
+        const path = el.getAttribute("data-asset-path");
+        if (path && window.assetUrl) el.href = window.assetUrl(path);
+      });
+    </script>
 
     <!-- i18n (debe cargar antes que los componentes) -->
     <script type="module" src="./components/i18n.js"></script>
