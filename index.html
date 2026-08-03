@@ -37,12 +37,13 @@
 
         window.assetUrl = (relativePath) =>
           new URL(relativePath.replace(/^\//, ""), getSiteBase()).href;
+
+        document.querySelectorAll("[data-asset-href]").forEach((el) => {
+          const path = el.getAttribute("data-asset-href");
+          if (path) el.setAttribute("href", window.assetUrl(path));
+        });
       })();
     </script>
-
-    <!-- Tailwind -->
-    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
-    <script defer src="https://cdn.tailwindcss.com"></script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -59,10 +60,11 @@
           imagesrcset="https://avatars.githubusercontent.com/Erickpe8?s=128 128w, https://avatars.githubusercontent.com/Erickpe8?s=256 256w, https://avatars.githubusercontent.com/Erickpe8?s=352 352w"
           imagesizes="(min-width: 768px) 176px, 128px" />
 
-    <!-- CSS opcional -->
-    <link rel="stylesheet" href="./assets/styles.css" />
-    <link rel="stylesheet" href="./assets/glass.css" />
-    <link rel="icon" type="image/png" href="./assets/images/favicon.png" />
+  <!-- CSS (Tailwind compilado: no depende de CDN ni del orden de los componentes) -->
+    <link rel="stylesheet" data-asset-href="assets/tailwind-built.css" />
+    <link rel="stylesheet" data-asset-href="assets/styles.css" />
+    <link rel="stylesheet" data-asset-href="assets/glass.css" />
+    <link rel="icon" type="image/png" data-asset-href="assets/images/favicon.png" />
 
     <!-- i18n (debe cargar antes que los componentes) -->
     <script type="module" src="./components/i18n.js"></script>

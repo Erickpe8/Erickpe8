@@ -132,6 +132,12 @@ jobs:
           git push
 
       # 3) Armar carpeta del sitio a publicar
+      - name: Build CSS
+        run: |
+          npm ci
+          npm run build:css
+          test -f assets/tailwind-built.css || { echo "tailwind-built.css missing"; exit 1; }
+
       - name: Prepare site
         run: |
           mkdir -p site
@@ -139,13 +145,13 @@ jobs:
           cp index.html site/
           cp github-metrics.svg site/
           cp main.js site/
-          cp assets/styles.css site/
 
           mkdir -p site/assets
           rsync -av \
             --exclude="streak.svg" \
             --exclude="streak-template.svg" \
             --exclude="*.json" \
+            --exclude="tailwind-input.css" \
             assets/ site/assets/
 
           cp -r components site/

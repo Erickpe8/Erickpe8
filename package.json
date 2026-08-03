@@ -3,6 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build:css": "tailwindcss -i ./assets/tailwind-input.css -o ./assets/tailwind-built.css --minify",
+    "predev": "npm run build:css",
     "dev": "serve .",
     "cv:pdf": "node scripts/generate-cv-pdf.mjs",
     "locales:export": "node scripts/export-locales.mjs",
@@ -13,6 +15,9 @@
     "puppeteer": "^24.4.0"
   },
   "devDependencies": {
-    "serve": "^14.2.6"
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "serve": "^14.2.6",
+    "tailwindcss": "^3.4.17"
   }
 }
