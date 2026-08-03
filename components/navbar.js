@@ -17,16 +17,27 @@ class NavbarComponent extends HTMLElement {
     const cvPdf =
       window.assetUrl?.("assets/cv/Erick-Perez-CV.pdf") ??
       "https://erickpe8.github.io/Erickpe8/assets/cv/Erick-Perez-CV.pdf";
-    const favicon =
-      window.assetUrl?.("assets/images/favicon.png") ??
-      "https://erickpe8.github.io/Erickpe8/assets/images/favicon.png";
 
     this.innerHTML = `
             <header class="nav-shell fixed top-0 left-0 right-0 z-50">
                 <nav class="nav-glass navbar flex items-center justify-between gap-3" aria-label="Principal">
                     <div class="flex items-center gap-3 min-w-0">
                         <a href="#" class="inline-flex items-center shrink-0 rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2" aria-label="${t("nav.home")}">
-                            <img src="${favicon}" alt="Erick Pérez" width="40" height="40" class="h-10 w-10 rounded-full object-cover ring-2 ring-white/80 shadow-sm" loading="eager" decoding="async" />
+                            <img
+                                src="https://avatars.githubusercontent.com/Erickpe8?s=128"
+                                srcset="
+                                    https://avatars.githubusercontent.com/Erickpe8?s=64 64w,
+                                    https://avatars.githubusercontent.com/Erickpe8?s=128 128w,
+                                    https://avatars.githubusercontent.com/Erickpe8?s=256 256w
+                                "
+                                sizes="40px"
+                                width="40"
+                                height="40"
+                                alt="Erick Pérez"
+                                class="h-10 w-10 rounded-full object-cover ring-2 ring-white/80 shadow-sm"
+                                loading="eager"
+                                decoding="async"
+                            />
                         </a>
                         ${langPickerMarkup()}
                     </div>
