@@ -18,9 +18,6 @@ on:
       - components/**
       - assets/**
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 permissions:
   contents: write
   pages: write
@@ -33,13 +30,11 @@ concurrency:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       # 1) Traer el repo
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           persist-credentials: true
 
@@ -173,10 +168,10 @@ jobs:
 
       # 4) Subir artefacto para Pages
       - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: site
 
       # 5) Desplegar a GitHub Pages
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
