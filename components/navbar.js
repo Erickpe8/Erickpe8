@@ -42,14 +42,14 @@ class NavbarComponent extends HTMLElement {
                         ${langPickerMarkup()}
                     </div>
 
-                    <button id="menu-toggle" 
-                            class="md:hidden flex flex-col justify-between w-7 h-6 focus:outline-none shrink-0"
+                    <button id="menu-toggle" type="button"
+                            class="nav-menu-toggle"
                             aria-controls="mobile-nav"
                             aria-expanded="false"
                             aria-label="${t("nav.openMenu")}">
-                        <span class="block h-[2px] bg-slate-800 rounded-full"></span>
-                        <span class="block h-[2px] bg-slate-800 rounded-full"></span>
-                        <span class="block h-[2px] bg-slate-800 rounded-full"></span>
+                        <span class="nav-menu-toggle__bar" aria-hidden="true"></span>
+                        <span class="nav-menu-toggle__bar" aria-hidden="true"></span>
+                        <span class="nav-menu-toggle__bar" aria-hidden="true"></span>
                     </button>
 
                     <div id="desktop-nav" class="hidden md:flex gap-5 lg:gap-6 text-sm font-medium items-center">
@@ -61,7 +61,7 @@ class NavbarComponent extends HTMLElement {
                     </div>
                 </nav>
 
-                <div id="mobile-nav" class="nav-mobile-panel md:hidden hidden max-w-6xl mx-auto overflow-hidden">
+                <div id="mobile-nav" class="nav-mobile-panel is-closed max-w-6xl mx-auto overflow-hidden">
                     <a href="#about" class="nav-link block py-3 px-4 border-b border-white/30 hover:bg-white/40">${t("nav.about")}</a>
                     <a href="#skills" class="nav-link block py-3 px-4 border-b border-white/30 hover:bg-white/40">${t("nav.skills")}</a>
                     <a href="#projects" class="nav-link block py-3 px-4 border-b border-white/30 hover:bg-white/40">${t("nav.projects")}</a>
@@ -78,8 +78,8 @@ class NavbarComponent extends HTMLElement {
     if (!toggle || !mobileNav) return;
 
     toggle.addEventListener("click", () => {
-      mobileNav.classList.toggle("hidden");
-      const isOpen = !mobileNav.classList.contains("hidden");
+      mobileNav.classList.toggle("is-closed");
+      const isOpen = !mobileNav.classList.contains("is-closed");
       toggle.setAttribute("aria-expanded", String(isOpen));
       toggle.setAttribute("aria-label", isOpen ? t("nav.closeMenu") : t("nav.openMenu"));
     });
