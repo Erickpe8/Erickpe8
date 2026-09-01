@@ -49,6 +49,9 @@ jobs:
           npm run build:css
           test -f assets/tailwind-built.css || { echo "tailwind-built.css missing"; exit 1; }
 
+      - name: Generate CV PDF
+        run: npm run cv:pdf
+
       # 2) Generar el SVG
       - name: Generate GitHub Metrics
         uses: lowlighter/metrics@latest

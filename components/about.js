@@ -1,4 +1,5 @@
 import { t, formatExperience } from "./i18n.js";
+import { EXPERIENCE_START_ISO } from "./experience-config.js";
 import { bindLocale, unbindLocale } from "./section-i18n.js";
 
 class AboutSection extends HTMLElement {
@@ -11,7 +12,7 @@ class AboutSection extends HTMLElement {
   }
 
   render() {
-    const experience = formatExperience(new Date("2025-08-04"));
+    const experience = formatExperience(new Date(`${EXPERIENCE_START_ISO}T00:00:00`));
 
     this.innerHTML = `
         <section id="about" class="section-shell px-4 fade-in">

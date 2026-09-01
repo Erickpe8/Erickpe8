@@ -30,7 +30,7 @@
   },
   "about": {
     "title": "About me",
-    "p1": "I'm a <strong>Full Stack</strong> developer focused on the backend, passionate about building solid, scalable systems aligned with software engineering best practices. I'm currently in my <strong>eighth semester of Software Engineering at FESC</strong>, hold a <strong>Associate Degree in Software Development</strong>, and have complementary training in <strong>Software Architectures</strong>, constantly strengthening my skills in development, analysis, and solution design.",
+    "p1": "I'm a <strong>Full Stack</strong> developer focused on the backend, passionate about building solid, scalable systems aligned with software engineering best practices. I'm currently in my <strong>eighth semester of Software Engineering at FESC</strong>, hold a <strong>Associate Degree in Software Development</strong>, and completed diplomas in <strong>Software Architectures</strong> and <strong>Full Stack Web Development</strong>, constantly strengthening my skills in development, analysis, and solution design.",
     "p2": "I have <strong>{{experience}}</strong> of experience at the <strong>FESC Software Laboratory</strong>, where I worked as an intern and now serve as a <strong>Software Development Technical Assistant</strong>. I enjoy every stage of the software lifecycle, from <strong>requirements gathering</strong> and <strong>functional analysis</strong> to implementation, <strong>documentation</strong>, and <strong>agile teamwork</strong>, always focused on efficient, maintainable, high-value solutions."
   },
   "skills": {

@@ -1,14 +1,16 @@
 import puppeteer from "puppeteer";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
+import { formatExperienceEs } from "./experience.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const htmlPath = path.join(root, "assets", "cv", "cv.html");
 const pdfPath = path.join(root, "assets", "cv", "Erick-Perez-CV.pdf");
+const experienceText = formatExperienceEs();
 
 const browser = await puppeteer.launch({
   headless: true,
-  args: ["--no-sandbox", "--disable-setuid-sandbox"],
+  args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
 });
 
 try {
@@ -18,6 +20,11 @@ try {
   });
 
   await page.evaluateHandle("document.fonts.ready");
+  await page.evaluate((text) => {
+    document.querySelectorAll("[data-experience]").forEach((el) => {
+      el.textContent = text;
+    });
+  }, experienceText);
 
   await page.pdf({
     path: pdfPath,
@@ -28,6 +35,7 @@ try {
   });
 
   console.log(`PDF generado: ${pdfPath}`);
+  console.log(`Experiencia: ${experienceText}`);
 } finally {
   await browser.close();
 }
